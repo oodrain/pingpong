@@ -1,0 +1,49 @@
+# Local Python environments and caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local inputs, outputs and original packages
+/data/raw/
+/pp_train_data/
+/outputs/
+/archives/
+/backups/
+/tmp/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.zip
+!/tools/pingpong-annotation-local-20261007.zip
+*.tar
+*.gz
+*.onnx
+*.pt
+*.pth
+*.engine
+/official/participant/*/public_data/gt_public.jsonl
+
+/development/annotation/
+/安装标注环境.cmd
+/启动标注.cmd
+
+# Annotation working sessions and frame caches
+session.json
+session.legacy-backup.json
+.session.lock
+.cache.lock
+.annotation-export-locks/
+_frames/
+frames/
+_export_backups/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key

@@ -1,0 +1,5 @@
+# Team exchange files use portable LF text.
+/labels/** text eol=lf
+
+# Preserve copied official bytes for integrity checks.
+/official/participant/** -text

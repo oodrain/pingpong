@@ -1,0 +1,1546 @@
+{
+  "schema_version": 1,
+  "path_base": "project_root",
+  "tasks": [
+    {
+      "video_id": "00_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/00/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/00/001.json",
+      "n_frames_declared": 193,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "00_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/00/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/00/002.json",
+      "n_frames_declared": 107,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "00_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/00/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/00/003.json",
+      "n_frames_declared": 70,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "00_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/00/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/00/004.json",
+      "n_frames_declared": 77,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "00_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/00/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/00/005.json",
+      "n_frames_declared": 74,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "00_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/00/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/00/006.json",
+      "n_frames_declared": 79,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "00_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/00/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/00/007.json",
+      "n_frames_declared": 81,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "01_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/01/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/01/001.json",
+      "n_frames_declared": 109,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "01_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/01/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/01/002.json",
+      "n_frames_declared": 139,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "01_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/01/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/01/003.json",
+      "n_frames_declared": 94,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "01_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/01/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/01/004.json",
+      "n_frames_declared": 76,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "01_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/01/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/01/005.json",
+      "n_frames_declared": 91,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "01_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/01/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/01/006.json",
+      "n_frames_declared": 70,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "01_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/01/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/01/007.json",
+      "n_frames_declared": 172,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "02_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/02/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/02/001.json",
+      "n_frames_declared": 60,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "02_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/02/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/02/002.json",
+      "n_frames_declared": 63,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "02_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/02/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/02/003.json",
+      "n_frames_declared": 180,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "02_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/02/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/02/004.json",
+      "n_frames_declared": 101,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "02_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/02/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/02/005.json",
+      "n_frames_declared": 247,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "02_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/02/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/02/006.json",
+      "n_frames_declared": 57,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "02_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/02/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/02/007.json",
+      "n_frames_declared": 61,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "03_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/03/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/03/001.json",
+      "n_frames_declared": 66,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "03_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/03/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/03/002.json",
+      "n_frames_declared": 122,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "03_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/03/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/03/003.json",
+      "n_frames_declared": 62,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "03_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/03/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/03/004.json",
+      "n_frames_declared": 94,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "03_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/03/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/03/005.json",
+      "n_frames_declared": 96,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "03_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/03/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/03/006.json",
+      "n_frames_declared": 100,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "03_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/03/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/03/007.json",
+      "n_frames_declared": 117,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "04_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/04/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/04/001.json",
+      "n_frames_declared": 65,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "04_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/04/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/04/002.json",
+      "n_frames_declared": 140,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "04_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/04/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/04/003.json",
+      "n_frames_declared": 68,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "04_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/04/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/04/004.json",
+      "n_frames_declared": 196,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "04_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/04/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/04/005.json",
+      "n_frames_declared": 142,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "04_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/04/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/04/006.json",
+      "n_frames_declared": 171,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "04_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/04/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/04/007.json",
+      "n_frames_declared": 266,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "05_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/05/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/05/001.json",
+      "n_frames_declared": 839,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "06_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/06/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/06/001.json",
+      "n_frames_declared": 74,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "06_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/06/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/06/002.json",
+      "n_frames_declared": 77,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "06_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/06/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/06/003.json",
+      "n_frames_declared": 64,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "06_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/06/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/06/004.json",
+      "n_frames_declared": 121,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "06_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/06/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/06/005.json",
+      "n_frames_declared": 46,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "06_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/06/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/06/006.json",
+      "n_frames_declared": 105,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "06_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/06/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/06/007.json",
+      "n_frames_declared": 62,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "07_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/07/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/07/001.json",
+      "n_frames_declared": 249,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "07_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/07/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/07/002.json",
+      "n_frames_declared": 127,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "07_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/07/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/07/003.json",
+      "n_frames_declared": 87,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "07_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/07/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/07/004.json",
+      "n_frames_declared": 233,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "07_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/07/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/07/005.json",
+      "n_frames_declared": 173,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "07_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/07/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/07/006.json",
+      "n_frames_declared": 147,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "07_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/07/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/07/007.json",
+      "n_frames_declared": 164,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "08_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/08/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/08/001.json",
+      "n_frames_declared": 175,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "08_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/08/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/08/002.json",
+      "n_frames_declared": 143,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "08_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/08/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/08/003.json",
+      "n_frames_declared": 67,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "08_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/08/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/08/004.json",
+      "n_frames_declared": 130,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "08_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/08/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/08/005.json",
+      "n_frames_declared": 56,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "08_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/08/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/08/006.json",
+      "n_frames_declared": 94,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "08_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/08/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/08/007.json",
+      "n_frames_declared": 85,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "09_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/09/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/09/001.json",
+      "n_frames_declared": 101,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "09_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/09/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/09/002.json",
+      "n_frames_declared": 135,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "09_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/09/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/09/003.json",
+      "n_frames_declared": 114,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "09_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/09/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/09/004.json",
+      "n_frames_declared": 78,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "09_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/09/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/09/005.json",
+      "n_frames_declared": 160,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "09_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/09/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/09/006.json",
+      "n_frames_declared": 122,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "09_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/09/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/09/007.json",
+      "n_frames_declared": 77,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "10_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/10/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/10/001.json",
+      "n_frames_declared": 95,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "10_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/10/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/10/002.json",
+      "n_frames_declared": 62,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "10_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/10/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/10/003.json",
+      "n_frames_declared": 165,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "10_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/10/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/10/004.json",
+      "n_frames_declared": 98,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "10_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/10/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/10/005.json",
+      "n_frames_declared": 106,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "10_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/10/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/10/006.json",
+      "n_frames_declared": 107,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "10_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/10/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/10/007.json",
+      "n_frames_declared": 224,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "11_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/11/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/11/001.json",
+      "n_frames_declared": 151,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "11_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/11/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/11/002.json",
+      "n_frames_declared": 116,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "11_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/11/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/11/003.json",
+      "n_frames_declared": 144,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "11_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/11/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/11/004.json",
+      "n_frames_declared": 98,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "11_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/11/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/11/005.json",
+      "n_frames_declared": 142,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "12_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/12/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/001.json",
+      "n_frames_declared": 86,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "12_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/12/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/002.json",
+      "n_frames_declared": 46,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "12_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/12/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/003.json",
+      "n_frames_declared": 122,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "12_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/12/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/004.json",
+      "n_frames_declared": 92,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "12_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/12/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/005.json",
+      "n_frames_declared": 66,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "12_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/12/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/006.json",
+      "n_frames_declared": 88,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "12_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/12/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/007.json",
+      "n_frames_declared": 67,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "12_008",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/12/008.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/12/008.json",
+      "n_frames_declared": 61,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "13_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/13/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/13/001.json",
+      "n_frames_declared": 136,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "13_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/13/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/13/002.json",
+      "n_frames_declared": 105,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "13_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/13/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/13/003.json",
+      "n_frames_declared": 78,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "13_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/13/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/13/004.json",
+      "n_frames_declared": 126,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "13_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/13/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/13/005.json",
+      "n_frames_declared": 125,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "13_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/13/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/13/006.json",
+      "n_frames_declared": 77,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "13_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/13/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/13/007.json",
+      "n_frames_declared": 173,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "14_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/14/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/14/001.json",
+      "n_frames_declared": 133,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "14_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/14/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/14/002.json",
+      "n_frames_declared": 119,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "14_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/14/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/14/003.json",
+      "n_frames_declared": 80,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "14_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/14/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/14/004.json",
+      "n_frames_declared": 83,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "14_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/14/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/14/005.json",
+      "n_frames_declared": 109,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "14_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/14/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/14/006.json",
+      "n_frames_declared": 158,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "14_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/14/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/14/007.json",
+      "n_frames_declared": 110,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "15_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/15/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/15/001.json",
+      "n_frames_declared": 240,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "15_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/15/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/15/002.json",
+      "n_frames_declared": 77,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "15_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/15/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/15/003.json",
+      "n_frames_declared": 81,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "15_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/15/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/15/004.json",
+      "n_frames_declared": 64,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "15_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/15/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/15/005.json",
+      "n_frames_declared": 81,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "15_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/15/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/15/006.json",
+      "n_frames_declared": 56,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "15_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/15/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/15/007.json",
+      "n_frames_declared": 46,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "16_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/16/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/16/001.json",
+      "n_frames_declared": 279,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "16_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/16/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/16/002.json",
+      "n_frames_declared": 187,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "16_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/16/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/16/003.json",
+      "n_frames_declared": 154,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "16_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/16/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/16/004.json",
+      "n_frames_declared": 76,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "17_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/17/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/17/001.json",
+      "n_frames_declared": 693,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "17_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/17/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/17/002.json",
+      "n_frames_declared": 405,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "18_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/18/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/18/001.json",
+      "n_frames_declared": 177,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "18_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/18/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/18/002.json",
+      "n_frames_declared": 312,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "18_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/18/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/18/003.json",
+      "n_frames_declared": 226,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "18_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/18/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/18/004.json",
+      "n_frames_declared": 171,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "18_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/18/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/18/005.json",
+      "n_frames_declared": 156,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "18_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/18/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/18/006.json",
+      "n_frames_declared": 248,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "18_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/18/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/18/007.json",
+      "n_frames_declared": 469,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "19_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/19/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/19/001.json",
+      "n_frames_declared": 96,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "19_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/19/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/19/002.json",
+      "n_frames_declared": 127,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "19_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/19/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/19/003.json",
+      "n_frames_declared": 86,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "19_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/19/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/19/004.json",
+      "n_frames_declared": 72,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "19_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/19/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/19/005.json",
+      "n_frames_declared": 91,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "19_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/19/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/19/006.json",
+      "n_frames_declared": 142,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "19_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/19/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/19/007.json",
+      "n_frames_declared": 121,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "20_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/20/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/20/001.json",
+      "n_frames_declared": 749,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "20_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/20/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/20/002.json",
+      "n_frames_declared": 328,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "20_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/20/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/20/003.json",
+      "n_frames_declared": 286,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "20_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/20/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/20/004.json",
+      "n_frames_declared": 152,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "21_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/21/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/21/001.json",
+      "n_frames_declared": 143,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "21_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/21/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/21/002.json",
+      "n_frames_declared": 147,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "21_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/21/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/21/003.json",
+      "n_frames_declared": 283,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "21_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/21/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/21/004.json",
+      "n_frames_declared": 182,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "21_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/21/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/21/005.json",
+      "n_frames_declared": 197,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "21_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/21/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/21/006.json",
+      "n_frames_declared": 193,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "21_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/21/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/21/007.json",
+      "n_frames_declared": 319,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "22_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/22/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/22/001.json",
+      "n_frames_declared": 702,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "22_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/22/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/22/002.json",
+      "n_frames_declared": 443,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "22_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/22/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/22/003.json",
+      "n_frames_declared": 272,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "22_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/22/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/22/004.json",
+      "n_frames_declared": 309,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "23_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/23/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/23/001.json",
+      "n_frames_declared": 69,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "23_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/23/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/23/002.json",
+      "n_frames_declared": 234,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "23_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/23/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/23/003.json",
+      "n_frames_declared": 160,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "23_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/23/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/23/004.json",
+      "n_frames_declared": 99,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "23_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/23/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/23/005.json",
+      "n_frames_declared": 469,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "23_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/23/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/23/006.json",
+      "n_frames_declared": 108,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    },
+    {
+      "video_id": "23_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/23/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/23/007.json",
+      "n_frames_declared": 150,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "24_001",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/24/001.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/24/001.json",
+      "n_frames_declared": 179,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "24_002",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/24/002.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/24/002.json",
+      "n_frames_declared": 140,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "24_003",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/24/003.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/24/003.json",
+      "n_frames_declared": 235,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "24_004",
+      "video": "pp_train_data/pp_train_data/rallies_videos/D/24/004.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/24/004.json",
+      "n_frames_declared": 75,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "D",
+      "reviewer": "A"
+    },
+    {
+      "video_id": "24_005",
+      "video": "pp_train_data/pp_train_data/rallies_videos/B/24/005.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/24/005.json",
+      "n_frames_declared": 140,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "B",
+      "reviewer": "C"
+    },
+    {
+      "video_id": "24_006",
+      "video": "pp_train_data/pp_train_data/rallies_videos/C/24/006.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/24/006.json",
+      "n_frames_declared": 119,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "C",
+      "reviewer": "D"
+    },
+    {
+      "video_id": "24_007",
+      "video": "pp_train_data/pp_train_data/rallies_videos/A/24/007.mp4",
+      "annotation": "pp_train_data/pp_train_data/annotations/24/007.json",
+      "n_frames_declared": 116,
+      "source_group": "unknown",
+      "split": "unassigned",
+      "annotator": "A",
+      "reviewer": "B"
+    }
+  ]
+}
