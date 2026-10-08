@@ -1,0 +1,11 @@
+{"event_id": "16_001_initial_uncertain_000040_000041", "video_id": "16_001", "frame_start": 40, "frame_end": 41, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000049_000049", "video_id": "16_001", "frame_start": 49, "frame_end": 49, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000059_000060", "video_id": "16_001", "frame_start": 59, "frame_end": 60, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000073_000073", "video_id": "16_001", "frame_start": 73, "frame_end": 73, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000101_000101", "video_id": "16_001", "frame_start": 101, "frame_end": 101, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000123_000124", "video_id": "16_001", "frame_start": 123, "frame_end": 124, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000137_000138", "video_id": "16_001", "frame_start": 137, "frame_end": 138, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000163_000164", "video_id": "16_001", "frame_start": 163, "frame_end": 164, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000177_000177", "video_id": "16_001", "frame_start": 177, "frame_end": 177, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000205_000206", "video_id": "16_001", "frame_start": 205, "frame_end": 206, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "16_001_initial_uncertain_000265_000266", "video_id": "16_001", "frame_start": 265, "frame_end": 266, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
