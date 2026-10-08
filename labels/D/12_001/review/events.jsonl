@@ -1,0 +1,6 @@
+{"event_id": "12_001_review_000009", "video_id": "12_001", "frame_id": 9, "x": 600.0, "y": 245.8, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "A"}
+{"event_id": "12_001_review_000020", "video_id": "12_001", "frame_id": 20, "x": 579.0, "y": 313.6, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "A"}
+{"event_id": "12_001_review_000037", "video_id": "12_001", "frame_id": 37, "x": 726.4, "y": 230.0, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "A"}
+{"event_id": "12_001_review_000051", "video_id": "12_001", "frame_id": 51, "x": 588.6, "y": 336.0, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "A"}
+{"event_id": "12_001_review_000059", "video_id": "12_001", "frame_id": 59, "x": 666.6, "y": 230.2, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "A"}
+{"event_id": "12_001_review_000067", "video_id": "12_001", "frame_id": 67, "x": 755.0, "y": 356.4, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "A"}
