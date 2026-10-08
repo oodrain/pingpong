@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "video_id": "02_002",
+  "annotator": "B",
+  "round": "review",
+  "width": 1280,
+  "height": 720,
+  "n_frames": 63,
+  "fps": 30.0,
+  "video_sha256": "5992e4cf9b79f8583c963c810c8c70d96ec6d07d7d4ffa381e41f7cf4179c76a",
+  "annotation_sha256": "264ca8081d565a850e4067403d4384bd5ad3ea0b98f531062a3d334bcdd6707a",
+  "completed": true,
+  "checked_ranges": [
+    [
+      0,
+      62
+    ]
+  ],
+  "no_events_reason": "",
+  "label_version": 1,
+  "updated_at": "2026-10-08T08:51:57.299827+00:00",
+  "tool": "local_annotation/v2",
+  "source_type": "manual",
+  "review_of": {
+    "annotator": "A",
+    "label_version": 1,
+    "metadata_sha256": "3389c641c37bb7ed67bc723bdda3dac95709f502d156c39a54f7450c13bad104",
+    "events_sha256": "d9eb6c39cffe3d8dfa183c35335a92bed0a3e3bc5e212b4c0a7c8273bf5bbc2c",
+    "uncertain_sha256": "87480b40cabf5536a7f3ce03e83131a3f39579c5cde627d43e31d75edfdd1552"
+  },
+  "completion_basis": "manual_attestation",
+  "displayed_ranges": [
+    [
+      0,
+      62
+    ]
+  ]
+}
