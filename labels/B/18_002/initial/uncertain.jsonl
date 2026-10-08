@@ -1,0 +1,3 @@
+{"event_id": "18_002_initial_uncertain_000187_000189", "video_id": "18_002", "frame_start": 187, "frame_end": 189, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "18_002_initial_uncertain_000254_000257", "video_id": "18_002", "frame_start": 254, "frame_end": 257, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "18_002_initial_uncertain_000266_000268", "video_id": "18_002", "frame_start": 266, "frame_end": 268, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}

@@ -1,0 +1,3 @@
+{"event_id": "01_005_initial_uncertain_000024_000024", "video_id": "01_005", "frame_start": 24, "frame_end": 24, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "01_005_initial_uncertain_000066_000068", "video_id": "01_005", "frame_start": 66, "frame_end": 68, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "01_005_initial_uncertain_000076_000090", "video_id": "01_005", "frame_start": 76, "frame_end": 90, "reason": "触网后多次触台，有遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}

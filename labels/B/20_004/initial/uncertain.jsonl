@@ -1,0 +1,4 @@
+{"event_id": "20_004_initial_uncertain_000019_000020", "video_id": "20_004", "frame_start": 19, "frame_end": 20, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "20_004_initial_uncertain_000046_000046", "video_id": "20_004", "frame_start": 46, "frame_end": 46, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "20_004_initial_uncertain_000079_000080", "video_id": "20_004", "frame_start": 79, "frame_end": 80, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "20_004_initial_uncertain_000109_000110", "video_id": "20_004", "frame_start": 109, "frame_end": 110, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}

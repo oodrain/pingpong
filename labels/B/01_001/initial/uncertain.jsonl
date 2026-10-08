@@ -1,0 +1,2 @@
+{"event_id": "01_001_initial_uncertain_000053_000054", "video_id": "01_001", "frame_start": 53, "frame_end": 54, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "01_001_initial_uncertain_000078_000079", "video_id": "01_001", "frame_start": 78, "frame_end": 79, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}

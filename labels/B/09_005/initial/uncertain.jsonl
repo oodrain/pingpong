@@ -1,0 +1,7 @@
+{"event_id": "09_005_initial_uncertain_000002_000003", "video_id": "09_005", "frame_start": 2, "frame_end": 3, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "09_005_initial_uncertain_000009_000011", "video_id": "09_005", "frame_start": 9, "frame_end": 11, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "09_005_initial_uncertain_000016_000019", "video_id": "09_005", "frame_start": 16, "frame_end": 19, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "09_005_initial_uncertain_000072_000073", "video_id": "09_005", "frame_start": 72, "frame_end": 73, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "09_005_initial_uncertain_000096_000097", "video_id": "09_005", "frame_start": 96, "frame_end": 97, "reason": "两帧之间接触", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "09_005_initial_uncertain_000122_000123", "video_id": "09_005", "frame_start": 122, "frame_end": 123, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "B"}
+{"event_id": "09_005_initial_uncertain_000134_000134", "video_id": "09_005", "frame_start": 134, "frame_end": 134, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "B"}
