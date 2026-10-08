@@ -1,0 +1,2 @@
+{"event_id": "01_006_initial_uncertain_000035_000035", "video_id": "01_006", "frame_start": 35, "frame_end": 35, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_006_initial_uncertain_000037_000037", "video_id": "01_006", "frame_start": 37, "frame_end": 37, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}

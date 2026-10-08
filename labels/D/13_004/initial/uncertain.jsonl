@@ -1,0 +1,3 @@
+{"event_id": "13_004_initial_uncertain_000036_000039", "video_id": "13_004", "frame_start": 36, "frame_end": 39, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "13_004_initial_uncertain_000058_000058", "video_id": "13_004", "frame_start": 58, "frame_end": 58, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "13_004_initial_uncertain_000060_000062", "video_id": "13_004", "frame_start": 60, "frame_end": 62, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}

@@ -1,0 +1,10 @@
+{"event_id": "01_007_initial_uncertain_000042_000042", "video_id": "01_007", "frame_start": 42, "frame_end": 42, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000064_000068", "video_id": "01_007", "frame_start": 64, "frame_end": 68, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000074_000074", "video_id": "01_007", "frame_start": 74, "frame_end": 74, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000082_000083", "video_id": "01_007", "frame_start": 82, "frame_end": 83, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000101_000105", "video_id": "01_007", "frame_start": 101, "frame_end": 105, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000126_000129", "video_id": "01_007", "frame_start": 126, "frame_end": 129, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000147_000149", "video_id": "01_007", "frame_start": 147, "frame_end": 149, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000153_000153", "video_id": "01_007", "frame_start": 153, "frame_end": 153, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000157_000159", "video_id": "01_007", "frame_start": 157, "frame_end": 159, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "01_007_initial_uncertain_000161_000161", "video_id": "01_007", "frame_start": 161, "frame_end": 161, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
