@@ -1,5 +1,7 @@
 # 标注文件与GitHub提交标准
 
+仓库按初标来源成员归档复核，让同一视频的initial和review相邻。例如A复核D时，文件放labels/D/视频/review，metadata和每条记录的annotator仍是A，review_of.annotator仍是D。按复核者存放的交换包也兼容。初标目录必须匹配初标者；复核目录必须匹配实际复核者或绑定的初标者，不能改写真实身份来适配目录。使用仓库自带的新版校验器：python tools/validate_labels.py validate labels。
+
 版本：2，2026-10-07。适用于四人小组内部补标；校验器继续接受v1，新本地窗口输出v2，旧CLI默认输出v1。
 
 大家可以使用现有工具，也可以自己做工具。统一的是数据版本、判断口径和交回的文件。先每人完成一段，B检查格式和帧号，再批量推进。
@@ -73,7 +75,7 @@ JSON和JSONL均为UTF-8编码，不带BOM。JSONL每行一个JSON对象，不使
 |event_type|固定table_bounce|
 |review_state|固定provisional，表示人工候选；复核也先保留此状态|
 |round|initial或review，与所在目录一致|
-|annotator|A/B/C/D，与所在目录及任务清单一致|
+|annotator|实际标注者A/B/C/D，与metadata和任务分配一致；复核可在初标来源成员目录归档|
 
 按frame_id升序排列。同一视频、成员和轮次，一帧最多一条触台记录，修改坐标应更新原记录。不同成员和轮次可以使用相同event_id，汇总时以成员、视频、轮次、event_id联合识别。
 
@@ -179,7 +181,7 @@ python "<工具包目录>/development/annotation/submission.py" reference labels
 **提交前检查：**
 
 ```powershell
-python "<工具包目录>/development/annotation/submission.py" validate labels
+python tools/validate_labels.py validate labels
 ```
 
 默认检查文件、类型、范围、重复记录、目录和复核来源；分配校验需显式提供 `--tasks data/manifests/tasks.json`。它不证明人工判断正确，也不表示所有任务完成。显示submissions和completed数量，便于区分部分提交和完成。
@@ -204,7 +206,7 @@ python "<工具包目录>/development/annotation/submission.py" validate labels
 git switch main
 git pull --ff-only
 git switch -c annotation/A-batch01
-python "<工具包目录>/development/annotation/submission.py" validate labels
+python tools/validate_labels.py validate labels
 git add -- labels/A/03_007/initial
 git diff --cached
 git commit -m "annotation: A initial 03_007 v1"
