@@ -1,0 +1,6 @@
+{"event_id": "07_007_initial_uncertain_000010_000013", "video_id": "07_007", "frame_start": 10, "frame_end": 13, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "07_007_initial_uncertain_000022_000022", "video_id": "07_007", "frame_start": 22, "frame_end": 22, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "07_007_initial_uncertain_000079_000079", "video_id": "07_007", "frame_start": 79, "frame_end": 79, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "07_007_initial_uncertain_000080_000084", "video_id": "07_007", "frame_start": 80, "frame_end": 84, "reason": "遮挡", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "07_007_initial_uncertain_000091_000091", "video_id": "07_007", "frame_start": 91, "frame_end": 91, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
+{"event_id": "07_007_initial_uncertain_000102_000102", "video_id": "07_007", "frame_start": 102, "frame_end": 102, "reason": "球心无法判断", "review_state": "uncertain", "round": "initial", "annotator": "D"}
