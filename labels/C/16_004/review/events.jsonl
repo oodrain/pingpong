@@ -1,0 +1,4 @@
+{"event_id": "16_004_review_000004", "video_id": "16_004", "frame_id": 4, "x": 553.4, "y": 408.6, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "D"}
+{"event_id": "16_004_review_000021", "video_id": "16_004", "frame_id": 21, "x": 752.8, "y": 404.4, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "D"}
+{"event_id": "16_004_review_000031", "video_id": "16_004", "frame_id": 31, "x": 525.0, "y": 381.8, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "D"}
+{"event_id": "16_004_review_000056", "video_id": "16_004", "frame_id": 56, "x": 662.2, "y": 396.8, "event_type": "table_bounce", "review_state": "provisional", "round": "review", "annotator": "D"}
