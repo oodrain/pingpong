@@ -1,2 +1,0 @@
-{"event_id": "01_005_review_uncertain_000021_000022", "video_id": "01_005", "frame_start": 21, "frame_end": 22, "reason": "遮挡", "review_state": "uncertain", "round": "review", "annotator": "C"}
-{"event_id": "01_005_review_uncertain_000082_000082", "video_id": "01_005", "frame_start": 82, "frame_end": 82, "reason": "球心无法判断", "review_state": "uncertain", "round": "review", "annotator": "C"}
