@@ -19,6 +19,7 @@ __pycache__/
 *.webm
 *.zip
 !/tools/pingpong-annotation-local-20261007.zip
+!/tools/pingpong-annotation-local-20261009.zip
 *.tar
 *.gz
 *.onnx
@@ -40,6 +41,9 @@ session.legacy-backup.json
 _frames/
 frames/
 _export_backups/
+_third_review_cache/
+_third_review_work/
+third_review/history/
 
 # Local credentials
 .env

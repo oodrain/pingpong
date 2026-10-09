@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "video_id": "02_006",
+  "annotator": "D",
+  "round": "review",
+  "width": 1280,
+  "height": 720,
+  "n_frames": 57,
+  "fps": 30.0,
+  "video_sha256": "582b9b55170d79449e000424f1d6ccc8ce899f0764aa85b6a7734419beea0646",
+  "annotation_sha256": "fb8f206f21fc5f1637a8171b93fe961c5eecf17074e83261e6a4135e9e1a826a",
+  "completed": true,
+  "checked_ranges": [
+    [
+      0,
+      56
+    ]
+  ],
+  "no_events_reason": "触台时被遮挡",
+  "label_version": 1,
+  "updated_at": "2026-10-08T11:39:37.223335+00:00",
+  "tool": "local_annotation/v2",
+  "source_type": "manual",
+  "review_of": {
+    "annotator": "C",
+    "label_version": 1,
+    "metadata_sha256": "7194d9f8ccd6f750229f25b78a2d816d44cf0adf09ef0614436b504247d9367a",
+    "events_sha256": "47c978f058263a0908a779be80d51183618306a2f5bdcfa2040c90dbfec07c87",
+    "uncertain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "completion_basis": "manual_attestation",
+  "displayed_ranges": [
+    [
+      0,
+      56
+    ]
+  ]
+}

@@ -1,0 +1,4 @@
+{"event_id": "07_007_review_uncertain_000010_000013", "video_id": "07_007", "frame_start": 10, "frame_end": 13, "reason": "遮挡", "review_state": "uncertain", "round": "review", "annotator": "A"}
+{"event_id": "07_007_review_uncertain_000053_000053", "video_id": "07_007", "frame_start": 53, "frame_end": 53, "reason": "遮挡", "review_state": "uncertain", "round": "review", "annotator": "A"}
+{"event_id": "07_007_review_uncertain_000070_000071", "video_id": "07_007", "frame_start": 70, "frame_end": 71, "reason": "两帧之间接触", "review_state": "uncertain", "round": "review", "annotator": "A"}
+{"event_id": "07_007_review_uncertain_000101_000102", "video_id": "07_007", "frame_start": 101, "frame_end": 102, "reason": "两帧之间接触", "review_state": "uncertain", "round": "review", "annotator": "A"}
