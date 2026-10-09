@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "README.md",
-      "size": 4746,
-      "sha256": "e1be847e8a46f882ee01c97fa092b553dfcb0f132ced9c1d76eb751b0c99e373"
+      "size": 5081,
+      "sha256": "1d60dadb0d26b4317f5fa26029b094a5af1ceaea1fe5e5f28486a114a60123d9"
     },
     {
       "path": "development/annotation/README.md",
-      "size": 8336,
-      "sha256": "01f0f517b9c4b1954ef48c32c8f1be324a4efb49c7501d03f7a789df7060fdd2"
+      "size": 8632,
+      "sha256": "b01f70f7c5d3f1fba2e0f9df6c1380447ef66d78130a97a675e42bc4691c90f8"
     },
     {
       "path": "development/annotation/Setup-Annotation.ps1",
@@ -23,8 +23,8 @@
     },
     {
       "path": "development/annotation/adjudication.py",
-      "size": 37455,
-      "sha256": "181b4b139718863ec5c5ac7ee0a0799cab57eac0c76cbd8de2e922a8bfdf6fd6"
+      "size": 43402,
+      "sha256": "b1232f1fd9c87abe0c9150dbb91b4ddf176b15007397deb646ed229be078a9c5"
     },
     {
       "path": "development/annotation/annotate.py",
@@ -88,8 +88,8 @@
     },
     {
       "path": "development/annotation/test_adjudication.py",
-      "size": 8240,
-      "sha256": "4ebcce9fb9f0d72856e0d8e94f47856f53dbca5bec97493a86229923ccc419f0"
+      "size": 10284,
+      "sha256": "20108c6cb55dfd71716a429be425e3d47af0077a3ef0a806c913cdf8774efd8c"
     },
     {
       "path": "development/annotation/test_annotation.py",
@@ -142,5 +142,5 @@
       "sha256": "dec31d079075444a0826b198c845be67fd2f2fa6fe940170ee0947fe0fc62f31"
     }
   ],
-  "zip_sha256": "503190864bbca2b4e573221efd4ecf824de52e6af319fa1d50397edc0e237616"
+  "zip_sha256": "f161f2db42b6cc172f1868c6ac315b60c4e05b7e85f85a7cff845ab17bdcb088"
 }
