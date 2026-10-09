@@ -1,0 +1,146 @@
+{
+  "format": "local-annotation-v2",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 4746,
+      "sha256": "e1be847e8a46f882ee01c97fa092b553dfcb0f132ced9c1d76eb751b0c99e373"
+    },
+    {
+      "path": "development/annotation/README.md",
+      "size": 8336,
+      "sha256": "01f0f517b9c4b1954ef48c32c8f1be324a4efb49c7501d03f7a789df7060fdd2"
+    },
+    {
+      "path": "development/annotation/Setup-Annotation.ps1",
+      "size": 3190,
+      "sha256": "ff55d7436900ef4cf2cd451ae4e1f76a706ce31dfa56c0ab345dc377dfb0a124"
+    },
+    {
+      "path": "development/annotation/Start-Annotation.ps1",
+      "size": 794,
+      "sha256": "fc8090c39ad00b5366db31ac6d0cb03120d638a2cf5421fbc7e6bb25fef29699"
+    },
+    {
+      "path": "development/annotation/adjudication.py",
+      "size": 37455,
+      "sha256": "181b4b139718863ec5c5ac7ee0a0799cab57eac0c76cbd8de2e922a8bfdf6fd6"
+    },
+    {
+      "path": "development/annotation/annotate.py",
+      "size": 27474,
+      "sha256": "583d34eafa93cd0c85d5f3d9fab34ac084ba65960e307b517ac3d2a84821d8ac"
+    },
+    {
+      "path": "development/annotation/annotation_core.py",
+      "size": 29422,
+      "sha256": "eed6ac24d61abe47b137988a3557705047fc9ef6d7610d3f1ef95b90dfad052d"
+    },
+    {
+      "path": "development/annotation/annotation_dialog.ps1",
+      "size": 5769,
+      "sha256": "80d526f074c628a5ccef025006fda7200136deaf77d81cbef6d62ca49917aaad"
+    },
+    {
+      "path": "development/annotation/check_environment.py",
+      "size": 1346,
+      "sha256": "30a3328dc3be6531f89e783876a8c0b0bf925b2fbb69550f518a992eb50ce875"
+    },
+    {
+      "path": "development/annotation/gui_dialogs.py",
+      "size": 2344,
+      "sha256": "85ad57c9164ba2d59933ba23430cd624d361c3d6adb3b228ebc7d16bbbb0d710"
+    },
+    {
+      "path": "development/annotation/local_annotation.py",
+      "size": 20860,
+      "sha256": "76f70173bea2500cf9f6fe7f2040527abc8e934f6e4abc64365ed4d061b290a6"
+    },
+    {
+      "path": "development/annotation/local_workflow.py",
+      "size": 18722,
+      "sha256": "5fe932dfe7a9f66d44e04c51012bec40e73cf17dc7edf48a25efef5429877af5"
+    },
+    {
+      "path": "development/annotation/package_tool.py",
+      "size": 2231,
+      "sha256": "e2a14794529f6d26889afd988c261d161d4b906d608c7f629177189d9819c703"
+    },
+    {
+      "path": "development/annotation/requirements-lock.txt",
+      "size": 55,
+      "sha256": "ae6a009cf15a3d3306f08f6f04ecc39760be2fe5d713efdbe5e5e09fb53da04b"
+    },
+    {
+      "path": "development/annotation/submission.py",
+      "size": 28757,
+      "sha256": "8e03a153127bf0fbdaf583ae8f81383a8229b0b61db2d9e1f3995eea7b5e8c5c"
+    },
+    {
+      "path": "development/annotation/tasks.json",
+      "size": 50834,
+      "sha256": "3928b231cde9005ae1e472848b287016a5cfe63c46c5ff811069915a57713e48"
+    },
+    {
+      "path": "development/annotation/team_annotation.py",
+      "size": 21068,
+      "sha256": "2df58f6753f4e088e563a54192f5a701efea120140444dceafcb311e112b4a1e"
+    },
+    {
+      "path": "development/annotation/test_adjudication.py",
+      "size": 8240,
+      "sha256": "4ebcce9fb9f0d72856e0d8e94f47856f53dbca5bec97493a86229923ccc419f0"
+    },
+    {
+      "path": "development/annotation/test_annotation.py",
+      "size": 12099,
+      "sha256": "f8dd11f337bed5952930d9817c3fdd36c2384d6e41b6a1d11198fc8e2872cbca"
+    },
+    {
+      "path": "development/annotation/test_local_annotation.py",
+      "size": 21135,
+      "sha256": "5313512d11f9862b49b154e61e41bd6cd7d1c83dbee09c717a8dd7cbbd531d9f"
+    },
+    {
+      "path": "development/annotation/test_submission.py",
+      "size": 8971,
+      "sha256": "42910cbe7904af0db0433ef2c47794d4df83fcec74b7727956fcb04c1151db7b"
+    },
+    {
+      "path": "development/annotation/test_team_annotation.py",
+      "size": 14648,
+      "sha256": "693b247f5ffb2abb83062c4fc257688b9b8266d29fa58a4ef2f27af30b6cd142"
+    },
+    {
+      "path": "development/annotation/启动标注.cmd",
+      "size": 94,
+      "sha256": "ba70c42e9658a9a15d59fffe27b102a65e0867d97348300ee975a713757d41fe"
+    },
+    {
+      "path": "docs/guides/标注工具_组员上手说明.md",
+      "size": 5105,
+      "sha256": "b7e55025ba51f52dee844205f886c3b3a3e8ade6d193a7e8e55df3027558219b"
+    },
+    {
+      "path": "docs/guides/标注文件与GitHub提交标准.md",
+      "size": 14235,
+      "sha256": "581d1984a9f2efa6f69973054dc5de12b68a5476599ab9ac66dcd91a22b388dc"
+    },
+    {
+      "path": "labels/README.md",
+      "size": 782,
+      "sha256": "a646ae1dea7a7e25f1eefca16bb4511c475158d754231b06f18d5c2a45e690e7"
+    },
+    {
+      "path": "启动标注.cmd",
+      "size": 117,
+      "sha256": "6704b155038911a67e6df21e1fa1fa7bc79bf5ae3fd5e104d988dab7014c653b"
+    },
+    {
+      "path": "安装标注环境.cmd",
+      "size": 123,
+      "sha256": "dec31d079075444a0826b198c845be67fd2f2fa6fe940170ee0947fe0fc62f31"
+    }
+  ],
+  "zip_sha256": "503190864bbca2b4e573221efd4ecf824de52e6af319fa1d50397edc0e237616"
+}
