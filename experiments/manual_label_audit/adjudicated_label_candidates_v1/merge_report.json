@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "policy": {
+    "agreement": "one-to-one match with frame +/-1 and Euclidean distance <=50px; review point represents agreement",
+    "third_review": "third-review point replaces a compatible consensus point in the same video, otherwise it is added",
+    "uncertain": "disputed source events excluded; unrelated consensus context retained",
+    "no_bounce": "disputed source events excluded"
+  },
+  "videos": 154,
+  "member_cases": {
+    "A": 35,
+    "B": 35,
+    "C": 35,
+    "D": 34
+  },
+  "decision_cases": {
+    "confirmed": 101,
+    "uncertain": 37,
+    "no_bounce": 1
+  },
+  "initial_review_consensus_before_replacement": 616,
+  "third_review_points": 174,
+  "third_points_replacing_consensus": 67,
+  "candidate_events": 723,
+  "candidate_source_counts": {
+    "third_review": 174,
+    "initial_review_agreement": 549
+  },
+  "excluded_uncertain_cases": 37,
+  "rejected_no_bounce_cases": 1,
+  "duplicate_candidates": 0,
+  "max_consensus_pixel_distance": 43.9091,
+  "source_unmatched_initial_events": 59,
+  "source_unmatched_review_events": 145
+}
