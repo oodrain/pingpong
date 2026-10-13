@@ -1,0 +1,13 @@
+回溯明细（j=原极大帧, k=回溯帧, s_prev/s_at/ratio, d=回溯距离）| 结果: 命中/新FP/丢失/无关
+
+v000001:
+  j f78 → k f76  s_prev=45.8 s_at=12.0 r=0.26 d=2 | 修复FN(label f76)
+
+v000038:
+  j f146 → k f142  s_prev=34.3 s_at=2.1 r=0.06 d=4 | 修复FN(label f142)
+
+v000057:
+  j f67 → k f64  s_prev=43.4 s_at=0.7 r=0.02 d=3 | 修复FN(label f64)
+
+v000085:
+  j f21 → k f16  s_prev=19.8 s_at=0.5 r=0.03 d=5 | 修复FN(label f16)
