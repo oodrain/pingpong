@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "version": "adjudicated_candidate_v2",
+  "policy": {
+    "scope": "apply only the 33 training-154 audit cases; public-15 cases remain audit-only",
+    "candidate_removed": "exclude the displayed D candidate",
+    "remove_event_ids": "remove only the explicitly selected v1 events",
+    "remaining_d_candidate": "add as confirmed audit candidate unless decision is already_labeled",
+    "final_events": "add all manually saved centers independently"
+  },
+  "videos": 154,
+  "v1_events": 723,
+  "training_audit_cases": 33,
+  "public_audit_only_cases": 2,
+  "removed_v1_events": 2,
+  "added_events": 14,
+  "v2_events": 735,
+  "action_counts": {
+    "manual_event": 5,
+    "removed_d_candidate": 24,
+    "removed_existing": 2,
+    "retained_d_candidate": 9
+  },
+  "duplicate_pairs_within_official_tolerance": 0
+}

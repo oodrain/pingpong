@@ -1,0 +1,26 @@
+﻿source_group,angle_degrees,video_count,first_video_id,last_video_id,confidence,basis
+00,0,7,00_001,00_007,high,visual check of first and last representative frames against official references
+01,0,7,01_001,01_007,high,visual check of first and last representative frames against official references
+02,90,7,02_001,02_007,high,visual check of first and last representative frames against official references
+03,90,7,03_001,03_007,high,visual check of first and last representative frames against official references
+04,90,7,04_001,04_007,high,visual check of first and last representative frames against official references
+05,90,1,05_001,05_001,high,visual check of first and last representative frames against official references
+06,0,7,06_001,06_007,high,visual check of first and last representative frames against official references
+07,0,7,07_001,07_007,high,visual check of first and last representative frames against official references
+08,0,7,08_001,08_007,high,visual check of first and last representative frames against official references
+09,90,7,09_001,09_007,high,visual check of first and last representative frames against official references
+10,90,7,10_001,10_007,high,visual check of first and last representative frames against official references
+11,45,5,11_001,11_005,high,visual check of first and last representative frames against official references
+12,0,8,12_001,12_008,high,visual check of first and last representative frames against official references
+13,90,7,13_001,13_007,high,visual check of first and last representative frames against official references
+14,0,7,14_001,14_007,high,visual check of first and last representative frames against official references
+15,0,7,15_001,15_007,high,visual check of first and last representative frames against official references
+16,0,4,16_001,16_004,high,visual check of first and last representative frames against official references
+17,45,2,17_001,17_002,high,visual check of first and last representative frames against official references
+18,0,7,18_001,18_007,high,visual check of first and last representative frames against official references
+19,0,7,19_001,19_007,high,visual check of first and last representative frames against official references
+20,45,4,20_001,20_004,high,visual check of first and last representative frames against official references
+21,90,7,21_001,21_007,high,visual check of first and last representative frames against official references
+22,90,4,22_001,22_004,high,visual check of first and last representative frames against official references
+23,0,7,23_001,23_007,high,visual check of first and last representative frames against official references
+24,90,7,24_001,24_007,high,visual check of first and last representative frames against official references
