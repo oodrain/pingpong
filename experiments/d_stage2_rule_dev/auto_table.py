@@ -76,10 +76,8 @@ def _canonical_order(quad: np.ndarray) -> np.ndarray:
     return np.roll(quad, -k, axis=0)
 
 
-def _frame_candidates(frame, ball_pts=None):
-    """单帧选角：三通道 top3 候选 → 中心/面积/球点覆盖率先验 → 首个合规者。
-
-    返回 ((quad 原图坐标, score, name)) 或 None。"""
+def frame_pool(frame, ball_pts=None):
+    """单帧候选池（中心/面积先验后）：[(quad 原图坐标, score, frac, name), ...]。"""
     h, w = frame.shape[:2]
     scale = 960.0 / w
     img = cv2.resize(frame, (960, max(1, int(h * scale))))
@@ -128,7 +126,7 @@ def _frame_candidates(frame, ball_pts=None):
                 cands.append((quad, float(sc), f"dark{h0}"))
 
     if not cands:
-        return None
+        return []
     frame_area = float(w * h)
     pts_ds = None
     if ball_pts:
@@ -152,12 +150,21 @@ def _frame_candidates(frame, ball_pts=None):
                      if cv2.pointPolygonTest(qc, (float(p[0]), float(p[1])), True) >= -tol_ds)
         return inside / max(1, len(pts_ds))
 
-    cands.sort(key=lambda t: -t[1])
-    # 一级：首个（中心+面积+覆盖率≥0.5）候选；二级回退：覆盖率≥0.4
+    out = []
+    for q_ds, sc, name in cands:
+        if centered(q_ds) and ok_frame(q_ds):
+            out.append((_canonical_order(q_ds) / scale, sc, ball_frac(q_ds), name))  # 原图坐标
+    return out
+
+
+def _frame_candidates(frame, ball_pts=None):
+    """单帧选出（中心/面积筛选后的）最优候选：覆盖率一级 0.5 二级回退 0.4。"""
+    pool = frame_pool(frame, ball_pts)
+    pool.sort(key=lambda t: -t[1])
     for frac_th in (FRAC_T1, FRAC_T2):
-        for q_ds, sc, name in cands:
-            if centered(q_ds) and ok_frame(q_ds) and ball_frac(q_ds) >= frac_th:
-                return _canonical_order(q_ds) / scale, sc, name
+        for q, sc, f, name in pool:
+            if f >= frac_th:
+                return q, sc, name
     return None
 
 
