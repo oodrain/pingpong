@@ -1,0 +1,80 @@
+历史几何触台规则接口说明
+
+目的
+处理桌面轴向、两遍扫描重复事件、评分贪心匹配问题，并提供
+可复现的实验接口。当前是独立实验模块，尚未替换已有窗口规则或官方算法。
+输入是模型检测缓存和可选桌面几何；规则不读取人工球拍方向或触台真值。
+真值只由评估程序读取。图像y转折用于产生候选，平面投影不等于3D恢复。
+
+文件
+table_geometry.py：循环四角校验、物理轴判断、固定2740×1525mm坐标、分段几何。
+ge_rule_v2.py：V0/V1a/V1b按时间顺序回放，缺失几何回退、空间去重。
+test_ge_rule_v2.py：轴向、重复输出、匹配优先级、分段边界与CLI回归检查。
+../evaluation/run_geometry_d_v2.py：参数化实验、两种ignore口径、边距扫描、留一验证。
+../evaluation/verify_geometry_d_v2.py：公开15及训练154检测缓存的精确回放验证。
+
+桌面几何输入
+目录内每个视频一个 VIDEO_ID.json。单段示例（坐标仅为格式示例）：
+{
+  "video_id": "v000001",
+  "segments": [
+    {
+      "id": "camera_0",
+      "start_frame": 0,
+      "end_frame": 124,
+      "corners": [[310,180],[850,220],[1080,610],[100,590]],
+      "edge01_axis": "width"
+    }
+  ]
+}
+corners按边界循环排列，允许任意起点和顺/逆时针；禁止乱序、重复、退化四角。
+edge01_axis说明第0角到第1角这条边的真实物理轴：length为2.74m，width为1.525m。
+也可省略该字段并提供net:[[x1,y1],[x2,y2]]，使用台面中线两侧边的网线交点。
+不要使用有高度的球网上沿端点代替台面交点，后者不位于同一个平面。
+程序在单位方形中识别网线方向，再统一到2740×1525；不比较有尺度偏差的x跨度。
+网线不够明确、无物理轴信息或四角无效时，几何为unknown，回退到V0。
+只靠画面长短边或0/45/90标签，不能确定物理轴。自动桌面模型也应遵守该接口。
+
+start_frame/end_frame为原视频0起始的输出帧号，包含端点，绝不是input_frame_id。
+单段允许省略范围（默认0至末尾）；多段必须给出范围，禁止重叠。
+范围间缺口回退。候选前后检测点跨不同相机段时不将画面转折视为触台。
+空间去重仅在同一段、前后均有有效几何、时间向前时生效；unknown不会提供
+空间放行依据。检测缓存input_frame_id做一次-1补偿，兼容缓存第0行未检测记录。
+
+运行（仓库根目录；先激活自己的 Python 环境）
+1. 回归检查：
+python -X utf8 -m unittest development.bounce.test_ge_rule_v2 -v
+
+2. 公开15回放及评分（缺失几何明确记录为回退）：
+python -X utf8 development/evaluation/run_geometry_d_v2.py --data-root <数据根目录> --baseline-predictions <基线预测文件>
+
+3. 有真实标定后，严格要求所有候选具备有效几何：
+python -X utf8 development/evaluation/run_geometry_d_v2.py --data-root <数据根目录> --geometry-dir <实际标定目录> --require-geometry
+
+4. 验证169段缓存兼容性，输出文件需尚不存在：
+python -X utf8 development/evaluation/verify_geometry_d_v2.py --data-root <数据根目录> --output <新输出文件>
+
+用--data-root指定独立输入工作区；自定义数据通过--raw-dir、--manifest、--gt指定；raw每个视频一个jsonl，须覆盖
+全部帧且input_frame_id从0严格递增；manifest/GT沿用evaluate_landings.py格式。
+输出目录默认新建时间戳目录，避免覆盖历史结果；可用--output指定尚不存在的路径。
+--margin-mm默认900只是历史待验证参数，不能视为推荐值；--margins指定扫描列表。
+
+评分与验收
+沿用项目最大数量匹配、有效GT优先、±1帧和50px匹配窗口。分别记录未匹配预测
+命中无效点时豁免/不豁免的两种口径。项目评分器并非赛事正式评分器。
+同时输出汇总micro-F1与视角平均F1；训练集angle=unknown时不能当作三视角平均。
+边距选择与每个留一训练折均优化不豁免口径的视角平均F1。平分时取更大的边距，
+减少误杀。缺少所有有效几何时不做扫描，避免选出没有意义的“最优边距”。
+实验选择不自动更改默认配置或生产算法；154阶段候选标签须与正式真值区分。
+
+产物
+summary.json：状态、参数、输入/代码SHA-256、几何缺失/无效原因、V0缓存比较。
+metrics.json：三模式、两评分口径的全量及按视角/视频明细。
+v*_predictions.jsonl：逐事件输出；v*_decisions.jsonl：逐候选区域/去重/回退解释。
+changed_matches.jsonl：相对V0丢失及新增命中的GT与预测。
+margin_analysis.json：扫描和留一选型；source/：实际执行的代码快照。
+REPORT.txt：简要结论。geometry_experiment_complete只表示可重跑，不代表已验收。
+
+当前验收边界
+该模块保留历史几何规则实验接口，不能据此推断当前 TCN 的评测结果。
+缺少可靠几何输入时应记录回退；自动桌面识别的准确性仍需独立评估。

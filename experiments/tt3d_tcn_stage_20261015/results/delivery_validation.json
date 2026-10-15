@@ -1,0 +1,38 @@
+{
+  "stage_delivery_checks": {
+    "native_event_review_tests": 21,
+    "full_video_label_replacement_tests": 2,
+    "frame_tcn_tests": 16,
+    "frozen_split_tests": 7,
+    "automatic_geometry_and_camera_tests": 34,
+    "total_unit_tests_passed": 80
+  },
+  "frozen_eval_replay": {
+    "videos": 46,
+    "frames": 6271,
+    "maximum_score_difference": 0.0,
+    "all_touch_and_hit_events_identical": true
+  },
+  "portable_train_reproduction": {
+    "six_source_cv_selection_identical": true,
+    "selected_epochs": 60,
+    "selected_threshold": 0.65,
+    "final_model_parameters_bitwise_identical": true,
+    "normalization_identical": true
+  },
+  "portable_external_cache_cli": {
+    "checked_video_ids": [
+      "09_001",
+      "v000001"
+    ],
+    "outputs_identical": true
+  },
+  "not_validated": [
+    "Fresh detector inference on a clean machine",
+    "Independent external video accuracy",
+    "GPU compatibility",
+    "Latest TCN end-to-end FPS",
+    "Competition integration"
+  ],
+  "validation_scope": "Delivery reproducibility only; no new architecture, hyperparameter sweep or model adoption."
+}

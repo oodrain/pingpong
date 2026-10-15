@@ -2,7 +2,9 @@
 
 乒乓球多视角落点检测。
 
-当前建立协作目录骨架。已有分工、标注格式说明和标注工具已归入对应位置；新增团队算法文件为空，未新增数据划分、人工标签、实验结果或自动检查逻辑。
+本分支保存截至 2026-10-15 的 **TT3D 启发台面几何与逐帧 TCN 阶段成果**：公开15条 F1 **73.68%**，内部保留31条阶段参考 F1 **73.81%**。包含源码、汇总报告和本地复现入口；模型和派生数据留在本地；未接入桌面默认程序或比赛 Solution，GPU与端到端50FPS验收尚未完成。
+
+请先阅读 [阶段总结、结果与复现步骤](experiments/tt3d_tcn_stage_20261015/README.md)。阶段评测已完成并暂停；内部标签不完整、历史开发曝光等限制已在报告中说明。
 
 ## 从这里开始
 
@@ -19,18 +21,18 @@
 |---|---|---|
 |solution/|团队最终推理源码，后续对应官方乒乓球参赛者代码区|Python 文件与配置、权重目录留空|
 |tools/|供组员下载的标注工具 ZIP|工具包随仓库提交，解压后使用|
-|development/detection/|轨迹导出与检测诊断工具|空目录|
-|development/bounce/|离线规则回放与诊断工具；复用 solution 中的规则|空目录|
-|development/evaluation/|评估与错误可视化工具|空目录|
+|development/detection/|自动球点、台面几何及相关检测工具|已包含阶段源码|
+|development/bounce/|轨迹事件、候选规则与逐帧 TCN|已包含阶段源码|
+|development/evaluation/|来源划分、评测与错误分析工具|已包含阶段源码|
 |development/packaging/|后续生成官方运行工程的打包工具|空目录|
 |development/training/|后续训练及模型导出工具|空目录|
-|labels/|A/B/C/D 的人工初标与复核结果|已有说明，成员目录为空|
+|labels/|A/B/C/D 的人工初标与复核结果|已有成员提交；以实际文件为准|
 |data/manifests/|团队数据来源、路径与哈希索引|已有任务清单 tasks.json，其余待补|
 |data/splits/|开发集与内部检查集划分|空目录|
 |data/label_selection/|评估采用的标签版本与裁决记录|空目录|
 |data/artifacts/|外部轨迹与大结果的位置、版本、哈希|空目录|
 |docs/|现有使用说明、分工与后续接口文档|已有文档已整理；interfaces 留空|
-|examples/、experiments/|后续小型样例与实验记录|空目录|
+|examples/、experiments/|小型样例与实验记录|experiments 已包含阶段实现与报告|
 |official/participant/|官方参考工程|框架、参考算法和输入清单；数据、GT 和权重另取|
 |.github/|后续工作流与任务模板|仅空目录|
 
@@ -62,7 +64,7 @@ python "<工具包目录>/development/annotation/submission.py" validate labels
 
 校验器只需要 Python 3.10 及以上和标准库；图形标注工具使用 Python 3.12 x64。详见 [组员上手说明](docs/guides/标注工具_组员上手说明.md)。
 
-`labels/A`、`B`、`C`、`D` 为空目录，未放置 `.gitkeep`，以免被已有校验器误判为提交。Git 不保留空成员目录，首次提交真实标签后自然出现。
+成员标签按实际提交保存在 `labels/A`、`B`、`C`、`D` 下。不要放置 `.gitkeep`，以免被已有校验器误判为提交。
 
 ## 仓库用途
 

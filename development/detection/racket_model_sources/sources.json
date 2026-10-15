@@ -1,0 +1,30 @@
+{
+  "csp_layer.py": {
+    "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection/v3.3.0/mmdet/models/layers/csp_layer.py",
+    "sha256": "9838bca1ee7b0791ee39afe6f86f7c1d8020581517af0b7c0d18f11a1d5ade55"
+  },
+  "csp_darknet.py": {
+    "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection/v3.3.0/mmdet/models/backbones/csp_darknet.py",
+    "sha256": "ecaae28ad75ed62d1ee02bf2d8fd87034389fe3361cbc026910151954bb5735e"
+  },
+  "cspnext.py": {
+    "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection/v3.3.0/mmdet/models/backbones/cspnext.py",
+    "sha256": "03829212e539c2b548eed809c80cadef9614bbb7b91776d16ca9976a364941e4"
+  },
+  "cspnext_pafpn.py": {
+    "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection/v3.3.0/mmdet/models/necks/cspnext_pafpn.py",
+    "sha256": "3c3a67b4c1121ff5b5de88efa5dfa2a15ec789a4b7a8e4572d9e87132e3d0ca0"
+  },
+  "rtmdet_head.py": {
+    "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection/v3.3.0/mmdet/models/dense_heads/rtmdet_head.py",
+    "sha256": "3ca0c55e0205db170400c2a7334d8ff92e4f3ec09de6f65c57d7505f7f4dc1cb"
+  },
+  "LICENSE": {
+    "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection/v3.3.0/LICENSE",
+    "sha256": "874b8b2e6f12306a1ff7812c068a0dbf880418b8ac1f7190382bd6c6da9f23a1"
+  },
+  "se_layer.py": {
+    "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection/v3.3.0/mmdet/models/layers/se_layer.py",
+    "sha256": "422e9a7ba47bf615693ceda35f972c695a4044555fee0678a1686402620a8101"
+  }
+}

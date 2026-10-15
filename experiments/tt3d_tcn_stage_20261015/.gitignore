@@ -1,0 +1,5 @@
+/local_bundle/
+/assets/
+/data/
+*.pt
+*.npz
