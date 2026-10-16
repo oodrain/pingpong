@@ -1,0 +1,61 @@
+{
+  "publication_scope": "source_and_aggregate_report_only",
+  "syntax_checked_python_files": 27,
+  "portable_core_imports_passed": true,
+  "frozen_public_replay": {
+    "videos": 15,
+    "frames": 2109,
+    "touch_predictions": 115,
+    "touch_and_hit_outputs_exact": true,
+    "automatic51_features_bit_exact": true
+  },
+  "aggregate_metric_formulas_checked": true,
+  "publication_scan": {
+    "checked_files": 33,
+    "passed": true
+  },
+  "no_retraining_or_threshold_changes": true,
+  "source_sha256": {
+    "latest/.gitignore": "f7f65d5f34bfba51e48ad727ac83038542fd4cf1f9df65ade4184f48360beaef",
+    "latest/prepare_model.py": "568cf61c8e851b999ac8ffc29721b23edd47dad88db7786f080cb89d6c5f25ec",
+    "latest/README.md": "b0b3fc99867b508ec9f1002a226a4d456664eec6d9b8748f1d3303779ddeec7d",
+    "latest/requirements.txt": "1020d7afc6685dcb952092d5b9877dd82089c741532dc4dd6b9b958544c19e2e",
+    "latest/run_cached.py": "c46d0e77fd532a724ef711c4dfa1dbb0b51778e32fb1856ebcdd15b3383d080d",
+    "latest/run_video.py": "e0257fcbf22b259f6997b4091c6db54aab8585ab956b373573227cb4cb349bac",
+    "latest/source/auto_table_geometry.py": "f2293b7ff1ea376f16f4381f0837daea466fa44abfe26d38986d3d1c630e4417",
+    "latest/source/ball_repair.py": "233ee6faf8fbc9a75f70bbb2a2137ee7b38b353ab22d60b01eb4eb76d7b1cbac",
+    "latest/source/camera.py": "4d18c79772bf2380a980d2238c6725892dbaca273d92db5653d8afcfcace310c",
+    "latest/source/camera_consensus.py": "11e300e40b1c6cb43879ca418ca4964bb3fc6fa531d7b07bc03d5e529ebfb12c",
+    "latest/source/camera_history.py": "4a66c8975aa450071d12e8630e931edfd92c988ae32735eb3336ee2449914874",
+    "latest/source/decoder.py": "10f74b4c54ba0a2f9a1d6da87d37c718d8108bdc1e709ce474f2d1a1a61d03f2",
+    "latest/source/flight_models.py": "b77fdccc55545c9d323c17bdc5a3c11264c52dca3892167abe5551b3f360dfed",
+    "latest/source/frame_features.py": "a4f6cd6bfd05a3fac559e08b4d4541fa28f02d5eb07187f066196cfb2b9968e5",
+    "latest/source/geometry.py": "e5008d02821ad99a165c36078da1c8b3c982c7239237d5742296e3918dc7bf9a",
+    "latest/source/model.py": "c46f8350ed7f2938356ca93a6308b925b3352162f70047d8c78026fcfab4413d",
+    "latest/source/observation_features.py": "f5c99e86f5e5ebf5c4afff335cd551353a28ea677a4a62c71cd9124c1f0fa080",
+    "latest/source/physics.py": "29630cda4e03e9c85a11f7585d43e3010ddc7801f3f2e872f52b7a3d6db19a52",
+    "latest/source/protocol.py": "3968f36dc175c7fadbbab7c1ea7fda710a4d4ef8716e6db8cafcac8bf57d1541",
+    "latest/source/revision.py": "584c812e52468e0a56d03634ff8583ced90b23eecfa04c8bba4dd6d61fea89ac",
+    "latest/source/roi.py": "fc905eaa187c2a686e3e0f782583ecd494c86592790d13faaa03001d7a0abbc8",
+    "latest/source/runtime.py": "ed9120bfef702e5c444c4babf1169e3c5c8b83c7e3ed172f01204f9e818d7a3a",
+    "latest/source/startup_pts_capture.py": "aede554196f491c76a3d3483e7118476072774a972f6d58992c63640900fc398",
+    "latest/source/table_border_lines.py": "238c63d790e44b56e6dd6b53911558bddf4613e227460e226300c841a94b0966",
+    "latest/source/table_geometry.py": "f2759564f8722e33396519c88e8cfee7e6c325751280c9848b2cd0c109128a30",
+    "latest/source/temporal.py": "423eae7f31354ee29cf11edcae5c970ca868cb7bc1d421ed16a6d17f637f8d6e",
+    "latest/source/tt3d_segmenter.py": "184ceb8d0a19e88d8778cac167d07f641e97c8c7aebaa61751eb90f2a174e150",
+    "latest/source/video_ball_detector.py": "bdcd1d62f1a8cf96cf97f7677d44d52bf2654ab702ed3770b190eb213de4f3ab",
+    "latest/source/video_inputs.py": "bcab3aa9af72ca2e3f2a8c9b6ef61792c02418694d795d0c3cf5739eb116da64",
+    "latest/source/__init__.py": "caae6fec23a71907f8079ad792143879060b77fba82b5f4b619ce6bf167da5d4"
+  },
+  "fresh_video_input_check": {
+    "videos": 1,
+    "frames": 68,
+    "detector_chain_rerun": true,
+    "automatic_features_bit_exact": true,
+    "tracks_exact": true,
+    "touch_and_hit_outputs_exact": true,
+    "annotation_inputs": [],
+    "historical_detection_inputs": []
+  },
+  "source_hash_encoding": "UTF-8 text with LF line endings"
+}

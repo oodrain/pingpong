@@ -1,0 +1,5 @@
+local_bundle/
+local_data/
+local_output/
+__pycache__/
+*.py[cod]
