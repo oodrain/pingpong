@@ -8,6 +8,8 @@
 
 请先阅读 [最新进展与分视角结果](experiments/tt3d_tcn_stage_20261015/latest/README.md)，使用 [当前官方工程适配入口](experiments/tt3d_tcn_stage_20261015/latest/official_adapter/README.md)。[2026-10-15 阶段总结](experiments/tt3d_tcn_stage_20261015/README.md)及早期公开成绩保留为历史记录。
 
+组员开展球检测优化，请先看 [轻量桌面核查工具与修改摘要](tools/ball_detection_review/README.md)，下载 [核查工具 ZIP](tools/ball_detection_review.zip)。内置六段视频的 57 个关注帧索引，可复用已有视频和球框；基线预测包通过组内共享存储另行提供。工具不需要 GPU、TCN 或模型权重。
+
 ## 从这里开始
 
 - [已有分工总结](docs/team/乒乓球项目分工总结.md)

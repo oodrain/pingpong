@@ -20,6 +20,7 @@ __pycache__/
 *.zip
 !/tools/pingpong-annotation-local-20261007.zip
 !/tools/pingpong-annotation-local-20261009.zip
+!/tools/ball_detection_review.zip
 *.tar
 *.gz
 *.onnx

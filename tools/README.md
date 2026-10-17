@@ -1,5 +1,7 @@
 # 标注工具下载
 
+新增 [轻量球检测核查工具](ball_detection_review/README.md)，可下载 [独立 ZIP](ball_detection_review.zip)。它只依赖本地视频、已有对象标注和可选的逐帧预测，支持可见性核查及基线/新模型对照，不需要 GPU 或 TCN。触台规则、球检测流程的简要修改说明也在该工具 README 中。
+
 第三复核请下载 [pingpong-annotation-local-20261009.zip](pingpong-annotation-local-20261009.zip)。在 GitHub 打开 ZIP 后，点击下载原文件；也可以克隆或下载整个仓库后从本目录取得 ZIP。10月7日版本只保留作旧版初标兼容，不支持本轮第三复核。
 
 1. 解压整个 ZIP 到自己的固定目录，进入 `pingpong-annotation-tool/`。

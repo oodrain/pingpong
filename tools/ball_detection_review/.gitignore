@@ -1,0 +1,5 @@
+.venv/
+local_output/
+local_data/
+__pycache__/
+*.py[cod]

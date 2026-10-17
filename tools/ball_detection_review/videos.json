@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "videos": [
+    {
+      "video_id": "00_001",
+      "angle": 0,
+      "video_path": "rallies_videos/B/00/001.mp4",
+      "annotation_path": "annotations/00/001.json",
+      "num_frames": 193
+    },
+    {
+      "video_id": "02_006",
+      "angle": 90,
+      "video_path": "rallies_videos/C/02/006.mp4",
+      "annotation_path": "annotations/02/006.json",
+      "num_frames": 57
+    },
+    {
+      "video_id": "10_001",
+      "angle": 90,
+      "video_path": "rallies_videos/B/10/001.mp4",
+      "annotation_path": "annotations/10/001.json",
+      "num_frames": 95
+    },
+    {
+      "video_id": "11_004",
+      "angle": 45,
+      "video_path": "rallies_videos/C/11/004.mp4",
+      "annotation_path": "annotations/11/004.json",
+      "num_frames": 98
+    },
+    {
+      "video_id": "16_004",
+      "angle": 0,
+      "video_path": "rallies_videos/C/16/004.mp4",
+      "annotation_path": "annotations/16/004.json",
+      "num_frames": 76
+    },
+    {
+      "video_id": "20_004",
+      "angle": 45,
+      "video_path": "rallies_videos/B/20/004.mp4",
+      "annotation_path": "annotations/20/004.json",
+      "num_frames": 152
+    }
+  ]
+}
