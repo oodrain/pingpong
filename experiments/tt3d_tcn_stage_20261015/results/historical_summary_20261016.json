@@ -1,0 +1,192 @@
+{
+  "stage_date": "2026-10-16",
+  "publication_scope": "source_and_aggregate_report_only",
+  "selected_model": "retained_calibrated_trajectory_tcn_with_frozen_fps_confirmation",
+  "latest_physics_experiment_promoted": false,
+  "public_regression": {
+    "with_ignore_exemption": {
+      "videos": 15,
+      "frames": 2109,
+      "valid_events": 92,
+      "matching": {
+        "frame_tolerance": 1,
+        "pixel_tolerance": 50,
+        "one_to_one": true
+      },
+      "overall": {
+        "tp": 77,
+        "fp": 36,
+        "fn": 15,
+        "precision": 0.6814159292035398,
+        "recall": 0.8369565217391305,
+        "f1": 0.751219512195122
+      },
+      "by_angle": {
+        "0": {
+          "tp": 16,
+          "fp": 10,
+          "fn": 5,
+          "precision": 0.6153846153846154,
+          "recall": 0.7619047619047619,
+          "f1": 0.6808510638297872
+        },
+        "45": {
+          "tp": 31,
+          "fp": 22,
+          "fn": 7,
+          "precision": 0.5849056603773585,
+          "recall": 0.8157894736842105,
+          "f1": 0.6813186813186813
+        },
+        "90": {
+          "tp": 30,
+          "fp": 4,
+          "fn": 3,
+          "precision": 0.8823529411764706,
+          "recall": 0.9090909090909091,
+          "f1": 0.8955223880597015
+        }
+      },
+      "ignored_predictions": 2
+    },
+    "without_ignore_exemption": {
+      "videos": 15,
+      "frames": 2109,
+      "valid_events": 92,
+      "matching": {
+        "frame_tolerance": 1,
+        "pixel_tolerance": 50,
+        "one_to_one": true
+      },
+      "overall": {
+        "tp": 77,
+        "fp": 38,
+        "fn": 15,
+        "precision": 0.6695652173913044,
+        "recall": 0.8369565217391305,
+        "f1": 0.7439613526570048
+      },
+      "by_angle": {
+        "0": {
+          "tp": 16,
+          "fp": 10,
+          "fn": 5,
+          "precision": 0.6153846153846154,
+          "recall": 0.7619047619047619,
+          "f1": 0.6808510638297872
+        },
+        "45": {
+          "tp": 31,
+          "fp": 22,
+          "fn": 7,
+          "precision": 0.5849056603773585,
+          "recall": 0.8157894736842105,
+          "f1": 0.6813186813186813
+        },
+        "90": {
+          "tp": 30,
+          "fp": 6,
+          "fn": 3,
+          "precision": 0.8333333333333334,
+          "recall": 0.9090909090909091,
+          "f1": 0.8695652173913043
+        }
+      },
+      "ignored_predictions": 0
+    }
+  },
+  "internal_timing_development": {
+    "complete": {
+      "videos": 20,
+      "matching": {
+        "frame_interval_tolerance": 1,
+        "pixel_threshold_applied": false,
+        "unknown_regions_are_not_negative": true,
+        "one_to_one": true
+      },
+      "overall": {
+        "tp": 99,
+        "fp": 17,
+        "fn": 13,
+        "precision": 0.853448275862069,
+        "recall": 0.8839285714285714,
+        "f1": 0.868421052631579
+      },
+      "by_angle": {
+        "0": {
+          "tp": 22,
+          "fp": 9,
+          "fn": 6,
+          "precision": 0.7096774193548387,
+          "recall": 0.7857142857142857,
+          "f1": 0.7457627118644068
+        },
+        "45": {
+          "tp": 7,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.7777777777777778,
+          "recall": 0.875,
+          "f1": 0.8235294117647058
+        },
+        "90": {
+          "tp": 70,
+          "fp": 6,
+          "fn": 6,
+          "precision": 0.9210526315789473,
+          "recall": 0.9210526315789473,
+          "f1": 0.9210526315789473
+        }
+      }
+    },
+    "trusted": {
+      "videos": 42,
+      "matching": {
+        "frame_interval_tolerance": 1,
+        "pixel_threshold_applied": false,
+        "unknown_regions_are_not_negative": true,
+        "one_to_one": true
+      },
+      "overall": {
+        "tp": 148,
+        "fp": 17,
+        "fn": 18,
+        "precision": 0.896969696969697,
+        "recall": 0.891566265060241,
+        "f1": 0.8942598187311178
+      },
+      "by_angle": {
+        "0": {
+          "tp": 57,
+          "fp": 10,
+          "fn": 11,
+          "precision": 0.8507462686567164,
+          "recall": 0.8382352941176471,
+          "f1": 0.8444444444444444
+        },
+        "45": {
+          "tp": 15,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.8823529411764706,
+          "recall": 0.9375,
+          "f1": 0.9090909090909091
+        },
+        "90": {
+          "tp": 76,
+          "fp": 5,
+          "fn": 6,
+          "precision": 0.9382716049382716,
+          "recall": 0.926829268292683,
+          "f1": 0.9325153374233128
+        }
+      }
+    }
+  },
+  "limitations": [
+    "historically_exposed_development_data_not_independent_blind_test",
+    "public_spatial_and_internal_timing_scores_are_not_interchangeable",
+    "no_official_end_to_end_speed_acceptance",
+    "model_weights_raw_videos_annotations_and_per_video_outputs_not_published"
+  ]
+}

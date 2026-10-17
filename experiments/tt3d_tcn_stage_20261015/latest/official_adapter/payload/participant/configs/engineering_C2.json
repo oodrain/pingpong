@@ -1,0 +1,7 @@
+{
+  "schema": "C2_engineering_v1",
+  "geometry_quick": false,
+  "batch_size": 8,
+  "queue_frames": 8,
+  "precision": "float32"
+}

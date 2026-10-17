@@ -61,6 +61,14 @@ def infer(models, features, tracks):
     return points, hits, scores, admission
 
 
+def infer_with_table_range(models, features, tracks, raw_table_proposals, image_size):
+    """Unchanged neural inference followed by the whole-video spatial gate."""
+    from .table_range import constrain_landings
+    points, hits, scores, admission = infer(models, features, tracks)
+    points, table_range = constrain_landings(points, raw_table_proposals, image_size)
+    return points, hits, scores, {'admission': admission, 'table_range': table_range}
+
+
 def sha(path):
     with Path(path).open('rb') as stream:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
