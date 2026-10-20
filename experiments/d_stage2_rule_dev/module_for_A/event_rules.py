@@ -17,7 +17,7 @@
     [{"frame_id": int, "x": float, "y": float}, ...]   # 按时间序
     frame_id 已含官方 fid-1 补偿（= input_frame_id - 1），不要再减 1。
 
-可选桌面几何（有标注时启用投影门 + 图像四边形双判）：
+可选桌面几何（有标注时启用投影门 + 图像四边形双判 + 固定范围门）：
     table = {"corners": [[x,y]*4],         # 按标注工具的规范化顺序（最左上起顺时针）
              "net": [[x,y],[x,y]] | None}  # 用于长短轴自动定向；缺省时用默认定向
     无 table 或配置关闭 gate 时，门相关逻辑自动跳过（纯规则部分）。
@@ -45,6 +45,9 @@ DEFAULT_CONFIG = {
     # —— 几何门（需 table 才生效）——
     "gate": 900.0,        # 投影出桌距离上限（mm）
     "gate_quad": 4.0,     # 图像四边形外扩像素（双判通道）
+    # —— 固定范围门（2026-10-17，复现 C 的固定球桌范围实验）——
+    "range_frac": 0.07,   # 事件点离桌面四边形 ≤ max(frac×对角线, min_px) 才保留
+    "range_min_px": 4.0,  # 容差像素下限；range_frac=0 关闭该门
     # —— M1.3' 远侧掩蔽触台（上升速度浅坑）——
     "D3": True, "D3_ratio": 0.45, "D3_min": 3.0,
 }
@@ -207,6 +210,18 @@ def detect_events(trajectory, config=None, table=None):
     for j in range(1, n - 2):
         scan(j)
     scan(n - 2)
+
+    # 固定范围门（后处理）：C 的 TT3D-TCN 分支同款，清除"悬在台面上方、投影仍在台内"的
+    # 击球类 FP；失效放行——无 table / range_frac=0 时不生效。
+    if table and quad is not None and cfg.get("gate") and cfg.get("range_frac", 0) > 0:
+        import cv2
+        import numpy as np
+        qa = np.array(quad, np.float32).reshape(-1, 1, 2)
+        p4 = np.array(quad, float)
+        diag = max(math.dist(p4[i], p4[j]) for i in range(4) for j in range(i + 1, 4))
+        tol = max(cfg["range_frac"] * diag, cfg.get("range_min_px", 4.0))
+        out = [e for e in out
+               if cv2.pointPolygonTest(qa, (float(e["x"]), float(e["y"])), True) >= -tol]
     return out
 
 

@@ -48,9 +48,45 @@ def replay_m12(rows, H, cfg):
                 and s_at <= cfg.get("D_ratio", 0.45) * s_prev
                 and traj[k + 1][0] - traj[k][0] <= 2)
 
+    last_d3_fid = -10_000
+
+    def d3_trigger(k):
+        """远侧掩蔽触台的"上升速度浅坑"：y 单调下降（图像上升）但速度骤减后骤增。"""
+        if k < 2 or k + 1 >= n:
+            return False
+        if traj[k + 1][0] - traj[k][0] > 2 or traj[k][0] - traj[k - 1][0] > 2 or traj[k - 1][0] - traj[k - 2][0] > 2:
+            return False
+        if not (traj[k][2] < traj[k - 1][2] and traj[k + 1][2] < traj[k][2]):
+            return False
+        rho_in = traj[k - 1][2] - traj[k][2]
+        rho_prev = traj[k - 2][2] - traj[k - 1][2]
+        rho_out = traj[k][2] - traj[k + 1][2]
+        r = cfg.get("D3_ratio", 0.45)
+        return (rho_prev >= cfg.get("D3_min", 3.0) and rho_out >= cfg.get("D3_min", 3.0)
+                and rho_in <= r * rho_prev and rho_in <= r * rho_out)
+
     def scan(j):
-        nonlocal last_fid, last_xy
+        nonlocal last_fid, last_xy, last_d3_fid
         fid, x, y = traj[j]
+        # D3 附加：不改变主扫描 MIN_GAP 状态（与主发射保持间隔，与自身保持间隔）
+        if cfg.get("D3") and d3_trigger(j) and fid - last_fid >= MIN_GAP and fid - last_d3_fid >= MIN_GAP:
+            passed = True
+            if cfg.get("gate"):
+                quad = cfg.get("quad")
+                passed = False
+                if quad is not None and cfg.get("gate_quad", 0.0) > 0:
+                    import cv2 as _cv2
+                    import numpy as _np
+                    dist = _cv2.pointPolygonTest(_np.array(quad, _np.float32).reshape(-1, 1, 2),
+                                                 (float(x), float(y)), True)
+                    passed = dist >= -cfg["gate_quad"]
+                if not passed:
+                    u, v = G.project(H, x, y)
+                    g = cfg["gate"]
+                    passed = (-g <= u <= G.TABLE_L + g and -g <= v <= G.TABLE_W + g)
+            if passed:
+                out.append({"frame_id": max(0, fid - 1), "x": x, "y": y, "why": "D3"})
+                last_d3_fid = fid
         if not (y > traj[j - 1][2] and y >= traj[j + 1][2]):
             return
         fall1 = y - traj[j - 1][2]
@@ -76,11 +112,25 @@ def replay_m12(rows, H, cfg):
                     break
 
         efid, ex, ey = traj[j_emit]
+        # 跳点守卫（全路径可选）：邻域存在 >120px 相邻位移 → 该极大多半源于假检测点
+        if cfg.get("jump_all"):
+            for k in range(max(1, j_emit - 2), min(n - 1, j_emit + 2)):
+                if math.dist((traj[k][1], traj[k][2]), (traj[k + 1][1], traj[k + 1][2])) > 120.0:
+                    return
         if cfg.get("gate"):
-            u, v = G.project(H, ex, ey)
-            g = cfg["gate"]
-            if not (-g <= u <= G.TABLE_L + g and -g <= v <= G.TABLE_W + g):
-                return
+            passed = False
+            quad = cfg.get("quad")
+            if quad is not None and cfg.get("gate_quad", 0.0) > 0:
+                import cv2 as _cv2
+                import numpy as _np
+                dist = _cv2.pointPolygonTest(_np.array(quad, _np.float32).reshape(-1, 1, 2),
+                                             (float(ex), float(ey)), True)
+                passed = dist >= -cfg["gate_quad"]
+            if not passed:
+                u, v = G.project(H, ex, ey)
+                g = cfg["gate"]
+                if not (-g <= u <= G.TABLE_L + g and -g <= v <= G.TABLE_W + g):
+                    return
 
         blocked = efid - last_fid < MIN_GAP
         if blocked:
@@ -124,6 +174,20 @@ def replay_m12(rows, H, cfg):
         scan(j)
     if n >= 3:
         scan(n - 2)
+
+    # 固定范围门（后处理，2026-10-17）：事件点离桌面四边形 ≤ max(frac×对角线, min_px)
+    # 才保留；需 cfg 的 quad 与 range_frac>0。语义与 event_rules.detect_events 一致。
+    rf = cfg.get("range_frac", 0)
+    quad = cfg.get("quad")
+    if rf and quad is not None:
+        import cv2 as _cv2
+        import numpy as _np
+        qa = _np.array(quad, _np.float32).reshape(-1, 1, 2)
+        p4 = _np.array(quad, float)
+        diag = max(math.dist(p4[a], p4[b]) for a in range(4) for b in range(a + 1, 4))
+        tol = max(rf * diag, cfg.get("range_min_px", 4.0))
+        out = [e for e in out
+               if _cv2.pointPolygonTest(qa, (float(e["x"]), float(e["y"])), True) >= -tol]
     return out
 
 

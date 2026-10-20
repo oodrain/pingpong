@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """验证 event_rules.py 与已验证回放（m12_eval.replay_m12 候选栈全配置）逐条一致。
 
-- 公开 15：带桌面几何（门+双判启用）；顺带复算 F1（应 = 0.744）
-- 154：无几何；顺带复算（v2 标签，应 = 585/459/150 ≈ 0.658）
+- 公开 15：带桌面几何（门+双判+固定范围门 range_frac=0.07 启用）；顺带复算 F1
+- 154：无几何；顺带复算（v2 标签，应 = 585/459/150 ≈ 0.658，范围门不生效）
 """
 import importlib.util
 import json
@@ -16,7 +16,8 @@ spec = importlib.util.spec_from_file_location("event_rules", HERE / "event_rules
 ER = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ER)
 
-src = (HERE / "m12_eval.py").read_text(encoding="utf-8").split("BASE =")[0]
+src_path = (HERE / "m12_eval.py") if (HERE / "m12_eval.py").exists() else (HERE.parent / "m12_eval.py")
+src = src_path.read_text(encoding="utf-8").split("BASE =")[0]
 m = types.ModuleType("m12mod")
 m.__dict__["__file__"] = str(HERE / "m12_eval.py")
 exec(compile(src, "m12_eval_part.py", "exec"), m.__dict__)
@@ -25,7 +26,8 @@ replay_m12 = m.replay_m12
 
 CFG = {"gate": 900, "F1": True, "F2": True, "F3": True, "D2": True, "D2_back": 5,
        "D_smin": 8.0, "D_ratio": 0.40, "D_smax": 50.0, "D_dmin": 2, "gate_quad": 4.0,
-       "D3": True, "D3_ratio": 0.45, "D3_min": 3.0}
+       "D3": True, "D3_ratio": 0.45, "D3_min": 3.0,
+       "range_frac": 0.07, "range_min_px": 4.0}
 
 V2 = Path("E:/pingpong-data/adjudicated_candidates_v2_20261013")
 RAW154 = Path("E:/pingpong-data/C_train154_20261011_v3/raw")
@@ -67,7 +69,7 @@ def main():
         fp += len(f_) + (len(mm_) - mv)
         fn += sum(1 for j in n_ if gts[j].get("valid", True))
     f1 = 2 * tp / (2 * tp + fp + fn)
-    print(f"公开15：逐条一致 = {ok}；模块 F1 复算 = {tp}/{fp}/{fn} = {f1:.3f}（应 0.744）")
+    print(f"公开15：逐条一致 = {ok}；模块 F1 复算 = {tp}/{fp}/{fn} = {f1:.3f}（应 77/30/15 ≈ 0.774：GT 角点 + 固定范围门 0.07；无范围门 0.744）")
 
     # —— 154 ——
     ev2 = [json.loads(l) for l in
