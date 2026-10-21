@@ -1,8 +1,0 @@
-# Keep the competition's CUDA/base runtime. Do not replace it with a CPU wheel.
-torch==2.1.2+cu118
-torchvision==0.16.2+cu118
-numpy==1.26.4
-onnxruntime-gpu==1.18.1
-tensorrt==8.6.1
-tensorrt-libs==8.6.1
-tensorrt-bindings==8.6.1
