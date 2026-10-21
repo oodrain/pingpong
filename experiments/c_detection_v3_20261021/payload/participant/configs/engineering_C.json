@@ -1,0 +1,8 @@
+{
+  "schema": "tcn_engineering_C_v1",
+  "geometry_mode": "safe",
+  "batch_size": 8,
+  "queue_frames": 8,
+  "selected_by_frozen_inner_acceptance": true,
+  "contact_review": "unchanged_previous_selected_review"
+}
