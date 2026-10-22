@@ -1,0 +1,215 @@
+{
+  "videos": [
+    {
+      "video": "00_001",
+      "annotated_frames": 178,
+      "A_matched": 170,
+      "C_matched": 170,
+      "无检测输出": 7,
+      "低置信度": 1
+    },
+    {
+      "video": "00_004",
+      "annotated_frames": 63,
+      "A_matched": 61,
+      "C_matched": 62,
+      "无检测输出": 1
+    },
+    {
+      "video": "00_005",
+      "annotated_frames": 65,
+      "A_matched": 59,
+      "C_matched": 60,
+      "无检测输出": 2,
+      "低置信度": 3
+    },
+    {
+      "video": "00_006",
+      "annotated_frames": 75,
+      "A_matched": 69,
+      "C_matched": 69,
+      "无检测输出": 5,
+      "低置信度": 1
+    },
+    {
+      "video": "00_007",
+      "annotated_frames": 70,
+      "A_matched": 67,
+      "C_matched": 67,
+      "无检测输出": 2,
+      "低置信度": 1
+    },
+    {
+      "video": "01_006",
+      "annotated_frames": 67,
+      "A_matched": 53,
+      "C_matched": 57,
+      "无检测输出": 7,
+      "低置信度": 3
+    },
+    {
+      "video": "02_006",
+      "annotated_frames": 42,
+      "A_matched": 38,
+      "C_matched": 38,
+      "无检测输出": 3,
+      "低置信度": 1
+    },
+    {
+      "video": "04_001",
+      "annotated_frames": 60,
+      "A_matched": 55,
+      "C_matched": 57,
+      "无检测输出": 3
+    },
+    {
+      "video": "07_003",
+      "annotated_frames": 75,
+      "A_matched": 69,
+      "C_matched": 71,
+      "无检测输出": 3,
+      "低置信度": 1
+    },
+    {
+      "video": "08_005",
+      "annotated_frames": 38,
+      "A_matched": 37,
+      "C_matched": 37,
+      "无检测输出": 1
+    },
+    {
+      "video": "11_001",
+      "annotated_frames": 150,
+      "A_matched": 137,
+      "C_matched": 137,
+      "无检测输出": 8,
+      "低置信度": 1,
+      "位置不匹配": 4
+    },
+    {
+      "video": "11_003",
+      "annotated_frames": 129,
+      "A_matched": 122,
+      "C_matched": 122,
+      "无检测输出": 5,
+      "低置信度": 2
+    },
+    {
+      "video": "11_004",
+      "annotated_frames": 97,
+      "A_matched": 91,
+      "C_matched": 91,
+      "无检测输出": 5,
+      "低置信度": 1
+    },
+    {
+      "video": "11_005",
+      "annotated_frames": 140,
+      "A_matched": 131,
+      "C_matched": 131,
+      "无检测输出": 5,
+      "低置信度": 3,
+      "位置不匹配": 1
+    },
+    {
+      "video": "13_006",
+      "annotated_frames": 72,
+      "A_matched": 66,
+      "C_matched": 67,
+      "无检测输出": 3,
+      "低置信度": 2
+    },
+    {
+      "video": "16_001",
+      "annotated_frames": 270,
+      "A_matched": 269,
+      "C_matched": 269,
+      "无检测输出": 1
+    },
+    {
+      "video": "16_002",
+      "annotated_frames": 181,
+      "A_matched": 162,
+      "C_matched": 162,
+      "无检测输出": 15,
+      "低置信度": 3,
+      "位置不匹配": 1
+    },
+    {
+      "video": "16_003",
+      "annotated_frames": 150,
+      "A_matched": 145,
+      "C_matched": 146,
+      "无检测输出": 4
+    },
+    {
+      "video": "16_004",
+      "annotated_frames": 72,
+      "A_matched": 70,
+      "C_matched": 70,
+      "无检测输出": 1,
+      "低置信度": 1
+    },
+    {
+      "video": "18_005",
+      "annotated_frames": 152,
+      "A_matched": 149,
+      "C_matched": 149,
+      "无检测输出": 3
+    },
+    {
+      "video": "19_002",
+      "annotated_frames": 123,
+      "A_matched": 121,
+      "C_matched": 122,
+      "无检测输出": 1
+    },
+    {
+      "video": "19_003",
+      "annotated_frames": 65,
+      "A_matched": 63,
+      "C_matched": 64,
+      "无检测输出": 1
+    },
+    {
+      "video": "19_004",
+      "annotated_frames": 72,
+      "A_matched": 70,
+      "C_matched": 70,
+      "无检测输出": 2
+    },
+    {
+      "video": "19_006",
+      "annotated_frames": 132,
+      "A_matched": 130,
+      "C_matched": 130,
+      "无检测输出": 2
+    },
+    {
+      "video": "19_007",
+      "annotated_frames": 104,
+      "A_matched": 98,
+      "C_matched": 98,
+      "无检测输出": 4,
+      "低置信度": 2
+    },
+    {
+      "video": "21_001",
+      "annotated_frames": 129,
+      "A_matched": 124,
+      "C_matched": 126,
+      "无检测输出": 2,
+      "低置信度": 1
+    },
+    {
+      "video": "22_003",
+      "annotated_frames": 259,
+      "A_matched": 246,
+      "C_matched": 249,
+      "无检测输出": 9,
+      "位置不匹配": 1
+    }
+  ],
+  "criterion": "confidence>=0.75 and distance to annotated box<=5px",
+  "independent_test": false
+}

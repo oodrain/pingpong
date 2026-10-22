@@ -1,0 +1,86 @@
+{
+  "version": "local_development_20261022_v1",
+  "development_videos": 123,
+  "precise_videos": 42,
+  "complete_videos": 20,
+  "precise_table_events": 166,
+  "complete_table_events": 112,
+  "confirmed_positive_union": 625,
+  "completed_supplemental_records": 120,
+  "draft_supplemental_records": 13,
+  "geometry_reference_records": 122,
+  "journals": [
+    {
+      "source": "outputs/data_split_audit_20261014/train_event_review_01/human_event_reviews.jsonl",
+      "revisions": 169,
+      "latest_cases": 36,
+      "completed": 36
+    },
+    {
+      "source": "outputs/contact_rule_revision_20261014/train_followup_review_02/human_event_reviews.jsonl",
+      "revisions": 53,
+      "latest_cases": 10,
+      "completed": 10
+    },
+    {
+      "source": "outputs/contact_rule_revision_20261014/train_false_positive_review_04/human_event_reviews.jsonl",
+      "revisions": 40,
+      "latest_cases": 6,
+      "completed": 6
+    },
+    {
+      "source": "outputs/frame_tcn_precision_20261015/complete_sequence_review_01/human_event_reviews.jsonl",
+      "revisions": 29,
+      "latest_cases": 6,
+      "completed": 6
+    },
+    {
+      "source": "outputs/frame_tcn_revision_20261015/source_expansion_review_01/human_event_reviews.jsonl",
+      "revisions": 61,
+      "latest_cases": 6,
+      "completed": 6
+    },
+    {
+      "source": "outputs/frame_tcn_source_robust_20261015/new_source_review_01/human_event_reviews.jsonl",
+      "revisions": 156,
+      "latest_cases": 8,
+      "completed": 8
+    },
+    {
+      "source": "outputs/frame_tcn_contact_objects_20261016/adjudication_01/human_event_reviews.jsonl",
+      "revisions": 13,
+      "latest_cases": 4,
+      "completed": 4
+    },
+    {
+      "source": "outputs/frame_tcn_event_ownership_20261016/state_review_01/human_event_reviews.jsonl",
+      "revisions": 35,
+      "latest_cases": 7,
+      "completed": 7
+    },
+    {
+      "source": "outputs/frame_tcn_net_rgb_review_20261016/subtype_review_01/human_net_subtype_reviews.jsonl",
+      "revisions": 33,
+      "latest_cases": 13,
+      "completed": 0
+    },
+    {
+      "source": "outputs/table_contact_scene_20261017/safety_review/human_event_reviews.jsonl",
+      "revisions": 5,
+      "latest_cases": 1,
+      "completed": 1
+    },
+    {
+      "source": "worktrees/table-geometry-v2/outputs/experiments/tt3d_trajectory_pilot_20261013/auxiliary_event_review_01/human_event_reviews.jsonl",
+      "revisions": 194,
+      "latest_cases": 31,
+      "completed": 31
+    },
+    {
+      "source": "worktrees/table-geometry-v2/outputs/experiments/tt3d_trajectory_pilot_20261013/racket_evidence_review_01/human_racket_evidence.jsonl",
+      "revisions": 19,
+      "latest_cases": 5,
+      "completed": 5
+    }
+  ]
+}

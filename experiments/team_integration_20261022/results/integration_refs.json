@@ -1,0 +1,11 @@
+{
+  "base_main": "209bf1ce88b49aa07106dd75aa8b0a1aed804351",
+  "TCN": "6a576796d70eede19a21a7f6cc319e5b36296213",
+  "C": "5b69f3ba723fb7dcaa193b0ae5620c04b67f5524",
+  "rules_stage2": "1f13ed6da8f96acfc96b61a104130bae46b58009",
+  "rules_stage1": "7902b85df8f3f4afba7053484b9a8bf3603fa091",
+  "replay": "986239f8e86d9c03a52d23254bf68c0f2b2521ca",
+  "C_package_restored_in_new_commit": true,
+  "default": "retained_C2",
+  "automatic_joint_score_filter": "withdrawn"
+}

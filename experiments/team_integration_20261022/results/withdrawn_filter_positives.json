@@ -1,0 +1,27 @@
+[
+  {
+    "video_id": "00_005",
+    "event_id": "00_005_candidate_0001",
+    "label_frame": 19
+  },
+  {
+    "video_id": "00_005",
+    "event_id": "00_005_candidate_v2_add_0001",
+    "label_frame": 29
+  },
+  {
+    "video_id": "11_001",
+    "event_id": "11_001_candidate_0008",
+    "label_frame": 128
+  },
+  {
+    "video_id": "11_003",
+    "event_id": "11_003_candidate_0005",
+    "label_frame": 123
+  },
+  {
+    "video_id": "11_005",
+    "event_id": "11_005_candidate_0006",
+    "label_frame": 127
+  }
+]

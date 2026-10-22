@@ -1,0 +1,5582 @@
+{
+  "version": "local_development_20261022_v1",
+  "scope": "42 development videos; annotation, not a fixed training split",
+  "videos": [
+    {
+      "video_id": "00_001",
+      "source_group": "00",
+      "video_sha256": "6d0633f8dabf93fa50df7e9d3280fde27cebee858f8af1c10085d5af6fb0e972",
+      "n_frames": 193,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          81,
+          116
+        ],
+        [
+          123,
+          144
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          82,
+          116
+        ],
+        [
+          123,
+          143
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "00_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            82,
+            83
+          ],
+          "review_case_ids": [
+            "00_001_92"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            84,
+            85
+          ],
+          "review_case_ids": [
+            "00_001_92"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            92,
+            93
+          ],
+          "review_case_ids": [
+            "00_001_92"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            94,
+            95
+          ],
+          "review_case_ids": [
+            "00_001_106",
+            "00_001_92"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            106,
+            106
+          ],
+          "review_case_ids": [
+            "00_001_106"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            114,
+            115
+          ],
+          "review_case_ids": [
+            "00_001_106"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            123,
+            124
+          ],
+          "review_case_ids": [
+            "00_001_133"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            132,
+            133
+          ],
+          "review_case_ids": [
+            "00_001_133"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            137,
+            138
+          ],
+          "review_case_ids": [
+            "00_001_133"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "00_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            142,
+            143
+          ],
+          "review_case_ids": [
+            "00_001_133"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/00_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/00_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "00_004",
+      "source_group": "00",
+      "video_sha256": "7f43cdfc57bcf0c1db7aa5ac6f001c8e797be9480f64838ac3a0a86e202c24d6",
+      "n_frames": 77,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          74
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          76
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          74
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "00_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            17,
+            18
+          ],
+          "review_case_ids": [
+            "00_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "00_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            21,
+            22
+          ],
+          "review_case_ids": [
+            "00_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            46,
+            47
+          ],
+          "review_case_ids": [
+            "00_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            52,
+            53
+          ],
+          "review_case_ids": [
+            "00_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "00_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            56,
+            57
+          ],
+          "review_case_ids": [
+            "00_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/00_004/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/00_004/supervision.npz"
+      }
+    },
+    {
+      "video_id": "00_005",
+      "source_group": "00",
+      "video_sha256": "4d9dfa684207f45b81e7d8ad4c16162b5490a25113607af392100bd629fe126a",
+      "n_frames": 74,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          44,
+          66
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          46,
+          66
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "00_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            45,
+            46
+          ],
+          "review_case_ids": [
+            "00_005_56"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            53,
+            54
+          ],
+          "review_case_ids": [
+            "00_005_56"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            56,
+            57
+          ],
+          "review_case_ids": [
+            "00_005_56"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/00_005/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/00_005/supervision.npz"
+      }
+    },
+    {
+      "video_id": "00_006",
+      "source_group": "00",
+      "video_sha256": "291ff0cbd7820b560ce16b1d0681c5a9ea9f09bf0fa65dc83e99303096dd5c5d",
+      "n_frames": 79,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          48,
+          68
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          48,
+          68
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "00_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            58,
+            59
+          ],
+          "review_case_ids": [
+            "00_006_58"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/00_006/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/00_006/supervision.npz"
+      }
+    },
+    {
+      "video_id": "00_007",
+      "source_group": "00",
+      "video_sha256": "b7ba6663d7ca6afec2c7e34137e4a209f85b50ba3f12834c0aca38b0e66549c5",
+      "n_frames": 81,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          39,
+          59
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          39,
+          59
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "00_007",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            42,
+            43
+          ],
+          "review_case_ids": [
+            "00_007_49"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "00_007",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            49,
+            50
+          ],
+          "review_case_ids": [
+            "00_007_49"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/00_007/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/00_007/supervision.npz"
+      }
+    },
+    {
+      "video_id": "01_006",
+      "source_group": "01",
+      "video_sha256": "1d820f856925a6d024139fbed978ae2f27aab598a35f7d2d27bebb46dc0153f0",
+      "n_frames": 70,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          67
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          69
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          67
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "01_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            36,
+            37
+          ],
+          "review_case_ids": [
+            "01_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "01_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            45,
+            45
+          ],
+          "review_case_ids": [
+            "01_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "01_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            48,
+            48
+          ],
+          "review_case_ids": [
+            "01_006_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "01_006",
+          "event_type": "other",
+          "interval_frames": [
+            53,
+            54
+          ],
+          "review_case_ids": [
+            "01_006_new_source_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "net",
+          "resolved_kind": "net_collision"
+        },
+        {
+          "video_id": "01_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            55,
+            56
+          ],
+          "review_case_ids": [
+            "01_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "01_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            64,
+            65
+          ],
+          "review_case_ids": [
+            "01_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/01_006/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/01_006/supervision.npz"
+      }
+    },
+    {
+      "video_id": "02_006",
+      "source_group": "02",
+      "video_sha256": "582b9b55170d79449e000424f1d6ccc8ce899f0764aa85b6a7734419beea0646",
+      "n_frames": 57,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          54
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          56
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          54
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "02_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            27,
+            28
+          ],
+          "review_case_ids": [
+            "02_006_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "02_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            32,
+            32
+          ],
+          "review_case_ids": [
+            "02_006_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "02_006",
+          "event_type": "other",
+          "interval_frames": [
+            44,
+            44
+          ],
+          "review_case_ids": [
+            "02_006_source_expansion_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "net",
+          "resolved_kind": "net_collision"
+        },
+        {
+          "video_id": "02_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            45,
+            46
+          ],
+          "review_case_ids": [
+            "02_006_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/02_006/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/02_006/supervision.npz"
+      }
+    },
+    {
+      "video_id": "03_003",
+      "source_group": "03",
+      "video_sha256": "3fcc2095ee3b2a9894e3d98cb6d264674a13285ef1cc9b5e348aaf2b7b132d56",
+      "n_frames": 62,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          61
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          61
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          15
+        ],
+        [
+          19,
+          34
+        ],
+        [
+          37,
+          46
+        ],
+        [
+          49,
+          52
+        ],
+        [
+          54,
+          57
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "03_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            17,
+            18
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            22,
+            23
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            30,
+            31
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            37,
+            38
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            45,
+            45
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "other",
+          "interval_frames": [
+            46,
+            46
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "net",
+          "resolved_kind": "net_collision"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            51,
+            52
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            55,
+            56
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "03_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            59,
+            60
+          ],
+          "review_case_ids": [
+            "03_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/03_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/03_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "04_001",
+      "source_group": "04",
+      "video_sha256": "846b138c25a4a2a969e3bf13f3f7339df6ae99da5913cd6b60b8b9f8d451bd51",
+      "n_frames": 65,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          62
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          64
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          62
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "04_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            38,
+            39
+          ],
+          "review_case_ids": [
+            "04_001_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "04_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            44,
+            45
+          ],
+          "review_case_ids": [
+            "04_001_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "04_001",
+          "event_type": "other",
+          "interval_frames": [
+            48,
+            49
+          ],
+          "review_case_ids": [
+            "04_001_source_expansion_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "net",
+          "resolved_kind": "net_collision"
+        },
+        {
+          "video_id": "04_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            56,
+            57
+          ],
+          "review_case_ids": [
+            "04_001_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/04_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/04_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "05_001",
+      "source_group": "05",
+      "video_sha256": "ca778fd94c4f0c19cbff395bdcc30c4e895e8eecf1202940c96fff2a1dd86a9c",
+      "n_frames": 839,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          836
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          838
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          836
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            83,
+            84
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            86,
+            87
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            97,
+            97
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            100,
+            101
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            112,
+            112
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            116,
+            117
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            126,
+            127
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            141,
+            141
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            145,
+            146
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            158,
+            158
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            159,
+            160
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            173,
+            174
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            175,
+            176
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            188,
+            189
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            191,
+            192
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            201,
+            202
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            205,
+            206
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            218,
+            219
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            232,
+            233
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            234,
+            235
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            248,
+            249
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            250,
+            251
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            262,
+            263
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            264,
+            265
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            276,
+            277
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            280,
+            281
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            291,
+            292
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            294,
+            295
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            306,
+            307
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            322,
+            323
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            325,
+            326
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            337,
+            338
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            350,
+            351
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            356,
+            357
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            368,
+            369
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            371,
+            372
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            383,
+            384
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            386,
+            387
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            398,
+            399
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            403,
+            404
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            413,
+            414
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            417,
+            418
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            430,
+            431
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            437,
+            438
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            446,
+            447
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            449,
+            450
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            462,
+            463
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            478,
+            479
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            481,
+            482
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            496,
+            497
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            498,
+            499
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            510,
+            511
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            512,
+            513
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            525,
+            526
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            530,
+            531
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            541,
+            542
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            544,
+            545
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            555,
+            556
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            569,
+            570
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            571,
+            572
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            583,
+            584
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            587,
+            588
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            599,
+            599
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            600,
+            601
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            614,
+            615
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            619,
+            620
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            630,
+            631
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            633,
+            634
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            647,
+            648
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            656,
+            657
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            662,
+            663
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            671,
+            672
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            690,
+            691
+          ],
+          "review_case_ids": [
+            "05_001_contact_adjudication_11"
+          ],
+          "adjudication_revision": "e1d6f0cc-7a6e-41eb-897b-1996c6c3727a",
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            701,
+            701
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            712,
+            713
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            721,
+            722
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            738,
+            739
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            742,
+            743
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            750,
+            751
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            762,
+            763
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            773,
+            774
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            776,
+            777
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            785,
+            786
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            792,
+            793
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            802,
+            803
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            804,
+            805
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            813,
+            814
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            817,
+            818
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "05_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            822,
+            823
+          ],
+          "review_case_ids": [
+            "05_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/05_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/05_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "06_001",
+      "source_group": "06",
+      "video_sha256": "7dbcef0145dd06df346f01b52944864ca31ca62b54432b7ec27d5745a081429b",
+      "n_frames": 74,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          15,
+          35
+        ],
+        [
+          54,
+          71
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          15,
+          33
+        ],
+        [
+          54,
+          71
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "06_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            19,
+            19
+          ],
+          "review_case_ids": [
+            "06_001_23"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            23,
+            24
+          ],
+          "review_case_ids": [
+            "06_001_23"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            33,
+            34
+          ],
+          "review_case_ids": [
+            "06_001_23"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_001",
+          "event_type": "other",
+          "interval_frames": [
+            63,
+            64
+          ],
+          "review_case_ids": [
+            "06_001_64"
+          ],
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/06_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/06_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "06_002",
+      "source_group": "06",
+      "video_sha256": "907ca7649eb59ea5a150959f7ffbb10970fef1d5e2afa29eb13499485233ff3f",
+      "n_frames": 77,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          33
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          2,
+          32
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "06_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            2,
+            3
+          ],
+          "review_case_ids": [
+            "06_002_7"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            6,
+            7
+          ],
+          "review_case_ids": [
+            "06_002_7"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            16,
+            17
+          ],
+          "review_case_ids": [
+            "06_002_22"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            21,
+            22
+          ],
+          "review_case_ids": [
+            "06_002_22"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            31,
+            32
+          ],
+          "review_case_ids": [
+            "06_002_22"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            33,
+            34
+          ],
+          "review_case_ids": [
+            "06_002_22"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/06_002/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/06_002/supervision.npz"
+      }
+    },
+    {
+      "video_id": "06_003",
+      "source_group": "06",
+      "video_sha256": "25bbbb514e9c0fef5b1ce771e58a35a92966bb7467664137b7e1c63ef024e8f2",
+      "n_frames": 64,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          7,
+          27
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          7,
+          27
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "06_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            5,
+            6
+          ],
+          "review_case_ids": [
+            "06_003_17"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            17,
+            18
+          ],
+          "review_case_ids": [
+            "06_003_17"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            22,
+            23
+          ],
+          "review_case_ids": [
+            "06_003_17"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/06_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/06_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "06_004",
+      "source_group": "06",
+      "video_sha256": "cb7a2c7d10532558eba6da4648d828f469b62967f7a5441ad8fb4106ae146b2d",
+      "n_frames": 121,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          33,
+          70
+        ],
+        [
+          77,
+          101
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          33,
+          70
+        ],
+        [
+          78,
+          101
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "06_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            35,
+            36
+          ],
+          "review_case_ids": [
+            "06_004_43"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            42,
+            43
+          ],
+          "review_case_ids": [
+            "06_004_43"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            51,
+            52
+          ],
+          "review_case_ids": [
+            "06_004_43",
+            "06_004_60"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "06_004_60"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            65,
+            66
+          ],
+          "review_case_ids": [
+            "06_004_60"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_004",
+          "event_type": "other",
+          "interval_frames": [
+            69,
+            69
+          ],
+          "review_case_ids": [
+            "06_004_60"
+          ],
+          "contact_class": "net",
+          "resolved_kind": "net_graze"
+        },
+        {
+          "video_id": "06_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            78,
+            79
+          ],
+          "review_case_ids": [
+            "06_004_79"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            91,
+            91
+          ],
+          "review_case_ids": [
+            "06_004_91"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/06_004/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/06_004/supervision.npz"
+      }
+    },
+    {
+      "video_id": "06_006",
+      "source_group": "06",
+      "video_sha256": "365b7ab5ba1a22f867fa897869e336b1cd4682b82a64011584be1db01dc1f33d",
+      "n_frames": 105,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          59,
+          79
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          59,
+          79
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "06_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            64,
+            65
+          ],
+          "review_case_ids": [
+            "06_006_69"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            69,
+            70
+          ],
+          "review_case_ids": [
+            "06_006_69"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/06_006/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/06_006/supervision.npz"
+      }
+    },
+    {
+      "video_id": "06_007",
+      "source_group": "06",
+      "video_sha256": "27fbf9128d1601424a975dd3e08801ddbf1380cccb8fe9b0f205167119945c61",
+      "n_frames": 62,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          59
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          61
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          59
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "06_007",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            7,
+            8
+          ],
+          "review_case_ids": [
+            "06_007_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "06_007",
+          "event_type": "other",
+          "interval_frames": [
+            12,
+            13
+          ],
+          "review_case_ids": [
+            "06_007_complete_video"
+          ],
+          "contact_class": "net",
+          "resolved_kind": "net_collision"
+        },
+        {
+          "video_id": "06_007",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            19,
+            20
+          ],
+          "review_case_ids": [
+            "06_007_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_007",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            26,
+            27
+          ],
+          "review_case_ids": [
+            "06_007_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_007",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            39,
+            40
+          ],
+          "review_case_ids": [
+            "06_007_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "06_007",
+          "event_type": "other",
+          "interval_frames": [
+            52,
+            53
+          ],
+          "review_case_ids": [
+            "06_007_complete_video"
+          ],
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/06_007/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/06_007/supervision.npz"
+      }
+    },
+    {
+      "video_id": "07_003",
+      "source_group": "07",
+      "video_sha256": "2e76bdb35d10c8b714a4f3db1e2eda55ea770c7ebd9c0cb88750f53806942e7d",
+      "n_frames": 87,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          65
+        ],
+        [
+          71,
+          84
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          65
+        ],
+        [
+          71,
+          86
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          64
+        ],
+        [
+          72,
+          84
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "07_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            43,
+            44
+          ],
+          "review_case_ids": [
+            "07_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "07_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            53,
+            54
+          ],
+          "review_case_ids": [
+            "07_003_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "07_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            57,
+            58
+          ],
+          "review_case_ids": [
+            "07_003_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/07_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/07_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "08_005",
+      "source_group": "08",
+      "video_sha256": "b448f464de583cfa0e29acae7011229ee539ec84afabe609b569914f054eb078",
+      "n_frames": 56,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          10
+        ],
+        [
+          24,
+          53
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          10
+        ],
+        [
+          24,
+          55
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          9
+        ],
+        [
+          25,
+          53
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "08_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            7,
+            8
+          ],
+          "review_case_ids": [
+            "08_005_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "08_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            27,
+            28
+          ],
+          "review_case_ids": [
+            "08_005_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "08_005",
+          "event_type": "other",
+          "interval_frames": [
+            31,
+            32
+          ],
+          "review_case_ids": [
+            "08_005_new_source_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "net",
+          "resolved_kind": "net_graze"
+        },
+        {
+          "video_id": "08_005",
+          "event_type": "other",
+          "interval_frames": [
+            45,
+            46
+          ],
+          "review_case_ids": [
+            "08_005_new_source_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/08_005/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/08_005/supervision.npz"
+      }
+    },
+    {
+      "video_id": "10_001",
+      "source_group": "10",
+      "video_sha256": "6a50be9205f65260314594bf970ea02ffefeeef85b39250ade26e45d41af2400",
+      "n_frames": 95,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          92
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          94
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          92
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "10_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            34,
+            34
+          ],
+          "review_case_ids": [
+            "10_001_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "10_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            45,
+            46
+          ],
+          "review_case_ids": [
+            "10_001_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "10_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            54,
+            55
+          ],
+          "review_case_ids": [
+            "10_001_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "10_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            63,
+            64
+          ],
+          "review_case_ids": [
+            "10_001_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "10_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            67,
+            68
+          ],
+          "review_case_ids": [
+            "10_001_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "10_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            73,
+            74
+          ],
+          "review_case_ids": [
+            "10_001_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/10_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/10_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "10_003",
+      "source_group": "10",
+      "video_sha256": "394d933f1f51e062a072b24f47f98dded9b0fba0dcce532a3516bc7e66dd73b6",
+      "n_frames": 165,
+      "complete_video": false,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          105,
+          139
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          105,
+          139
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "10_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            116,
+            117
+          ],
+          "review_case_ids": [
+            "10_003_115"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "10_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            118,
+            119
+          ],
+          "review_case_ids": [
+            "10_003_115"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "10_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            126,
+            127
+          ],
+          "review_case_ids": [
+            "10_003_115",
+            "10_003_129"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "10_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            129,
+            130
+          ],
+          "review_case_ids": [
+            "10_003_129"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "10_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            137,
+            138
+          ],
+          "review_case_ids": [
+            "10_003_129"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/10_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/10_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "10_005",
+      "source_group": "10",
+      "video_sha256": "01a4f528c1e35605c84d319281a1c3a0cbd9481327bb3938511a05d54d7c5f12",
+      "n_frames": 106,
+      "complete_video": false,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          6,
+          26
+        ],
+        [
+          64,
+          84
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          6,
+          26
+        ],
+        [
+          64,
+          84
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "10_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            65,
+            66
+          ],
+          "review_case_ids": [
+            "10_005_74"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "10_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            74,
+            75
+          ],
+          "review_case_ids": [
+            "10_005_74"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "10_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            79,
+            80
+          ],
+          "review_case_ids": [
+            "10_005_74"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/10_005/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/10_005/supervision.npz"
+      }
+    },
+    {
+      "video_id": "10_006",
+      "source_group": "10",
+      "video_sha256": "b9a9c342f00066fa22ac64401a28585c9192b71a14a1982b36278f8d0b1e8906",
+      "n_frames": 107,
+      "complete_video": false,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          52,
+          72
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          52,
+          70
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "10_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            57,
+            58
+          ],
+          "review_case_ids": [
+            "10_006_60"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "10_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "10_006_60"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "10_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            70,
+            71
+          ],
+          "review_case_ids": [
+            "10_006_60"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/10_006/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/10_006/supervision.npz"
+      }
+    },
+    {
+      "video_id": "11_001",
+      "source_group": "11",
+      "video_sha256": "befc683179c7d7501a2e31642f732ec3a6f34928e327770258c1781516981286",
+      "n_frames": 151,
+      "complete_video": false,
+      "angle": "45",
+      "evaluation_ranges": [
+        [
+          21,
+          41
+        ],
+        [
+          55,
+          76
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          21,
+          38
+        ],
+        [
+          55,
+          75
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "11_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            22,
+            23
+          ],
+          "review_case_ids": [
+            "11_001_28"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "11_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            27,
+            28
+          ],
+          "review_case_ids": [
+            "11_001_28"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            39,
+            40
+          ],
+          "review_case_ids": [
+            "11_001_28"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            56,
+            57
+          ],
+          "review_case_ids": [
+            "11_001_65"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            65,
+            66
+          ],
+          "review_case_ids": [
+            "11_001_65"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "11_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            74,
+            75
+          ],
+          "review_case_ids": [
+            "11_001_65"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/11_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/11_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "11_003",
+      "source_group": "11",
+      "video_sha256": "22315dc9efaf1565b9991044a8c5eb38aaab33c26f7592c6bf983dcba46aa8dd",
+      "n_frames": 144,
+      "complete_video": false,
+      "angle": "45",
+      "evaluation_ranges": [
+        [
+          84,
+          104
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          84,
+          104
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "11_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            93,
+            94
+          ],
+          "review_case_ids": [
+            "11_003_94"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            102,
+            103
+          ],
+          "review_case_ids": [
+            "11_003_94"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/11_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/11_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "11_004",
+      "source_group": "11",
+      "video_sha256": "3217fd4c39033fef069d9636187b11f6f5d8340bbe91c8a90125786ea5efcff5",
+      "n_frames": 98,
+      "complete_video": true,
+      "angle": "45",
+      "evaluation_ranges": [
+        [
+          2,
+          95
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          97
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          95
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "11_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            44,
+            44
+          ],
+          "review_case_ids": [
+            "11_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "11_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            49,
+            50
+          ],
+          "review_case_ids": [
+            "11_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "11_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            64,
+            65
+          ],
+          "review_case_ids": [
+            "11_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "11_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            71,
+            72
+          ],
+          "review_case_ids": [
+            "11_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            84,
+            84
+          ],
+          "review_case_ids": [
+            "11_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            93,
+            94
+          ],
+          "review_case_ids": [
+            "11_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/11_004/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/11_004/supervision.npz"
+      }
+    },
+    {
+      "video_id": "11_005",
+      "source_group": "11",
+      "video_sha256": "65d041e7bb8e837f4ca65ad79b8dc0491954000e6f0224f907b991a73f49496e",
+      "n_frames": 142,
+      "complete_video": false,
+      "angle": "45",
+      "evaluation_ranges": [
+        [
+          42,
+          56
+        ],
+        [
+          58,
+          78
+        ],
+        [
+          92,
+          112
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          42,
+          53
+        ],
+        [
+          58,
+          78
+        ],
+        [
+          92,
+          112
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "11_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            43,
+            43
+          ],
+          "review_case_ids": [
+            "11_005_43"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            49,
+            50
+          ],
+          "review_case_ids": [
+            "11_005_43"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "11_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            54,
+            55
+          ],
+          "review_case_ids": [
+            "11_005_43"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "11_005_68"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "11_005",
+          "event_type": "other",
+          "interval_frames": [
+            68,
+            68
+          ],
+          "review_case_ids": [
+            "11_005_68"
+          ],
+          "contact_class": "net",
+          "resolved_kind": "net_graze"
+        },
+        {
+          "video_id": "11_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            76,
+            76
+          ],
+          "review_case_ids": [
+            "11_005_68"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "11_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            79,
+            80
+          ],
+          "review_case_ids": [
+            "11_005_68"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "11_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            102,
+            103
+          ],
+          "review_case_ids": [
+            "11_005_102"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/11_005/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/11_005/supervision.npz"
+      }
+    },
+    {
+      "video_id": "13_006",
+      "source_group": "13",
+      "video_sha256": "99679b100441dd9dff8d0b12e666001440704c6c13c533a618ce2a2d8a1707ae",
+      "n_frames": 77,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          74
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          76
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          74
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "13_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            31,
+            32
+          ],
+          "review_case_ids": [
+            "13_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "13_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            43,
+            44
+          ],
+          "review_case_ids": [
+            "13_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "13_006",
+          "event_type": "other",
+          "interval_frames": [
+            53,
+            54
+          ],
+          "review_case_ids": [
+            "13_006_new_source_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "net",
+          "resolved_kind": "net_collision"
+        },
+        {
+          "video_id": "13_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "13_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "13_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            70,
+            71
+          ],
+          "review_case_ids": [
+            "13_006_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/13_006/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/13_006/supervision.npz"
+      }
+    },
+    {
+      "video_id": "14_003",
+      "source_group": "14",
+      "video_sha256": "e21c56680c948bea3d881a0a0aab41333293b39918cc2b172cf5cdc9d390e043",
+      "n_frames": 80,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          77
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          79
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          77
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "14_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            21,
+            22
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            24,
+            25
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            34,
+            34
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            39,
+            39
+          ],
+          "review_case_ids": [
+            "14_003_contact_adjudication_05"
+          ],
+          "adjudication_revision": "063948a2-f3e8-470f-bda7-5fa14aebd249",
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            44,
+            45
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            47,
+            48
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            57,
+            58
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "14_003",
+          "event_type": "other",
+          "interval_frames": [
+            71,
+            72
+          ],
+          "review_case_ids": [
+            "14_003_new_source_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/14_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/14_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "16_001",
+      "source_group": "16",
+      "video_sha256": "571dba2a23b38e0a99a81afd47605ee71bbe0d12786fa8edbb543035337d2280",
+      "n_frames": 279,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          35,
+          55
+        ],
+        [
+          57,
+          77
+        ],
+        [
+          210,
+          230
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          35,
+          55
+        ],
+        [
+          57,
+          77
+        ],
+        [
+          210,
+          230
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "16_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            40,
+            41
+          ],
+          "review_case_ids": [
+            "16_001_45"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            43,
+            44
+          ],
+          "review_case_ids": [
+            "16_001_45"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "other",
+          "interval_frames": [
+            45,
+            45
+          ],
+          "review_case_ids": [
+            "16_001_45"
+          ],
+          "contact_class": "flight",
+          "resolved_kind": "flight"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            49,
+            49
+          ],
+          "review_case_ids": [
+            "16_001_45"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            51,
+            52
+          ],
+          "review_case_ids": [
+            "16_001_45"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            59,
+            60
+          ],
+          "review_case_ids": [
+            "16_001_67"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            66,
+            67
+          ],
+          "review_case_ids": [
+            "16_001_67"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            73,
+            73
+          ],
+          "review_case_ids": [
+            "16_001_67"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            217,
+            217
+          ],
+          "review_case_ids": [
+            "16_001_220"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            230,
+            231
+          ],
+          "review_case_ids": [
+            "16_001_220"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/16_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/16_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "16_002",
+      "source_group": "16",
+      "video_sha256": "91e9154ebdf43557010705e12c2e07e709016a7ef90f64ef699eaa05ff6b53ef",
+      "n_frames": 187,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          21,
+          46
+        ],
+        [
+          66,
+          86
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          23,
+          43
+        ],
+        [
+          66,
+          86
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "16_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            22,
+            23
+          ],
+          "review_case_ids": [
+            "16_002_33"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            32,
+            33
+          ],
+          "review_case_ids": [
+            "16_002_33"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            33,
+            33
+          ],
+          "review_case_ids": [
+            "16_002_33"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            44,
+            45
+          ],
+          "review_case_ids": [
+            "16_002_33"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            75,
+            76
+          ],
+          "review_case_ids": [
+            "16_002_76"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            84,
+            85
+          ],
+          "review_case_ids": [
+            "16_002_76"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/16_002/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/16_002/supervision.npz"
+      }
+    },
+    {
+      "video_id": "16_003",
+      "source_group": "16",
+      "video_sha256": "e14c9cf49ddc0510080589a83c69c0c5b778f4ba2ea0341be5571668778f0186",
+      "n_frames": 154,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          72,
+          95
+        ],
+        [
+          132,
+          151
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          72,
+          92
+        ],
+        [
+          132,
+          151
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "16_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            82,
+            83
+          ],
+          "review_case_ids": [
+            "16_003_82"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            90,
+            91
+          ],
+          "review_case_ids": [
+            "16_003_82"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            93,
+            94
+          ],
+          "review_case_ids": [
+            "16_003_82"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_003",
+          "event_type": "other",
+          "interval_frames": [
+            141,
+            142
+          ],
+          "review_case_ids": [
+            "16_003_142"
+          ],
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/16_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/16_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "16_004",
+      "source_group": "16",
+      "video_sha256": "81694ba5259e39e98322a440b3e5b4ebda49e96e280b9839e0234bf9799566c0",
+      "n_frames": 76,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          73
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          75
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          73
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "16_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            4,
+            5
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            10,
+            10
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            20,
+            21
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            26,
+            26
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            31,
+            32
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            36,
+            37
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            56,
+            56
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            64,
+            65
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            64,
+            65
+          ],
+          "review_case_ids": [
+            "16_004_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "16_004",
+          "event_type": "normal_crossing",
+          "resolved_kind": "normal_crossing",
+          "contact_class": "flight",
+          "interval_frames": [
+            17,
+            17
+          ],
+          "provenance": "existing_typed_review"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/16_004/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/16_004/supervision.npz"
+      }
+    },
+    {
+      "video_id": "18_005",
+      "source_group": "18",
+      "video_sha256": "2b4d2bb6c621891c1d7e7274d2c5b3136d5abc23636da640b0f3895e7eed1c0a",
+      "n_frames": 156,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          153
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          155
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          153
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "18_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            44,
+            45
+          ],
+          "review_case_ids": [
+            "18_005_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "18_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            54,
+            55
+          ],
+          "review_case_ids": [
+            "18_005_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "18_005",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            76,
+            77
+          ],
+          "review_case_ids": [
+            "18_005_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "18_005",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            91,
+            92
+          ],
+          "review_case_ids": [
+            "18_005_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "18_005",
+          "event_type": "other",
+          "interval_frames": [
+            125,
+            126
+          ],
+          "review_case_ids": [
+            "18_005_new_source_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/18_005/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/18_005/supervision.npz"
+      }
+    },
+    {
+      "video_id": "19_002",
+      "source_group": "19",
+      "video_sha256": "1f638da120acdcdd573e693367130cfa4b1ee658dbc7d7a2bbd426aea9b246f1",
+      "n_frames": 127,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          4,
+          27
+        ],
+        [
+          41,
+          61
+        ],
+        [
+          73,
+          93
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          4,
+          24
+        ],
+        [
+          41,
+          61
+        ],
+        [
+          73,
+          93
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "19_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            7,
+            8
+          ],
+          "review_case_ids": [
+            "19_002_14"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            13,
+            14
+          ],
+          "review_case_ids": [
+            "19_002_14"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            26,
+            26
+          ],
+          "review_case_ids": [
+            "19_002_14"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            43,
+            44
+          ],
+          "review_case_ids": [
+            "19_002_51"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            51,
+            52
+          ],
+          "review_case_ids": [
+            "19_002_51"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            55,
+            56
+          ],
+          "review_case_ids": [
+            "19_002_51"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            59,
+            59
+          ],
+          "review_case_ids": [
+            "19_002_51"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            75,
+            75
+          ],
+          "review_case_ids": [
+            "19_002_83"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            83,
+            84
+          ],
+          "review_case_ids": [
+            "19_002_83"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_002",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            89,
+            90
+          ],
+          "review_case_ids": [
+            "19_002_83"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/19_002/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/19_002/supervision.npz"
+      }
+    },
+    {
+      "video_id": "19_003",
+      "source_group": "19",
+      "video_sha256": "13bababd81ec4e7197296c2d1db9c36531fa96ae1c1d485ea5c22f173b079715",
+      "n_frames": 86,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          2,
+          83
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          85
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          83
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "19_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            20,
+            20
+          ],
+          "review_case_ids": [
+            "19_003_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            29,
+            30
+          ],
+          "review_case_ids": [
+            "19_003_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_003",
+          "event_type": "other",
+          "interval_frames": [
+            35,
+            36
+          ],
+          "review_case_ids": [
+            "19_003_complete_video"
+          ],
+          "contact_class": "net",
+          "resolved_kind": "net_graze"
+        },
+        {
+          "video_id": "19_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "19_003_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            66,
+            67
+          ],
+          "review_case_ids": [
+            "19_003_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/19_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/19_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "19_004",
+      "source_group": "19",
+      "video_sha256": "3326b9e00992e6b9514cb76a9e59209604d111ab0a221f246ab5b524d8b93ee7",
+      "n_frames": 72,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          6,
+          26
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          6,
+          26
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "19_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            16,
+            17
+          ],
+          "review_case_ids": [
+            "19_004_16"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            19,
+            20
+          ],
+          "review_case_ids": [
+            "19_004_16"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/19_004/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/19_004/supervision.npz"
+      }
+    },
+    {
+      "video_id": "19_006",
+      "source_group": "19",
+      "video_sha256": "b2dca24072e23c622e49077895bc4175d49b332a428ba1388ef7a81043c5f688",
+      "n_frames": 142,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          18,
+          38
+        ],
+        [
+          61,
+          81
+        ],
+        [
+          109,
+          129
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          18,
+          38
+        ],
+        [
+          61,
+          81
+        ],
+        [
+          109,
+          129
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "19_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            21,
+            22
+          ],
+          "review_case_ids": [
+            "19_006_28"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            27,
+            28
+          ],
+          "review_case_ids": [
+            "19_006_28"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            39,
+            39
+          ],
+          "review_case_ids": [
+            "19_006_28"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            70,
+            71
+          ],
+          "review_case_ids": [
+            "19_006_71"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_006",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            82,
+            83
+          ],
+          "review_case_ids": [
+            "19_006_71"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_006",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            119,
+            120
+          ],
+          "review_case_ids": [
+            "19_006_119"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/19_006/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/19_006/supervision.npz"
+      }
+    },
+    {
+      "video_id": "19_007",
+      "source_group": "19",
+      "video_sha256": "22c88fbece2898b72abcca1771c9d4848a09d2fbafba549b6cfee9daec575053",
+      "n_frames": 121,
+      "complete_video": false,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          25,
+          45
+        ],
+        [
+          102,
+          118
+        ]
+      ],
+      "full_evaluation_ranges": [],
+      "training_known_ranges": [
+        [
+          25,
+          45
+        ],
+        [
+          102,
+          118
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "19_007",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            24,
+            25
+          ],
+          "review_case_ids": [
+            "19_007_35"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "19_007",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            35,
+            36
+          ],
+          "review_case_ids": [
+            "19_007_35"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "19_007",
+          "event_type": "other",
+          "interval_frames": [
+            112,
+            112
+          ],
+          "review_case_ids": [
+            "19_007_112"
+          ],
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/19_007/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/19_007/supervision.npz"
+      }
+    },
+    {
+      "video_id": "20_004",
+      "source_group": "20",
+      "video_sha256": "1cd1c07e91a118c165e9645dd08e27a23991a129bd9daecd1643a8180c1b0b30",
+      "n_frames": 152,
+      "complete_video": true,
+      "angle": "45",
+      "evaluation_ranges": [
+        [
+          2,
+          149
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          151
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          149
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "20_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            1,
+            2
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            19,
+            20
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            27,
+            28
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            46,
+            46
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            63,
+            64
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            79,
+            80
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            86,
+            86
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            109,
+            110
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            123,
+            124
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "20_004",
+          "event_type": "other",
+          "interval_frames": [
+            148,
+            149
+          ],
+          "review_case_ids": [
+            "20_004_source_expansion_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/20_004/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/20_004/supervision.npz"
+      }
+    },
+    {
+      "video_id": "21_001",
+      "source_group": "21",
+      "video_sha256": "0425e51f526c1847df19e9471c1df9102fafee6efdfc7020759a554521340ebd",
+      "n_frames": 143,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          140
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          142
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          140
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "21_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            22,
+            23
+          ],
+          "review_case_ids": [
+            "21_001_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "21_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            32,
+            33
+          ],
+          "review_case_ids": [
+            "21_001_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "21_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            59,
+            60
+          ],
+          "review_case_ids": [
+            "21_001_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "21_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            69,
+            70
+          ],
+          "review_case_ids": [
+            "21_001_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "21_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            91,
+            92
+          ],
+          "review_case_ids": [
+            "21_001_source_expansion_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "21_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            108,
+            109
+          ],
+          "review_case_ids": [
+            "21_001_source_expansion_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/21_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/21_001/supervision.npz"
+      }
+    },
+    {
+      "video_id": "22_003",
+      "source_group": "22",
+      "video_sha256": "3597a95c664683d4b512c934b095bf51b45eda9112ebf377c960742e2146e011",
+      "n_frames": 272,
+      "complete_video": true,
+      "angle": "90",
+      "evaluation_ranges": [
+        [
+          2,
+          269
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          271
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          269
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "22_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            50,
+            51
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            59,
+            60
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            86,
+            87
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            106,
+            107
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            126,
+            127
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            134,
+            135
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            160,
+            161
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            162,
+            163
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            184,
+            184
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            202,
+            203
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            225,
+            226
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            242,
+            243
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "22_003",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            260,
+            260
+          ],
+          "review_case_ids": [
+            "22_003_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/22_003/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/22_003/supervision.npz"
+      }
+    },
+    {
+      "video_id": "23_001",
+      "source_group": "23",
+      "video_sha256": "ae0e95daa0b22dbdcd41a6b86f13065fc3917c7d644cd457a3d602f14969f43f",
+      "n_frames": 69,
+      "complete_video": true,
+      "angle": "0",
+      "evaluation_ranges": [
+        [
+          0,
+          66
+        ]
+      ],
+      "full_evaluation_ranges": [
+        [
+          0,
+          68
+        ]
+      ],
+      "training_known_ranges": [
+        [
+          2,
+          66
+        ]
+      ],
+      "events": [
+        {
+          "video_id": "23_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            0,
+            1
+          ],
+          "review_case_ids": [
+            "23_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "23_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            9,
+            10
+          ],
+          "review_case_ids": [
+            "23_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "23_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            16,
+            17
+          ],
+          "review_case_ids": [
+            "23_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "23_001",
+          "event_type": "table_bounce",
+          "interval_frames": [
+            26,
+            27
+          ],
+          "review_case_ids": [
+            "23_001_new_source_complete_video"
+          ],
+          "contact_class": "table",
+          "resolved_kind": "table_bounce"
+        },
+        {
+          "video_id": "23_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            33,
+            34
+          ],
+          "review_case_ids": [
+            "23_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "23_001",
+          "event_type": "racket_contact",
+          "interval_frames": [
+            48,
+            49
+          ],
+          "review_case_ids": [
+            "23_001_new_source_complete_video"
+          ],
+          "contact_class": "racket",
+          "resolved_kind": "racket_contact"
+        },
+        {
+          "video_id": "23_001",
+          "event_type": "other",
+          "interval_frames": [
+            60,
+            61
+          ],
+          "review_case_ids": [
+            "23_001_new_source_complete_video"
+          ],
+          "other_kind": "unspecified",
+          "contact_class": "ground",
+          "resolved_kind": "ground"
+        }
+      ],
+      "provenance": {
+        "events_source": "outputs/six_task_delivery_20261020/inputs/23_001/events.json",
+        "masks_source": "outputs/contact_accuracy_long_20261020/phase2/inputs/23_001/supervision.npz"
+      }
+    }
+  ]
+}

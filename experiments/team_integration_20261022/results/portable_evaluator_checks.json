@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "control": {
+    "passed": true,
+    "baseline_matched": 110,
+    "retained": 110,
+    "lost": [],
+    "positive_only": true,
+    "unmatched_predictions_are_not_false_positives": true
+  },
+  "C_regression": {
+    "passed": false,
+    "baseline_matched": 110,
+    "retained": 109,
+    "lost": [
+      {
+        "video_id": "00_005",
+        "interval_frames": [
+          19,
+          19
+        ],
+        "provenance": [
+          "00_005_candidate_0001"
+        ],
+        "event_type": "table_bounce",
+        "event_index": 0
+      }
+    ],
+    "positive_only": true,
+    "unmatched_predictions_are_not_false_positives": true
+  },
+  "prior_five_deletions_rejected": true,
+  "calibration_complete": {
+    "scope": "complete",
+    "videos": 3,
+    "tp": 11,
+    "fp": 2,
+    "fn": 1,
+    "f1": 0.88,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+  },
+  "calibration_trusted": {
+    "scope": "trusted",
+    "videos": 13,
+    "tp": 38,
+    "fp": 0,
+    "fn": 1,
+    "f1": 0.987012987012987,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+  }
+}

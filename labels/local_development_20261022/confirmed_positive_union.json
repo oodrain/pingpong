@@ -1,0 +1,7663 @@
+{
+  "version": "local_development_20261022_v1",
+  "tolerance_frames": 1,
+  "positive_only": true,
+  "absence_means_unknown": true,
+  "not_a_full_precision_recall_dataset": true,
+  "videos": {
+    "00_001": [
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          62,
+          62
+        ],
+        "provenance": [
+          "00_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          73,
+          73
+        ],
+        "provenance": [
+          "00_001_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          82,
+          83
+        ],
+        "provenance": [
+          "precise",
+          "00_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          92,
+          93
+        ],
+        "provenance": [
+          "precise",
+          "00_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          106,
+          106
+        ],
+        "provenance": [
+          "precise",
+          "00_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          120,
+          120
+        ],
+        "provenance": [
+          "00_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          132,
+          133
+        ],
+        "provenance": [
+          "precise",
+          "00_001_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_001",
+        "interval_frames": [
+          142,
+          143
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "00_002": [
+      {
+        "video_id": "00_002",
+        "interval_frames": [
+          56,
+          56
+        ],
+        "provenance": [
+          "precise",
+          "00_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_002",
+        "interval_frames": [
+          72,
+          72
+        ],
+        "provenance": [
+          "precise",
+          "00_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_002",
+        "interval_frames": [
+          83,
+          83
+        ],
+        "provenance": [
+          "precise",
+          "00_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "00_003": [],
+    "00_004": [
+      {
+        "video_id": "00_004",
+        "interval_frames": [
+          21,
+          22
+        ],
+        "provenance": [
+          "precise",
+          "00_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_004",
+        "interval_frames": [
+          46,
+          47
+        ],
+        "provenance": [
+          "precise",
+          "00_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_004",
+        "interval_frames": [
+          56,
+          57
+        ],
+        "provenance": [
+          "precise",
+          "00_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "00_005": [
+      {
+        "video_id": "00_005",
+        "interval_frames": [
+          19,
+          19
+        ],
+        "provenance": [
+          "00_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_005",
+        "interval_frames": [
+          29,
+          29
+        ],
+        "provenance": [
+          "00_005_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_005",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "00_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_005",
+        "interval_frames": [
+          45,
+          46
+        ],
+        "provenance": [
+          "precise",
+          "00_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "00_005",
+        "interval_frames": [
+          53,
+          54
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "00_006": [
+      {
+        "video_id": "00_006",
+        "interval_frames": [
+          41,
+          41
+        ],
+        "provenance": [
+          "00_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "00_007": [
+      {
+        "video_id": "00_007",
+        "interval_frames": [
+          42,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "00_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "01_001": [
+      {
+        "video_id": "01_001",
+        "interval_frames": [
+          54,
+          54
+        ],
+        "provenance": [
+          "precise",
+          "01_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_001",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "precise",
+          "01_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_001",
+        "interval_frames": [
+          78,
+          78
+        ],
+        "provenance": [
+          "precise",
+          "01_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "01_002": [
+      {
+        "video_id": "01_002",
+        "interval_frames": [
+          41,
+          41
+        ],
+        "provenance": [
+          "precise",
+          "01_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_002",
+        "interval_frames": [
+          50,
+          50
+        ],
+        "provenance": [
+          "precise",
+          "01_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_002",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "precise",
+          "01_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_002",
+        "interval_frames": [
+          77,
+          77
+        ],
+        "provenance": [
+          "precise",
+          "01_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_002",
+        "interval_frames": [
+          91,
+          91
+        ],
+        "provenance": [
+          "precise",
+          "01_002_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_002",
+        "interval_frames": [
+          111,
+          111
+        ],
+        "provenance": [
+          "precise",
+          "01_002_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "01_003": [
+      {
+        "video_id": "01_003",
+        "interval_frames": [
+          30,
+          30
+        ],
+        "provenance": [
+          "precise",
+          "01_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_003",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "precise",
+          "01_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_003",
+        "interval_frames": [
+          53,
+          53
+        ],
+        "provenance": [
+          "precise",
+          "01_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_003",
+        "interval_frames": [
+          71,
+          71
+        ],
+        "provenance": [
+          "precise",
+          "01_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "01_004": [
+      {
+        "video_id": "01_004",
+        "interval_frames": [
+          31,
+          31
+        ],
+        "provenance": [
+          "precise",
+          "01_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_004",
+        "interval_frames": [
+          40,
+          40
+        ],
+        "provenance": [
+          "precise",
+          "01_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_004",
+        "interval_frames": [
+          52,
+          52
+        ],
+        "provenance": [
+          "precise",
+          "01_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "01_005": [
+      {
+        "video_id": "01_005",
+        "interval_frames": [
+          33,
+          33
+        ],
+        "provenance": [
+          "precise",
+          "01_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_005",
+        "interval_frames": [
+          53,
+          53
+        ],
+        "provenance": [
+          "precise",
+          "01_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_005",
+        "interval_frames": [
+          66,
+          66
+        ],
+        "provenance": [
+          "precise",
+          "01_005_candidate_v2_add_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_005",
+        "interval_frames": [
+          76,
+          76
+        ],
+        "provenance": [
+          "precise",
+          "01_005_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "01_006": [
+      {
+        "video_id": "01_006",
+        "interval_frames": [
+          36,
+          37
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_006",
+        "interval_frames": [
+          45,
+          45
+        ],
+        "provenance": [
+          "precise",
+          "01_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_006",
+        "interval_frames": [
+          55,
+          56
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_006",
+        "interval_frames": [
+          64,
+          65
+        ],
+        "provenance": [
+          "precise",
+          "01_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "01_007": [
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          28,
+          28
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          52,
+          52
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          73,
+          73
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          91,
+          91
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          108,
+          108
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          145,
+          145
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "01_007",
+        "interval_frames": [
+          165,
+          165
+        ],
+        "provenance": [
+          "precise",
+          "01_007_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "02_001": [
+      {
+        "video_id": "02_001",
+        "interval_frames": [
+          28,
+          28
+        ],
+        "provenance": [
+          "precise",
+          "02_001_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_001",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "precise",
+          "02_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "02_002": [
+      {
+        "video_id": "02_002",
+        "interval_frames": [
+          32,
+          32
+        ],
+        "provenance": [
+          "precise",
+          "02_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_002",
+        "interval_frames": [
+          44,
+          44
+        ],
+        "provenance": [
+          "precise",
+          "02_002_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "02_003": [
+      {
+        "video_id": "02_003",
+        "interval_frames": [
+          34,
+          34
+        ],
+        "provenance": [
+          "precise",
+          "02_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_003",
+        "interval_frames": [
+          51,
+          51
+        ],
+        "provenance": [
+          "precise",
+          "02_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_003",
+        "interval_frames": [
+          84,
+          84
+        ],
+        "provenance": [
+          "precise",
+          "02_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_003",
+        "interval_frames": [
+          101,
+          101
+        ],
+        "provenance": [
+          "precise",
+          "02_003_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_003",
+        "interval_frames": [
+          151,
+          151
+        ],
+        "provenance": [
+          "precise",
+          "02_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "02_004": [
+      {
+        "video_id": "02_004",
+        "interval_frames": [
+          40,
+          40
+        ],
+        "provenance": [
+          "precise",
+          "02_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_004",
+        "interval_frames": [
+          58,
+          58
+        ],
+        "provenance": [
+          "precise",
+          "02_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "02_005": [
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          13,
+          13
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          20,
+          20
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          27,
+          27
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          109,
+          109
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          125,
+          125
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          145,
+          145
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          165,
+          165
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_005",
+        "interval_frames": [
+          229,
+          229
+        ],
+        "provenance": [
+          "precise",
+          "02_005_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "02_006": [
+      {
+        "video_id": "02_006",
+        "interval_frames": [
+          32,
+          32
+        ],
+        "provenance": [
+          "precise",
+          "02_006_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_006",
+        "interval_frames": [
+          45,
+          46
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "02_007": [
+      {
+        "video_id": "02_007",
+        "interval_frames": [
+          25,
+          25
+        ],
+        "provenance": [
+          "precise",
+          "02_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "02_007",
+        "interval_frames": [
+          51,
+          51
+        ],
+        "provenance": [
+          "precise",
+          "02_007_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "03_001": [
+      {
+        "video_id": "03_001",
+        "interval_frames": [
+          29,
+          29
+        ],
+        "provenance": [
+          "precise",
+          "03_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "03_002": [
+      {
+        "video_id": "03_002",
+        "interval_frames": [
+          44,
+          44
+        ],
+        "provenance": [
+          "precise",
+          "03_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_002",
+        "interval_frames": [
+          55,
+          55
+        ],
+        "provenance": [
+          "precise",
+          "03_002_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_002",
+        "interval_frames": [
+          65,
+          65
+        ],
+        "provenance": [
+          "precise",
+          "03_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_002",
+        "interval_frames": [
+          81,
+          81
+        ],
+        "provenance": [
+          "precise",
+          "03_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_002",
+        "interval_frames": [
+          100,
+          100
+        ],
+        "provenance": [
+          "precise",
+          "03_002_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "03_003": [
+      {
+        "video_id": "03_003",
+        "interval_frames": [
+          22,
+          23
+        ],
+        "provenance": [
+          "precise",
+          "03_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_003",
+        "interval_frames": [
+          30,
+          31
+        ],
+        "provenance": [
+          "precise",
+          "03_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_003",
+        "interval_frames": [
+          45,
+          45
+        ],
+        "provenance": [
+          "precise",
+          "03_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_003",
+        "interval_frames": [
+          51,
+          52
+        ],
+        "provenance": [
+          "precise",
+          "03_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_003",
+        "interval_frames": [
+          55,
+          56
+        ],
+        "provenance": [
+          "precise",
+          "03_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_003",
+        "interval_frames": [
+          59,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "03_003_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "03_004": [
+      {
+        "video_id": "03_004",
+        "interval_frames": [
+          29,
+          29
+        ],
+        "provenance": [
+          "precise",
+          "03_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_004",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "precise",
+          "03_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_004",
+        "interval_frames": [
+          47,
+          47
+        ],
+        "provenance": [
+          "precise",
+          "03_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_004",
+        "interval_frames": [
+          54,
+          54
+        ],
+        "provenance": [
+          "precise",
+          "03_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_004",
+        "interval_frames": [
+          61,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "03_004_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_004",
+        "interval_frames": [
+          67,
+          67
+        ],
+        "provenance": [
+          "precise",
+          "03_004_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_004",
+        "interval_frames": [
+          72,
+          72
+        ],
+        "provenance": [
+          "precise",
+          "03_004_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "03_005": [
+      {
+        "video_id": "03_005",
+        "interval_frames": [
+          21,
+          21
+        ],
+        "provenance": [
+          "precise",
+          "03_005_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_005",
+        "interval_frames": [
+          29,
+          29
+        ],
+        "provenance": [
+          "precise",
+          "03_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_005",
+        "interval_frames": [
+          43,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "03_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_005",
+        "interval_frames": [
+          61,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "03_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_005",
+        "interval_frames": [
+          68,
+          68
+        ],
+        "provenance": [
+          "precise",
+          "03_005_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "03_006": [
+      {
+        "video_id": "03_006",
+        "interval_frames": [
+          30,
+          30
+        ],
+        "provenance": [
+          "precise",
+          "03_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_006",
+        "interval_frames": [
+          50,
+          50
+        ],
+        "provenance": [
+          "precise",
+          "03_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_006",
+        "interval_frames": [
+          76,
+          76
+        ],
+        "provenance": [
+          "precise",
+          "03_006_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "03_007": [
+      {
+        "video_id": "03_007",
+        "interval_frames": [
+          60,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "03_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "03_007",
+        "interval_frames": [
+          82,
+          82
+        ],
+        "provenance": [
+          "precise",
+          "03_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "04_001": [
+      {
+        "video_id": "04_001",
+        "interval_frames": [
+          44,
+          45
+        ],
+        "provenance": [
+          "precise",
+          "04_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_001",
+        "interval_frames": [
+          56,
+          57
+        ],
+        "provenance": [
+          "precise",
+          "04_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "04_002": [
+      {
+        "video_id": "04_002",
+        "interval_frames": [
+          29,
+          29
+        ],
+        "provenance": [
+          "precise",
+          "04_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_002",
+        "interval_frames": [
+          40,
+          40
+        ],
+        "provenance": [
+          "precise",
+          "04_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_002",
+        "interval_frames": [
+          58,
+          58
+        ],
+        "provenance": [
+          "precise",
+          "04_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_002",
+        "interval_frames": [
+          110,
+          110
+        ],
+        "provenance": [
+          "precise",
+          "04_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "04_003": [
+      {
+        "video_id": "04_003",
+        "interval_frames": [
+          38,
+          38
+        ],
+        "provenance": [
+          "precise",
+          "04_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_003",
+        "interval_frames": [
+          62,
+          62
+        ],
+        "provenance": [
+          "precise",
+          "04_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "04_004": [
+      {
+        "video_id": "04_004",
+        "interval_frames": [
+          50,
+          50
+        ],
+        "provenance": [
+          "precise",
+          "04_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_004",
+        "interval_frames": [
+          83,
+          83
+        ],
+        "provenance": [
+          "precise",
+          "04_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_004",
+        "interval_frames": [
+          144,
+          144
+        ],
+        "provenance": [
+          "precise",
+          "04_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_004",
+        "interval_frames": [
+          156,
+          156
+        ],
+        "provenance": [
+          "precise",
+          "04_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_004",
+        "interval_frames": [
+          170,
+          170
+        ],
+        "provenance": [
+          "precise",
+          "04_004_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "04_005": [
+      {
+        "video_id": "04_005",
+        "interval_frames": [
+          51,
+          51
+        ],
+        "provenance": [
+          "precise",
+          "04_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_005",
+        "interval_frames": [
+          64,
+          64
+        ],
+        "provenance": [
+          "precise",
+          "04_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_005",
+        "interval_frames": [
+          83,
+          83
+        ],
+        "provenance": [
+          "precise",
+          "04_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_005",
+        "interval_frames": [
+          102,
+          102
+        ],
+        "provenance": [
+          "precise",
+          "04_005_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_005",
+        "interval_frames": [
+          120,
+          120
+        ],
+        "provenance": [
+          "precise",
+          "04_005_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "04_006": [
+      {
+        "video_id": "04_006",
+        "interval_frames": [
+          32,
+          32
+        ],
+        "provenance": [
+          "precise",
+          "04_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_006",
+        "interval_frames": [
+          43,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "04_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_006",
+        "interval_frames": [
+          59,
+          59
+        ],
+        "provenance": [
+          "precise",
+          "04_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_006",
+        "interval_frames": [
+          76,
+          76
+        ],
+        "provenance": [
+          "precise",
+          "04_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_006",
+        "interval_frames": [
+          126,
+          126
+        ],
+        "provenance": [
+          "precise",
+          "04_006_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "04_007": [
+      {
+        "video_id": "04_007",
+        "interval_frames": [
+          45,
+          45
+        ],
+        "provenance": [
+          "precise",
+          "04_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_007",
+        "interval_frames": [
+          155,
+          155
+        ],
+        "provenance": [
+          "precise",
+          "04_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_007",
+        "interval_frames": [
+          211,
+          211
+        ],
+        "provenance": [
+          "precise",
+          "04_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "04_007",
+        "interval_frames": [
+          234,
+          234
+        ],
+        "provenance": [
+          "precise",
+          "04_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "05_001": [
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          86,
+          87
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          97,
+          97
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          112,
+          112
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          126,
+          127
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          141,
+          141
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          158,
+          158
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          173,
+          174
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          188,
+          189
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          201,
+          202
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          218,
+          219
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          232,
+          233
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          248,
+          249
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          262,
+          263
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          276,
+          277
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          291,
+          292
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          306,
+          307
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          322,
+          323
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          337,
+          338
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          350,
+          351
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          368,
+          369
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          383,
+          384
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0011"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          398,
+          399
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0012"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          413,
+          414
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0013"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          430,
+          431
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          446,
+          447
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0014"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          462,
+          463
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          478,
+          479
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0015"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          496,
+          497
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          510,
+          511
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0016"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          525,
+          526
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0017"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          541,
+          542
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          555,
+          556
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          569,
+          570
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0018"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          583,
+          584
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0019"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          599,
+          599
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0020"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          614,
+          615
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0021"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          630,
+          631
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0022"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          647,
+          648
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0023"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          662,
+          663
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0024"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          690,
+          691
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          712,
+          713
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0025"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          738,
+          739
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          750,
+          751
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0026"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          773,
+          774
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0027"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          785,
+          786
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0028"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          802,
+          803
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          813,
+          814
+        ],
+        "provenance": [
+          "precise",
+          "05_001_candidate_0029"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "05_001",
+        "interval_frames": [
+          822,
+          823
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "06_001": [
+      {
+        "video_id": "06_001",
+        "interval_frames": [
+          23,
+          24
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_001",
+        "interval_frames": [
+          33,
+          34
+        ],
+        "provenance": [
+          "precise",
+          "06_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "06_002": [
+      {
+        "video_id": "06_002",
+        "interval_frames": [
+          6,
+          7
+        ],
+        "provenance": [
+          "precise",
+          "06_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_002",
+        "interval_frames": [
+          16,
+          17
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_002",
+        "interval_frames": [
+          31,
+          32
+        ],
+        "provenance": [
+          "precise",
+          "06_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_002",
+        "interval_frames": [
+          47,
+          47
+        ],
+        "provenance": [
+          "06_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "06_003": [
+      {
+        "video_id": "06_003",
+        "interval_frames": [
+          3,
+          3
+        ],
+        "provenance": [
+          "06_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_003",
+        "interval_frames": [
+          17,
+          18
+        ],
+        "provenance": [
+          "precise",
+          "06_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_003",
+        "interval_frames": [
+          42,
+          42
+        ],
+        "provenance": [
+          "06_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_003",
+        "interval_frames": [
+          52,
+          52
+        ],
+        "provenance": [
+          "06_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_003",
+        "interval_frames": [
+          58,
+          58
+        ],
+        "provenance": [
+          "06_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "06_004": [
+      {
+        "video_id": "06_004",
+        "interval_frames": [
+          16,
+          16
+        ],
+        "provenance": [
+          "06_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_004",
+        "interval_frames": [
+          30,
+          30
+        ],
+        "provenance": [
+          "06_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_004",
+        "interval_frames": [
+          42,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "06_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_004",
+        "interval_frames": [
+          60,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "06_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_004",
+        "interval_frames": [
+          78,
+          79
+        ],
+        "provenance": [
+          "precise",
+          "06_004_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "06_005": [
+      {
+        "video_id": "06_005",
+        "interval_frames": [
+          7,
+          7
+        ],
+        "provenance": [
+          "precise",
+          "06_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "06_006": [
+      {
+        "video_id": "06_006",
+        "interval_frames": [
+          23,
+          23
+        ],
+        "provenance": [
+          "06_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_006",
+        "interval_frames": [
+          45,
+          45
+        ],
+        "provenance": [
+          "06_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_006",
+        "interval_frames": [
+          55,
+          55
+        ],
+        "provenance": [
+          "06_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_006",
+        "interval_frames": [
+          64,
+          65
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "06_007": [
+      {
+        "video_id": "06_007",
+        "interval_frames": [
+          19,
+          20
+        ],
+        "provenance": [
+          "precise",
+          "06_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_007",
+        "interval_frames": [
+          26,
+          27
+        ],
+        "provenance": [
+          "precise",
+          "06_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "06_007",
+        "interval_frames": [
+          39,
+          40
+        ],
+        "provenance": [
+          "precise",
+          "06_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "07_001": [
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          68,
+          68
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          79,
+          79
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          89,
+          89
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          170,
+          170
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          180,
+          180
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          205,
+          205
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          217,
+          217
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_001",
+        "interval_frames": [
+          226,
+          226
+        ],
+        "provenance": [
+          "precise",
+          "07_001_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "07_002": [
+      {
+        "video_id": "07_002",
+        "interval_frames": [
+          87,
+          87
+        ],
+        "provenance": [
+          "precise",
+          "07_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_002",
+        "interval_frames": [
+          97,
+          97
+        ],
+        "provenance": [
+          "precise",
+          "07_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "07_003": [
+      {
+        "video_id": "07_003",
+        "interval_frames": [
+          43,
+          44
+        ],
+        "provenance": [
+          "precise",
+          "07_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_003",
+        "interval_frames": [
+          53,
+          54
+        ],
+        "provenance": [
+          "precise",
+          "07_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_003",
+        "interval_frames": [
+          69,
+          69
+        ],
+        "provenance": [
+          "07_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "07_004": [
+      {
+        "video_id": "07_004",
+        "interval_frames": [
+          152,
+          152
+        ],
+        "provenance": [
+          "precise",
+          "07_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_004",
+        "interval_frames": [
+          162,
+          162
+        ],
+        "provenance": [
+          "precise",
+          "07_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_004",
+        "interval_frames": [
+          176,
+          176
+        ],
+        "provenance": [
+          "precise",
+          "07_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_004",
+        "interval_frames": [
+          200,
+          200
+        ],
+        "provenance": [
+          "precise",
+          "07_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "07_005": [
+      {
+        "video_id": "07_005",
+        "interval_frames": [
+          86,
+          86
+        ],
+        "provenance": [
+          "precise",
+          "07_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_005",
+        "interval_frames": [
+          97,
+          97
+        ],
+        "provenance": [
+          "precise",
+          "07_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_005",
+        "interval_frames": [
+          123,
+          123
+        ],
+        "provenance": [
+          "precise",
+          "07_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_005",
+        "interval_frames": [
+          136,
+          136
+        ],
+        "provenance": [
+          "precise",
+          "07_005_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_005",
+        "interval_frames": [
+          149,
+          149
+        ],
+        "provenance": [
+          "precise",
+          "07_005_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "07_006": [
+      {
+        "video_id": "07_006",
+        "interval_frames": [
+          3,
+          3
+        ],
+        "provenance": [
+          "precise",
+          "07_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_006",
+        "interval_frames": [
+          12,
+          12
+        ],
+        "provenance": [
+          "precise",
+          "07_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_006",
+        "interval_frames": [
+          95,
+          95
+        ],
+        "provenance": [
+          "precise",
+          "07_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_006",
+        "interval_frames": [
+          104,
+          104
+        ],
+        "provenance": [
+          "precise",
+          "07_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "07_007": [
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          22,
+          22
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          31,
+          31
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          43,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          70,
+          70
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          112,
+          112
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          123,
+          123
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          133,
+          133
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          143,
+          143
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          153,
+          153
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "07_007",
+        "interval_frames": [
+          161,
+          161
+        ],
+        "provenance": [
+          "precise",
+          "07_007_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "08_001": [
+      {
+        "video_id": "08_001",
+        "interval_frames": [
+          61,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "08_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_001",
+        "interval_frames": [
+          128,
+          128
+        ],
+        "provenance": [
+          "precise",
+          "08_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_001",
+        "interval_frames": [
+          139,
+          139
+        ],
+        "provenance": [
+          "precise",
+          "08_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "08_002": [
+      {
+        "video_id": "08_002",
+        "interval_frames": [
+          26,
+          26
+        ],
+        "provenance": [
+          "precise",
+          "08_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_002",
+        "interval_frames": [
+          36,
+          36
+        ],
+        "provenance": [
+          "precise",
+          "08_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_002",
+        "interval_frames": [
+          48,
+          48
+        ],
+        "provenance": [
+          "precise",
+          "08_002_candidate_v2_add_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_002",
+        "interval_frames": [
+          77,
+          77
+        ],
+        "provenance": [
+          "precise",
+          "08_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_002",
+        "interval_frames": [
+          91,
+          91
+        ],
+        "provenance": [
+          "precise",
+          "08_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_002",
+        "interval_frames": [
+          105,
+          105
+        ],
+        "provenance": [
+          "precise",
+          "08_002_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_002",
+        "interval_frames": [
+          128,
+          128
+        ],
+        "provenance": [
+          "precise",
+          "08_002_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "08_003": [
+      {
+        "video_id": "08_003",
+        "interval_frames": [
+          7,
+          7
+        ],
+        "provenance": [
+          "precise",
+          "08_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_003",
+        "interval_frames": [
+          50,
+          50
+        ],
+        "provenance": [
+          "precise",
+          "08_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "08_004": [
+      {
+        "video_id": "08_004",
+        "interval_frames": [
+          52,
+          52
+        ],
+        "provenance": [
+          "precise",
+          "08_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_004",
+        "interval_frames": [
+          73,
+          73
+        ],
+        "provenance": [
+          "precise",
+          "08_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_004",
+        "interval_frames": [
+          88,
+          88
+        ],
+        "provenance": [
+          "precise",
+          "08_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "08_005": [],
+    "08_006": [
+      {
+        "video_id": "08_006",
+        "interval_frames": [
+          37,
+          37
+        ],
+        "provenance": [
+          "precise",
+          "08_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_006",
+        "interval_frames": [
+          49,
+          49
+        ],
+        "provenance": [
+          "precise",
+          "08_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_006",
+        "interval_frames": [
+          62,
+          62
+        ],
+        "provenance": [
+          "precise",
+          "08_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_006",
+        "interval_frames": [
+          75,
+          75
+        ],
+        "provenance": [
+          "precise",
+          "08_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "08_007": [
+      {
+        "video_id": "08_007",
+        "interval_frames": [
+          14,
+          14
+        ],
+        "provenance": [
+          "precise",
+          "08_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "08_007",
+        "interval_frames": [
+          61,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "08_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "10_001": [
+      {
+        "video_id": "10_001",
+        "interval_frames": [
+          34,
+          34
+        ],
+        "provenance": [
+          "precise",
+          "10_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_001",
+        "interval_frames": [
+          45,
+          46
+        ],
+        "provenance": [
+          "precise",
+          "10_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_001",
+        "interval_frames": [
+          63,
+          64
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_001",
+        "interval_frames": [
+          73,
+          74
+        ],
+        "provenance": [
+          "precise",
+          "10_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "10_002": [
+      {
+        "video_id": "10_002",
+        "interval_frames": [
+          24,
+          24
+        ],
+        "provenance": [
+          "precise",
+          "10_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_002",
+        "interval_frames": [
+          36,
+          36
+        ],
+        "provenance": [
+          "precise",
+          "10_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "10_003": [
+      {
+        "video_id": "10_003",
+        "interval_frames": [
+          45,
+          45
+        ],
+        "provenance": [
+          "10_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_003",
+        "interval_frames": [
+          57,
+          57
+        ],
+        "provenance": [
+          "10_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_003",
+        "interval_frames": [
+          76,
+          76
+        ],
+        "provenance": [
+          "10_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_003",
+        "interval_frames": [
+          91,
+          91
+        ],
+        "provenance": [
+          "10_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_003",
+        "interval_frames": [
+          116,
+          117
+        ],
+        "provenance": [
+          "precise",
+          "10_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_003",
+        "interval_frames": [
+          126,
+          127
+        ],
+        "provenance": [
+          "precise",
+          "10_003_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_003",
+        "interval_frames": [
+          137,
+          138
+        ],
+        "provenance": [
+          "precise",
+          "10_003_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "10_004": [
+      {
+        "video_id": "10_004",
+        "interval_frames": [
+          48,
+          48
+        ],
+        "provenance": [
+          "precise",
+          "10_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_004",
+        "interval_frames": [
+          62,
+          62
+        ],
+        "provenance": [
+          "precise",
+          "10_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "10_005": [
+      {
+        "video_id": "10_005",
+        "interval_frames": [
+          35,
+          35
+        ],
+        "provenance": [
+          "10_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_005",
+        "interval_frames": [
+          47,
+          47
+        ],
+        "provenance": [
+          "10_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_005",
+        "interval_frames": [
+          74,
+          75
+        ],
+        "provenance": [
+          "precise",
+          "10_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "10_006": [
+      {
+        "video_id": "10_006",
+        "interval_frames": [
+          34,
+          34
+        ],
+        "provenance": [
+          "10_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_006",
+        "interval_frames": [
+          46,
+          46
+        ],
+        "provenance": [
+          "10_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_006",
+        "interval_frames": [
+          57,
+          58
+        ],
+        "provenance": [
+          "precise",
+          "10_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_006",
+        "interval_frames": [
+          70,
+          71
+        ],
+        "provenance": [
+          "precise",
+          "10_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "10_007": [
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          49,
+          49
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          60,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          77,
+          77
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          96,
+          96
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          120,
+          120
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          159,
+          159
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          173,
+          173
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "10_007",
+        "interval_frames": [
+          193,
+          193
+        ],
+        "provenance": [
+          "precise",
+          "10_007_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "11_001": [
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          27,
+          28
+        ],
+        "provenance": [
+          "precise",
+          "11_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          39,
+          40
+        ],
+        "provenance": [
+          "precise",
+          "11_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          56,
+          57
+        ],
+        "provenance": [
+          "precise",
+          "11_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          74,
+          75
+        ],
+        "provenance": [
+          "precise",
+          "11_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          88,
+          88
+        ],
+        "provenance": [
+          "11_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          102,
+          102
+        ],
+        "provenance": [
+          "11_001_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          112,
+          112
+        ],
+        "provenance": [
+          "11_001_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_001",
+        "interval_frames": [
+          128,
+          128
+        ],
+        "provenance": [
+          "11_001_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "11_002": [
+      {
+        "video_id": "11_002",
+        "interval_frames": [
+          34,
+          34
+        ],
+        "provenance": [
+          "precise",
+          "11_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_002",
+        "interval_frames": [
+          46,
+          46
+        ],
+        "provenance": [
+          "precise",
+          "11_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_002",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "precise",
+          "11_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "11_003": [
+      {
+        "video_id": "11_003",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "11_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_003",
+        "interval_frames": [
+          76,
+          76
+        ],
+        "provenance": [
+          "11_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_003",
+        "interval_frames": [
+          93,
+          94
+        ],
+        "provenance": [
+          "precise",
+          "11_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_003",
+        "interval_frames": [
+          109,
+          109
+        ],
+        "provenance": [
+          "11_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_003",
+        "interval_frames": [
+          123,
+          123
+        ],
+        "provenance": [
+          "11_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "11_004": [
+      {
+        "video_id": "11_004",
+        "interval_frames": [
+          49,
+          50
+        ],
+        "provenance": [
+          "precise",
+          "11_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_004",
+        "interval_frames": [
+          60,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "11_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_004",
+        "interval_frames": [
+          71,
+          72
+        ],
+        "provenance": [
+          "precise",
+          "11_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_004",
+        "interval_frames": [
+          84,
+          84
+        ],
+        "provenance": [
+          "precise",
+          "11_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "11_005": [
+      {
+        "video_id": "11_005",
+        "interval_frames": [
+          32,
+          32
+        ],
+        "provenance": [
+          "11_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_005",
+        "interval_frames": [
+          43,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "11_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_005",
+        "interval_frames": [
+          54,
+          55
+        ],
+        "provenance": [
+          "precise",
+          "11_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_005",
+        "interval_frames": [
+          76,
+          76
+        ],
+        "provenance": [
+          "precise",
+          "11_005_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_005",
+        "interval_frames": [
+          89,
+          89
+        ],
+        "provenance": [
+          "11_005_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_005",
+        "interval_frames": [
+          127,
+          127
+        ],
+        "provenance": [
+          "11_005_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "11_005",
+        "interval_frames": [
+          135,
+          135
+        ],
+        "provenance": [
+          "11_005_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "13_001": [
+      {
+        "video_id": "13_001",
+        "interval_frames": [
+          84,
+          84
+        ],
+        "provenance": [
+          "precise",
+          "13_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_001",
+        "interval_frames": [
+          95,
+          95
+        ],
+        "provenance": [
+          "precise",
+          "13_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_001",
+        "interval_frames": [
+          109,
+          109
+        ],
+        "provenance": [
+          "precise",
+          "13_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_001",
+        "interval_frames": [
+          125,
+          125
+        ],
+        "provenance": [
+          "precise",
+          "13_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_001",
+        "interval_frames": [
+          133,
+          133
+        ],
+        "provenance": [
+          "precise",
+          "13_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "13_002": [
+      {
+        "video_id": "13_002",
+        "interval_frames": [
+          40,
+          40
+        ],
+        "provenance": [
+          "precise",
+          "13_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_002",
+        "interval_frames": [
+          52,
+          52
+        ],
+        "provenance": [
+          "precise",
+          "13_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_002",
+        "interval_frames": [
+          67,
+          67
+        ],
+        "provenance": [
+          "precise",
+          "13_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "13_003": [
+      {
+        "video_id": "13_003",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "precise",
+          "13_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_003",
+        "interval_frames": [
+          50,
+          50
+        ],
+        "provenance": [
+          "precise",
+          "13_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_003",
+        "interval_frames": [
+          62,
+          62
+        ],
+        "provenance": [
+          "precise",
+          "13_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "13_004": [
+      {
+        "video_id": "13_004",
+        "interval_frames": [
+          43,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "13_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_004",
+        "interval_frames": [
+          54,
+          54
+        ],
+        "provenance": [
+          "precise",
+          "13_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_004",
+        "interval_frames": [
+          69,
+          69
+        ],
+        "provenance": [
+          "precise",
+          "13_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_004",
+        "interval_frames": [
+          83,
+          83
+        ],
+        "provenance": [
+          "precise",
+          "13_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_004",
+        "interval_frames": [
+          97,
+          97
+        ],
+        "provenance": [
+          "precise",
+          "13_004_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "13_005": [
+      {
+        "video_id": "13_005",
+        "interval_frames": [
+          59,
+          59
+        ],
+        "provenance": [
+          "precise",
+          "13_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_005",
+        "interval_frames": [
+          71,
+          71
+        ],
+        "provenance": [
+          "precise",
+          "13_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_005",
+        "interval_frames": [
+          85,
+          85
+        ],
+        "provenance": [
+          "precise",
+          "13_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "13_006": [
+      {
+        "video_id": "13_006",
+        "interval_frames": [
+          31,
+          32
+        ],
+        "provenance": [
+          "precise",
+          "13_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_006",
+        "interval_frames": [
+          43,
+          44
+        ],
+        "provenance": [
+          "precise",
+          "13_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_006",
+        "interval_frames": [
+          60,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "13_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_006",
+        "interval_frames": [
+          70,
+          71
+        ],
+        "provenance": [
+          "precise",
+          "13_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "13_007": [
+      {
+        "video_id": "13_007",
+        "interval_frames": [
+          31,
+          31
+        ],
+        "provenance": [
+          "precise",
+          "13_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_007",
+        "interval_frames": [
+          43,
+          43
+        ],
+        "provenance": [
+          "precise",
+          "13_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_007",
+        "interval_frames": [
+          56,
+          56
+        ],
+        "provenance": [
+          "precise",
+          "13_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_007",
+        "interval_frames": [
+          72,
+          72
+        ],
+        "provenance": [
+          "precise",
+          "13_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_007",
+        "interval_frames": [
+          117,
+          117
+        ],
+        "provenance": [
+          "precise",
+          "13_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "13_007",
+        "interval_frames": [
+          132,
+          132
+        ],
+        "provenance": [
+          "precise",
+          "13_007_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "14_001": [
+      {
+        "video_id": "14_001",
+        "interval_frames": [
+          50,
+          50
+        ],
+        "provenance": [
+          "precise",
+          "14_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_001",
+        "interval_frames": [
+          60,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "14_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_001",
+        "interval_frames": [
+          84,
+          84
+        ],
+        "provenance": [
+          "precise",
+          "14_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_001",
+        "interval_frames": [
+          97,
+          97
+        ],
+        "provenance": [
+          "precise",
+          "14_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "14_002": [
+      {
+        "video_id": "14_002",
+        "interval_frames": [
+          51,
+          51
+        ],
+        "provenance": [
+          "precise",
+          "14_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_002",
+        "interval_frames": [
+          60,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "14_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_002",
+        "interval_frames": [
+          87,
+          87
+        ],
+        "provenance": [
+          "precise",
+          "14_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_002",
+        "interval_frames": [
+          97,
+          97
+        ],
+        "provenance": [
+          "precise",
+          "14_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "14_003": [
+      {
+        "video_id": "14_003",
+        "interval_frames": [
+          24,
+          25
+        ],
+        "provenance": [
+          "precise",
+          "14_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_003",
+        "interval_frames": [
+          34,
+          34
+        ],
+        "provenance": [
+          "precise",
+          "14_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_003",
+        "interval_frames": [
+          44,
+          45
+        ],
+        "provenance": [
+          "precise",
+          "14_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_003",
+        "interval_frames": [
+          57,
+          58
+        ],
+        "provenance": [
+          "precise",
+          "14_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "14_004": [
+      {
+        "video_id": "14_004",
+        "interval_frames": [
+          31,
+          31
+        ],
+        "provenance": [
+          "precise",
+          "14_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_004",
+        "interval_frames": [
+          40,
+          40
+        ],
+        "provenance": [
+          "precise",
+          "14_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_004",
+        "interval_frames": [
+          52,
+          52
+        ],
+        "provenance": [
+          "precise",
+          "14_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_004",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "precise",
+          "14_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "14_005": [
+      {
+        "video_id": "14_005",
+        "interval_frames": [
+          54,
+          54
+        ],
+        "provenance": [
+          "precise",
+          "14_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_005",
+        "interval_frames": [
+          64,
+          64
+        ],
+        "provenance": [
+          "precise",
+          "14_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_005",
+        "interval_frames": [
+          80,
+          80
+        ],
+        "provenance": [
+          "precise",
+          "14_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "14_006": [
+      {
+        "video_id": "14_006",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "precise",
+          "14_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_006",
+        "interval_frames": [
+          73,
+          73
+        ],
+        "provenance": [
+          "precise",
+          "14_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_006",
+        "interval_frames": [
+          94,
+          94
+        ],
+        "provenance": [
+          "precise",
+          "14_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_006",
+        "interval_frames": [
+          113,
+          113
+        ],
+        "provenance": [
+          "precise",
+          "14_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_006",
+        "interval_frames": [
+          134,
+          134
+        ],
+        "provenance": [
+          "precise",
+          "14_006_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "14_007": [
+      {
+        "video_id": "14_007",
+        "interval_frames": [
+          30,
+          30
+        ],
+        "provenance": [
+          "precise",
+          "14_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_007",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "precise",
+          "14_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_007",
+        "interval_frames": [
+          51,
+          51
+        ],
+        "provenance": [
+          "precise",
+          "14_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_007",
+        "interval_frames": [
+          61,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "14_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "14_007",
+        "interval_frames": [
+          68,
+          68
+        ],
+        "provenance": [
+          "precise",
+          "14_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "16_001": [
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          10,
+          10
+        ],
+        "provenance": [
+          "16_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          22,
+          22
+        ],
+        "provenance": [
+          "16_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          40,
+          41
+        ],
+        "provenance": [
+          "precise",
+          "16_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          49,
+          49
+        ],
+        "provenance": [
+          "precise",
+          "16_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          59,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "16_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          73,
+          73
+        ],
+        "provenance": [
+          "precise",
+          "16_001_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          88,
+          88
+        ],
+        "provenance": [
+          "16_001_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          101,
+          101
+        ],
+        "provenance": [
+          "16_001_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          123,
+          123
+        ],
+        "provenance": [
+          "16_001_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          177,
+          177
+        ],
+        "provenance": [
+          "16_001_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          217,
+          217
+        ],
+        "provenance": [
+          "precise",
+          "16_001_candidate_0011"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_001",
+        "interval_frames": [
+          254,
+          254
+        ],
+        "provenance": [
+          "16_001_candidate_0012"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "16_002": [
+      {
+        "video_id": "16_002",
+        "interval_frames": [
+          22,
+          23
+        ],
+        "provenance": [
+          "precise",
+          "16_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_002",
+        "interval_frames": [
+          32,
+          33
+        ],
+        "provenance": [
+          "precise",
+          "16_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_002",
+        "interval_frames": [
+          44,
+          45
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_002",
+        "interval_frames": [
+          75,
+          76
+        ],
+        "provenance": [
+          "precise",
+          "16_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_002",
+        "interval_frames": [
+          124,
+          124
+        ],
+        "provenance": [
+          "16_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "16_003": [
+      {
+        "video_id": "16_003",
+        "interval_frames": [
+          2,
+          2
+        ],
+        "provenance": [
+          "16_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_003",
+        "interval_frames": [
+          15,
+          15
+        ],
+        "provenance": [
+          "16_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_003",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "16_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_003",
+        "interval_frames": [
+          49,
+          49
+        ],
+        "provenance": [
+          "16_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_003",
+        "interval_frames": [
+          82,
+          83
+        ],
+        "provenance": [
+          "precise",
+          "16_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_003",
+        "interval_frames": [
+          93,
+          94
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "16_004": [
+      {
+        "video_id": "16_004",
+        "interval_frames": [
+          4,
+          5
+        ],
+        "provenance": [
+          "precise",
+          "16_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_004",
+        "interval_frames": [
+          20,
+          21
+        ],
+        "provenance": [
+          "precise",
+          "16_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_004",
+        "interval_frames": [
+          31,
+          32
+        ],
+        "provenance": [
+          "precise",
+          "16_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_004",
+        "interval_frames": [
+          56,
+          56
+        ],
+        "provenance": [
+          "precise",
+          "16_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "16_004",
+        "interval_frames": [
+          64,
+          65
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "18_001": [
+      {
+        "video_id": "18_001",
+        "interval_frames": [
+          61,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "18_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_001",
+        "interval_frames": [
+          84,
+          84
+        ],
+        "provenance": [
+          "precise",
+          "18_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_001",
+        "interval_frames": [
+          124,
+          124
+        ],
+        "provenance": [
+          "precise",
+          "18_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "18_002": [
+      {
+        "video_id": "18_002",
+        "interval_frames": [
+          10,
+          10
+        ],
+        "provenance": [
+          "precise",
+          "18_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_002",
+        "interval_frames": [
+          21,
+          21
+        ],
+        "provenance": [
+          "precise",
+          "18_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_002",
+        "interval_frames": [
+          212,
+          212
+        ],
+        "provenance": [
+          "precise",
+          "18_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "18_003": [
+      {
+        "video_id": "18_003",
+        "interval_frames": [
+          90,
+          90
+        ],
+        "provenance": [
+          "precise",
+          "18_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_003",
+        "interval_frames": [
+          141,
+          141
+        ],
+        "provenance": [
+          "precise",
+          "18_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_003",
+        "interval_frames": [
+          162,
+          162
+        ],
+        "provenance": [
+          "precise",
+          "18_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_003",
+        "interval_frames": [
+          187,
+          187
+        ],
+        "provenance": [
+          "precise",
+          "18_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "18_004": [
+      {
+        "video_id": "18_004",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "precise",
+          "18_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_004",
+        "interval_frames": [
+          116,
+          116
+        ],
+        "provenance": [
+          "precise",
+          "18_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "18_005": [
+      {
+        "video_id": "18_005",
+        "interval_frames": [
+          54,
+          55
+        ],
+        "provenance": [
+          "precise",
+          "18_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_005",
+        "interval_frames": [
+          76,
+          77
+        ],
+        "provenance": [
+          "precise",
+          "18_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "18_006": [
+      {
+        "video_id": "18_006",
+        "interval_frames": [
+          136,
+          136
+        ],
+        "provenance": [
+          "precise",
+          "18_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_006",
+        "interval_frames": [
+          159,
+          159
+        ],
+        "provenance": [
+          "precise",
+          "18_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "18_007": [
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          60,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          114,
+          114
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          162,
+          162
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          179,
+          179
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          216,
+          216
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          251,
+          251
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          296,
+          296
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "18_007",
+        "interval_frames": [
+          356,
+          356
+        ],
+        "provenance": [
+          "precise",
+          "18_007_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "19_001": [
+      {
+        "video_id": "19_001",
+        "interval_frames": [
+          25,
+          25
+        ],
+        "provenance": [
+          "precise",
+          "19_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "19_002": [
+      {
+        "video_id": "19_002",
+        "interval_frames": [
+          13,
+          14
+        ],
+        "provenance": [
+          "precise",
+          "19_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_002",
+        "interval_frames": [
+          26,
+          26
+        ],
+        "provenance": [
+          "precise",
+          "19_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_002",
+        "interval_frames": [
+          43,
+          44
+        ],
+        "provenance": [
+          "precise",
+          "19_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_002",
+        "interval_frames": [
+          55,
+          56
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_002",
+        "interval_frames": [
+          75,
+          75
+        ],
+        "provenance": [
+          "precise",
+          "19_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_002",
+        "interval_frames": [
+          89,
+          90
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "19_003": [
+      {
+        "video_id": "19_003",
+        "interval_frames": [
+          20,
+          20
+        ],
+        "provenance": [
+          "precise",
+          "19_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_003",
+        "interval_frames": [
+          66,
+          67
+        ],
+        "provenance": [
+          "precise",
+          "19_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "19_004": [
+      {
+        "video_id": "19_004",
+        "interval_frames": [
+          19,
+          20
+        ],
+        "provenance": [
+          "precise",
+          "19_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_004",
+        "interval_frames": [
+          30,
+          30
+        ],
+        "provenance": [
+          "19_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "19_005": [
+      {
+        "video_id": "19_005",
+        "interval_frames": [
+          30,
+          30
+        ],
+        "provenance": [
+          "precise",
+          "19_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_005",
+        "interval_frames": [
+          44,
+          44
+        ],
+        "provenance": [
+          "precise",
+          "19_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "19_006": [
+      {
+        "video_id": "19_006",
+        "interval_frames": [
+          27,
+          28
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_006",
+        "interval_frames": [
+          70,
+          71
+        ],
+        "provenance": [
+          "precise",
+          "19_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_006",
+        "interval_frames": [
+          88,
+          88
+        ],
+        "provenance": [
+          "19_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_006",
+        "interval_frames": [
+          119,
+          120
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "19_007": [
+      {
+        "video_id": "19_007",
+        "interval_frames": [
+          14,
+          14
+        ],
+        "provenance": [
+          "19_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "19_007",
+        "interval_frames": [
+          35,
+          36
+        ],
+        "provenance": [
+          "precise",
+          "19_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "20_001": [
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          20,
+          20
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          49,
+          49
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          78,
+          78
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          111,
+          111
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          137,
+          137
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          165,
+          165
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          191,
+          191
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          219,
+          219
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          241,
+          241
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          276,
+          276
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          300,
+          300
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0011"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          333,
+          333
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0012"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          356,
+          356
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0013"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          384,
+          384
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0014"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          410,
+          410
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0015"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          438,
+          438
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0016"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          465,
+          465
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0017"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          491,
+          491
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0018"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          516,
+          516
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0019"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          543,
+          543
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0020"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          569,
+          569
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0021"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          597,
+          597
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0022"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          623,
+          623
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0023"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          654,
+          654
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0024"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          681,
+          681
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0025"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          708,
+          708
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0026"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_001",
+        "interval_frames": [
+          733,
+          733
+        ],
+        "provenance": [
+          "precise",
+          "20_001_candidate_0027"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "20_002": [
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          23,
+          23
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          56,
+          56
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          84,
+          84
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          115,
+          115
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          139,
+          139
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          177,
+          177
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          202,
+          202
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          239,
+          239
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_002",
+        "interval_frames": [
+          261,
+          261
+        ],
+        "provenance": [
+          "precise",
+          "20_002_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "20_003": [
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          7,
+          7
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          35,
+          35
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          61,
+          61
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          113,
+          113
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          147,
+          147
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          173,
+          173
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          205,
+          205
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          232,
+          232
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          259,
+          259
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_003",
+        "interval_frames": [
+          276,
+          276
+        ],
+        "provenance": [
+          "precise",
+          "20_003_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "20_004": [
+      {
+        "video_id": "20_004",
+        "interval_frames": [
+          19,
+          20
+        ],
+        "provenance": [
+          "precise",
+          "20_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_004",
+        "interval_frames": [
+          46,
+          46
+        ],
+        "provenance": [
+          "precise",
+          "20_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_004",
+        "interval_frames": [
+          79,
+          80
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "20_004",
+        "interval_frames": [
+          109,
+          110
+        ],
+        "provenance": [
+          "precise",
+          "20_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "21_001": [
+      {
+        "video_id": "21_001",
+        "interval_frames": [
+          32,
+          33
+        ],
+        "provenance": [
+          "precise",
+          "21_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_001",
+        "interval_frames": [
+          59,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "21_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_001",
+        "interval_frames": [
+          91,
+          92
+        ],
+        "provenance": [
+          "precise",
+          "21_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "21_002": [
+      {
+        "video_id": "21_002",
+        "interval_frames": [
+          46,
+          46
+        ],
+        "provenance": [
+          "precise",
+          "21_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_002",
+        "interval_frames": [
+          71,
+          71
+        ],
+        "provenance": [
+          "precise",
+          "21_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "21_003": [
+      {
+        "video_id": "21_003",
+        "interval_frames": [
+          56,
+          56
+        ],
+        "provenance": [
+          "precise",
+          "21_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_003",
+        "interval_frames": [
+          85,
+          85
+        ],
+        "provenance": [
+          "precise",
+          "21_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_003",
+        "interval_frames": [
+          114,
+          114
+        ],
+        "provenance": [
+          "precise",
+          "21_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_003",
+        "interval_frames": [
+          139,
+          139
+        ],
+        "provenance": [
+          "precise",
+          "21_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_003",
+        "interval_frames": [
+          191,
+          191
+        ],
+        "provenance": [
+          "precise",
+          "21_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_003",
+        "interval_frames": [
+          221,
+          221
+        ],
+        "provenance": [
+          "precise",
+          "21_003_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "21_004": [
+      {
+        "video_id": "21_004",
+        "interval_frames": [
+          90,
+          90
+        ],
+        "provenance": [
+          "precise",
+          "21_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_004",
+        "interval_frames": [
+          121,
+          121
+        ],
+        "provenance": [
+          "precise",
+          "21_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "21_005": [
+      {
+        "video_id": "21_005",
+        "interval_frames": [
+          70,
+          70
+        ],
+        "provenance": [
+          "precise",
+          "21_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_005",
+        "interval_frames": [
+          108,
+          108
+        ],
+        "provenance": [
+          "precise",
+          "21_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_005",
+        "interval_frames": [
+          145,
+          145
+        ],
+        "provenance": [
+          "precise",
+          "21_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_005",
+        "interval_frames": [
+          182,
+          182
+        ],
+        "provenance": [
+          "precise",
+          "21_005_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_005",
+        "interval_frames": [
+          196,
+          196
+        ],
+        "provenance": [
+          "precise",
+          "21_005_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "21_006": [
+      {
+        "video_id": "21_006",
+        "interval_frames": [
+          42,
+          42
+        ],
+        "provenance": [
+          "precise",
+          "21_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_006",
+        "interval_frames": [
+          74,
+          74
+        ],
+        "provenance": [
+          "precise",
+          "21_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_006",
+        "interval_frames": [
+          119,
+          119
+        ],
+        "provenance": [
+          "precise",
+          "21_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_006",
+        "interval_frames": [
+          143,
+          143
+        ],
+        "provenance": [
+          "precise",
+          "21_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_006",
+        "interval_frames": [
+          173,
+          173
+        ],
+        "provenance": [
+          "precise",
+          "21_006_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_006",
+        "interval_frames": [
+          188,
+          188
+        ],
+        "provenance": [
+          "precise",
+          "21_006_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "21_007": [
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          78,
+          78
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          106,
+          106
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          140,
+          140
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          179,
+          179
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          223,
+          223
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          260,
+          260
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          293,
+          293
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "21_007",
+        "interval_frames": [
+          315,
+          315
+        ],
+        "provenance": [
+          "precise",
+          "21_007_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "22_001": [
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          12,
+          12
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          34,
+          34
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          63,
+          63
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          106,
+          106
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          140,
+          140
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          222,
+          222
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          262,
+          262
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          303,
+          303
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          412,
+          412
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          443,
+          443
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          519,
+          519
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0011"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          560,
+          560
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0012"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          590,
+          590
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0013"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          628,
+          628
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0014"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_001",
+        "interval_frames": [
+          661,
+          661
+        ],
+        "provenance": [
+          "precise",
+          "22_001_candidate_0015"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "22_002": [
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          42,
+          42
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          70,
+          70
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          101,
+          101
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          127,
+          127
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          164,
+          164
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          240,
+          240
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          287,
+          287
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          312,
+          312
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          350,
+          350
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          382,
+          382
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          407,
+          407
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0011"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_002",
+        "interval_frames": [
+          431,
+          431
+        ],
+        "provenance": [
+          "precise",
+          "22_002_candidate_0012"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "22_003": [
+      {
+        "video_id": "22_003",
+        "interval_frames": [
+          59,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "22_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_003",
+        "interval_frames": [
+          86,
+          87
+        ],
+        "provenance": [
+          "precise",
+          "22_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_003",
+        "interval_frames": [
+          126,
+          127
+        ],
+        "provenance": [
+          "precise",
+          "22_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_003",
+        "interval_frames": [
+          160,
+          161
+        ],
+        "provenance": [
+          "precise"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_003",
+        "interval_frames": [
+          184,
+          184
+        ],
+        "provenance": [
+          "precise",
+          "22_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_003",
+        "interval_frames": [
+          225,
+          226
+        ],
+        "provenance": [
+          "precise",
+          "22_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_003",
+        "interval_frames": [
+          260,
+          260
+        ],
+        "provenance": [
+          "precise",
+          "22_003_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "22_004": [
+      {
+        "video_id": "22_004",
+        "interval_frames": [
+          51,
+          51
+        ],
+        "provenance": [
+          "precise",
+          "22_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_004",
+        "interval_frames": [
+          75,
+          75
+        ],
+        "provenance": [
+          "precise",
+          "22_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_004",
+        "interval_frames": [
+          105,
+          105
+        ],
+        "provenance": [
+          "precise",
+          "22_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_004",
+        "interval_frames": [
+          158,
+          158
+        ],
+        "provenance": [
+          "precise",
+          "22_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_004",
+        "interval_frames": [
+          207,
+          207
+        ],
+        "provenance": [
+          "precise",
+          "22_004_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_004",
+        "interval_frames": [
+          258,
+          258
+        ],
+        "provenance": [
+          "precise",
+          "22_004_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "22_004",
+        "interval_frames": [
+          288,
+          288
+        ],
+        "provenance": [
+          "precise",
+          "22_004_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "23_001": [
+      {
+        "video_id": "23_001",
+        "interval_frames": [
+          0,
+          1
+        ],
+        "provenance": [
+          "precise",
+          "23_001_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_001",
+        "interval_frames": [
+          9,
+          10
+        ],
+        "provenance": [
+          "precise",
+          "23_001_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_001",
+        "interval_frames": [
+          26,
+          27
+        ],
+        "provenance": [
+          "precise",
+          "23_001_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "23_002": [
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          20,
+          20
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          37,
+          37
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          49,
+          49
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          76,
+          76
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          91,
+          91
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          114,
+          114
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          156,
+          156
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          171,
+          171
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_002",
+        "interval_frames": [
+          206,
+          206
+        ],
+        "provenance": [
+          "precise",
+          "23_002_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "23_003": [
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          22,
+          22
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          32,
+          32
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          45,
+          45
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          55,
+          55
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          68,
+          68
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          92,
+          92
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          106,
+          106
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_003",
+        "interval_frames": [
+          130,
+          130
+        ],
+        "provenance": [
+          "precise",
+          "23_003_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "23_004": [
+      {
+        "video_id": "23_004",
+        "interval_frames": [
+          19,
+          19
+        ],
+        "provenance": [
+          "precise",
+          "23_004_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_004",
+        "interval_frames": [
+          36,
+          36
+        ],
+        "provenance": [
+          "precise",
+          "23_004_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_004",
+        "interval_frames": [
+          51,
+          51
+        ],
+        "provenance": [
+          "precise",
+          "23_004_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_004",
+        "interval_frames": [
+          81,
+          81
+        ],
+        "provenance": [
+          "precise",
+          "23_004_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_004",
+        "interval_frames": [
+          94,
+          94
+        ],
+        "provenance": [
+          "precise",
+          "23_004_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "23_005": [
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          18,
+          18
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          27,
+          27
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          48,
+          48
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          60,
+          60
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          85,
+          85
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          99,
+          99
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0006"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          122,
+          122
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0007"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          138,
+          138
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0008"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          181,
+          181
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0009"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          207,
+          207
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0010"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          223,
+          223
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0011"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          251,
+          251
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0012"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          265,
+          265
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0013"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          297,
+          297
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0014"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          328,
+          328
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0015"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          339,
+          339
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0016"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          365,
+          365
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0017"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          377,
+          377
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0018"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          400,
+          400
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0019"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          415,
+          415
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0020"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_005",
+        "interval_frames": [
+          439,
+          439
+        ],
+        "provenance": [
+          "precise",
+          "23_005_candidate_0021"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "23_006": [
+      {
+        "video_id": "23_006",
+        "interval_frames": [
+          24,
+          24
+        ],
+        "provenance": [
+          "precise",
+          "23_006_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_006",
+        "interval_frames": [
+          42,
+          42
+        ],
+        "provenance": [
+          "precise",
+          "23_006_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_006",
+        "interval_frames": [
+          57,
+          57
+        ],
+        "provenance": [
+          "precise",
+          "23_006_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_006",
+        "interval_frames": [
+          86,
+          86
+        ],
+        "provenance": [
+          "precise",
+          "23_006_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      }
+    ],
+    "23_007": [
+      {
+        "video_id": "23_007",
+        "interval_frames": [
+          15,
+          15
+        ],
+        "provenance": [
+          "precise",
+          "23_007_candidate_0001"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_007",
+        "interval_frames": [
+          39,
+          39
+        ],
+        "provenance": [
+          "precise",
+          "23_007_candidate_0002"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_007",
+        "interval_frames": [
+          57,
+          57
+        ],
+        "provenance": [
+          "precise",
+          "23_007_candidate_0003"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_007",
+        "interval_frames": [
+          73,
+          73
+        ],
+        "provenance": [
+          "precise",
+          "23_007_candidate_0004"
+        ],
+        "event_type": "table_bounce"
+      },
+      {
+        "video_id": "23_007",
+        "interval_frames": [
+          90,
+          90
+        ],
+        "provenance": [
+          "precise",
+          "23_007_candidate_0005"
+        ],
+        "event_type": "table_bounce"
+      }
+    ]
+  }
+}

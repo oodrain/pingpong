@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "unit_tests": {
+    "new_positive_and_source_safety_contracts": 7,
+    "existing_ball_review_tool": 5,
+    "existing_dataset_protocol": 7,
+    "total_passed": 19
+  },
+  "snapshot_counts_verified": true,
+  "deterministic_export_files_verified": 20,
+  "real_cached_outputs": {
+    "videos": 27,
+    "original_positive_matches": 110,
+    "C_positive_matches": 109,
+    "C_lost_positive": "00_005 f19",
+    "all_prior_five_deletions_rejected_by_new_guard": true,
+    "calibration_complete_tp_fp_fn": [11, 2, 1],
+    "calibration_trusted_tp_fp_fn": [38, 0, 1]
+  },
+  "C_source_package_manifest_passed": true,
+  "C2_source_package_manifest_passed": true,
+  "protected_C2_and_solution_source_files": 82,
+  "neural_training_during_integration": 0,
+  "new_annotations": 0,
+  "full_video_or_GPU_acceptance_performed": false,
+  "independent_blind_test": false
+}
