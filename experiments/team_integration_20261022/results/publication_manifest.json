@@ -2,11 +2,11 @@
   "version": "team_sync_20261022_v1",
   "hash_encoding": "sha256 of LF-normalized text",
   "files": {
-    "README.md": "053e993615499cc87b8c1c61c7c53dbe841cbc597eb1ec0d98372d3f3ae4d130",
+    "README.md": "8ea70082b06682f1a257968aac5eb7e4e08bc8426b4f9bfe6a84a58edc9acbd7",
     "data/splits/team_split_v1.json": "71fb4a6085dc4e01120cd641116bb6430c2c90d2d0eba2a0d941e3d05c10268f",
     "development/evaluation/team_data.py": "516dfdbd8c6c7de04a4ac979c8c3c7feed02ffa3482fe193e779f63f29e38825",
     "development/evaluation/test_team_data.py": "9f161c9600d5904d43893d54e665f0a9ec750ca4777bbbf60ea6bf4ab10a9f7f",
-    "docs/team/数据与实验协作规范.md": "8ac6c92dac6aceac7a1609126522df1045cf365b252a01e3acb0754ce67e2db0",
+    "docs/team/数据与实验协作规范.md": "29dc7ac2810f27ae6b4d82f05650dd07f71f3edfb8c6c8730c985d6bf337439b",
     "docs/team/整合分支交接_20261022.md": "2f2f52d464de9f498468979a85564197207156ea1bcf6ca7d1f9c71a7191af88",
     "experiments/team_integration_20261022/README.md": "2315d75f9ce164d4760fbe89678441c544e9c8d92a6c74943c4b20af02d9ba7d",
     "experiments/team_integration_20261022/results/ball_comparison.json": "b3e7a3e10b601cb2f6bca81a72e17bd91767bce696c9b06d373ab21998e9dcaf",
