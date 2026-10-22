@@ -1,0 +1,83 @@
+{
+  "stage_date": "2026-10-17",
+  "publication_scope": "source_configuration_aggregate_only",
+  "selected_runtime": "C2_equivalent",
+  "video_only_inference": true,
+  "ball_weights": "unchanged_official",
+  "tcn_retrained_for_C2": false,
+  "quick_geometry_enabled": false,
+  "new_ball_finetune_promoted": false,
+  "evaluation": {
+    "videos_with_windows": 42,
+    "frames": 5444,
+    "matching": "one-to-one event interval expanded by one frame",
+    "spatial_matching": false,
+    "historical_development_exposure": true,
+    "independent_blind_test": false,
+    "public_scores_recomputed_this_stage": false,
+    "outer_fold_used_for_selection": false
+  },
+  "complete": {
+    "videos": 20,
+    "events": 112,
+    "overall": {
+      "tp": 99,
+      "fp": 16,
+      "fn": 13,
+      "precision": 0.8608695652173913,
+      "recall": 0.8839285714285714,
+      "f1": 0.8722466960352423
+    },
+    "by_angle": {
+      "0": {
+        "tp": 22,
+        "fp": 9,
+        "fn": 6,
+        "precision": 0.7096774193548387,
+        "recall": 0.7857142857142857,
+        "f1": 0.7457627118644068
+      },
+      "45": {
+        "tp": 7,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.875,
+        "recall": 0.875,
+        "f1": 0.875
+      },
+      "90": {
+        "tp": 70,
+        "fp": 6,
+        "fn": 6,
+        "precision": 0.9210526315789473,
+        "recall": 0.9210526315789473,
+        "f1": 0.9210526315789473
+      }
+    }
+  },
+  "trusted_windows": {
+    "events": 166,
+    "overall": {
+      "tp": 148,
+      "fp": 16,
+      "fn": 18,
+      "precision": 0.9024390243902439,
+      "recall": 0.891566265060241,
+      "f1": 0.896969696969697
+    }
+  },
+  "performance": {
+    "geometry_microbenchmark_speedup": 1.2999363,
+    "whole_pipeline_cpu_speedup_demonstrated": false,
+    "new_cuda_path_cloud_validated": false,
+    "fps_50_demonstrated": false
+  },
+  "known_limits": [
+    "0 and 45 degree cross-source event classification",
+    "nearby hit and bounce ownership and localization",
+    "occlusion and background ball responses",
+    "final contact coordinates still use automatic observed ball points",
+    "existing FPS confirmation policy retained"
+  ],
+  "historical_scores": "historical_summary_20261016.json"
+}

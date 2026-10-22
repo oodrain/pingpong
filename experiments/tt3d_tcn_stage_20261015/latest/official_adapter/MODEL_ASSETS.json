@@ -1,0 +1,48 @@
+{
+  "table_export": {
+    "original_checkpoint_sha256": "0ed344f09c5fe9079a22a51fa10f0c529d836e318895a1d4321ca75db0a93605",
+    "all_state_tensors_bit_exact": true,
+    "source_bytes": 68475920,
+    "export_bytes": 22931010,
+    "optimizer_and_training_metadata_removed": true
+  },
+  "tcn_and_ball_files_unchanged": true,
+  "file_sha256": {
+    "model.pt": "711304f985effd37a041bc650b6d057b55e0d320733739431f2a7fd7062102e0",
+    "ball.onnx": "a5a467f134ae7e2fc5679e395dca9af12b6dfcc65cee51e633c465beb0c61543",
+    "table_segmentation.ckpt": "ad98ad7c96f0f992c4e35e98ee44698ee73b68571122a6942c2940c1c9d1d8d0"
+  },
+  "middle_graph": {
+    "original_sha256": "a5a467f134ae7e2fc5679e395dca9af12b6dfcc65cee51e633c465beb0c61543",
+    "derived_sha256": "87fd3d874cfdf5cb2731c79e0b9c7eee473ea04232bcdbcd53b2f1481b0a5048",
+    "mapping": [
+      {
+        "name": "model.final_layers.0.weight",
+        "original_shape": [
+          3,
+          16,
+          1,
+          1
+        ],
+        "new_shape": [
+          1,
+          16,
+          1,
+          1
+        ],
+        "original_middle_bytes_exact": true
+      },
+      {
+        "name": "model.final_layers.0.bias",
+        "original_shape": [
+          3
+        ],
+        "new_shape": [
+          1
+        ],
+        "original_middle_bytes_exact": true
+      }
+    ],
+    "training": false
+  }
+}

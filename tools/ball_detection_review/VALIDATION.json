@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "stage_date": "2026-10-17",
+  "core_tests_passed": 5,
+  "cli_help_checks": 3,
+  "desktop": {
+    "cases_opened": 57,
+    "videos_opened": 6,
+    "baseline_and_proposal_overlay_passed": true,
+    "exact_frame_stepping_passed": true,
+    "review_save_reload_passed": true,
+    "pause_timer_cancelled": true,
+    "original_annotations_unchanged": true,
+    "desktop_smoke_passed": true
+  },
+  "baseline_positive_box_counts_reproduced": {
+    "positive_frames": 606,
+    "matched": 548,
+    "missing": 44,
+    "low_confidence": 9,
+    "wrong_location": 1,
+    "tail_not_inferred": 4
+  },
+  "raw_media_annotations_weights_and_predictions_in_tool_zip": false,
+  "training_performed": false,
+  "official_f1_calculated": false
+}

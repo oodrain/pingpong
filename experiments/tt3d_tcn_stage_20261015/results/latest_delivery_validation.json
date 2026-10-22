@@ -1,0 +1,38 @@
+{
+  "stage_date": "2026-10-17",
+  "publication_scope": "source_configuration_aggregate_only",
+  "syntax_checked_python_files": 94,
+  "adapter_source_files": 74,
+  "runtime_source_files": 59,
+  "runtime_source_identical_to_validated_C2": true,
+  "source_only_verification_passed": true,
+  "missing_model_assets_rejected": true,
+  "local_asset_copy_and_complete_manifest_passed": true,
+  "repeat_preparation_preserves_assets": true,
+  "damaged_assets_rejected_without_overwrite": true,
+  "installed_payload_verification_passed": true,
+  "cli_help_checks": 6,
+  "fixed_table_behavior_tests_passed": 5,
+  "publication_scan": {
+    "checked_files": 78,
+    "findings": [],
+    "passed": true
+  },
+  "source_text_encoding": "UTF-8, adapter Git attributes enforce LF",
+  "reused_fixed_stage_acceptance": {
+    "geometry_frames": 28,
+    "geometry_outputs_exact": true,
+    "ball_videos": 6,
+    "ball_frames": 671,
+    "ball_outputs_exact": true,
+    "fresh_video_frames": 231,
+    "fresh_events": 11,
+    "fresh_outputs_exact": true,
+    "fresh_features_and_tcn_scores_exact": true,
+    "note": "Previously completed stage evidence; no new neural inference performed for publication"
+  },
+  "no_weights_media_annotations_or_local_runtime_records_published": true,
+  "new_cuda_path_cloud_validated": false,
+  "fps_50_demonstrated": false,
+  "no_new_training_threshold_search_or_outer_fold_selection": true
+}
