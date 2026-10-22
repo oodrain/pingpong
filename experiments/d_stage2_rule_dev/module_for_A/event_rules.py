@@ -45,8 +45,9 @@ DEFAULT_CONFIG = {
     # —— 几何门（需 table 才生效）——
     "gate": 900.0,        # 投影出桌距离上限（mm）
     "gate_quad": 4.0,     # 图像四边形外扩像素（双判通道）
-    # —— 固定范围门（2026-10-17，复现 C 的固定球桌范围实验）——
-    "range_frac": 0.07,   # 事件点离桌面四边形 ≤ max(frac×对角线, min_px) 才保留
+    # —— 固定范围门（v1.2：邻帧最小距离，2026-10-22 按团队协议复核后修订）——
+    "range_frac": 0.03,   # 接触邻域(±range_window)内须有点离桌面四边形 ≤ max(frac×对角线,min_px)
+    "range_window": 2,    # 邻帧半窗（输入帧）；0 = 单点旧版（会误杀桌缘触点）
     "range_min_px": 4.0,  # 容差像素下限；range_frac=0 关闭该门
     # —— M1.3' 远侧掩蔽触台（上升速度浅坑）——
     "D3": True, "D3_ratio": 0.45, "D3_min": 3.0,
@@ -211,8 +212,10 @@ def detect_events(trajectory, config=None, table=None):
         scan(j)
     scan(n - 2)
 
-    # 固定范围门（后处理）：C 的 TT3D-TCN 分支同款，清除"悬在台面上方、投影仍在台内"的
-    # 击球类 FP；失效放行——无 table / range_frac=0 时不生效。
+    # 固定范围门（v1.2 后处理）：事件保留的条件是"接触邻域"（frame_id+1 ± range_window
+    # 输入帧）内存在任一达标观测落在桌面四边形 ± max(frac×对角线, min_px) 内。
+    # 单点旧版会误杀桌缘触点（00_001 f82-83：发射点已在桌外 20.9%，但接触邻域在桌内）。
+    # 失效放行——无 table / range_frac=0 时不生效。
     if table and quad is not None and cfg.get("gate") and cfg.get("range_frac", 0) > 0:
         import cv2
         import numpy as np
@@ -220,8 +223,18 @@ def detect_events(trajectory, config=None, table=None):
         p4 = np.array(quad, float)
         diag = max(math.dist(p4[i], p4[j]) for i in range(4) for j in range(i + 1, 4))
         tol = max(cfg["range_frac"] * diag, cfg.get("range_min_px", 4.0))
-        out = [e for e in out
-               if cv2.pointPolygonTest(qa, (float(e["x"]), float(e["y"])), True) >= -tol]
+        win = int(cfg.get("range_window", 0))
+        by_fid = {pt[0]: (pt[1], pt[2]) for pt in traj}
+
+        def keep(e):
+            fid = e["frame_id"] + 1
+            if win <= 0:
+                pts = [(float(e["x"]), float(e["y"]))]
+            else:
+                pts = [by_fid[f] for f in range(fid - win, fid + win + 1) if f in by_fid]
+            return (not pts) or any(
+                cv2.pointPolygonTest(qa, (float(x), float(y)), True) >= -tol for x, y in pts)
+        out = [e for e in out if keep(e)]
     return out
 
 

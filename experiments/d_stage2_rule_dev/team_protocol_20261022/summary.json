@@ -1,0 +1,226 @@
+{
+ "pure": {
+  "all42": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 42,
+    "tp": 129,
+    "fp": 43,
+    "fn": 37,
+    "f1": 0.7633136094674556,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 20,
+    "tp": 95,
+    "fp": 28,
+    "fn": 17,
+    "f1": 0.8085106382978723,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  },
+  "fit": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 14,
+    "tp": 27,
+    "fp": 17,
+    "fn": 12,
+    "f1": 0.6506024096385542,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 10,
+    "tp": 23,
+    "fp": 14,
+    "fn": 5,
+    "f1": 0.7076923076923077,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  },
+  "inner": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 13,
+    "tp": 25,
+    "fp": 11,
+    "fn": 14,
+    "f1": 0.6666666666666666,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 3,
+    "tp": 9,
+    "fp": 2,
+    "fn": 3,
+    "f1": 0.782608695652174,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  }
+ },
+ "geom_v10": {
+  "all42": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 42,
+    "tp": 129,
+    "fp": 40,
+    "fn": 37,
+    "f1": 0.7701492537313432,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 20,
+    "tp": 95,
+    "fp": 27,
+    "fn": 17,
+    "f1": 0.811965811965812,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  },
+  "fit": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 14,
+    "tp": 27,
+    "fp": 16,
+    "fn": 12,
+    "f1": 0.6585365853658537,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 10,
+    "tp": 23,
+    "fp": 13,
+    "fn": 5,
+    "f1": 0.71875,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  },
+  "inner": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 13,
+    "tp": 25,
+    "fp": 10,
+    "fn": 14,
+    "f1": 0.6756756756756757,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 3,
+    "tp": 9,
+    "fp": 2,
+    "fn": 3,
+    "f1": 0.782608695652174,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  }
+ },
+ "geom_v12": {
+  "all42": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 42,
+    "tp": 129,
+    "fp": 35,
+    "fn": 37,
+    "f1": 0.7818181818181819,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 20,
+    "tp": 95,
+    "fp": 24,
+    "fn": 17,
+    "f1": 0.8225108225108225,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  },
+  "fit": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 14,
+    "tp": 27,
+    "fp": 15,
+    "fn": 12,
+    "f1": 0.6666666666666666,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 10,
+    "tp": 23,
+    "fp": 12,
+    "fn": 5,
+    "f1": 0.7301587301587301,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  },
+  "inner": {
+   "trusted": {
+    "scope": "trusted",
+    "videos": 13,
+    "tp": 25,
+    "fp": 8,
+    "fn": 14,
+    "f1": 0.6944444444444444,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   },
+   "complete": {
+    "scope": "complete",
+    "videos": 3,
+    "tp": 9,
+    "fp": 1,
+    "fn": 3,
+    "f1": 0.8181818181818182,
+    "spatial_scoring": false,
+    "independent_blind_test": false
+   }
+  }
+ },
+ "preservation": {
+  "pure->geom_v10": {
+   "baseline_matched": 502,
+   "retained": 502,
+   "lost": [],
+   "passed": true
+  },
+  "pure->geom_v12": {
+   "baseline_matched": 502,
+   "retained": 502,
+   "lost": [],
+   "passed": true
+  },
+  "geom_v10->geom_v12": {
+   "baseline_matched": 502,
+   "retained": 502,
+   "lost": [],
+   "passed": true
+  }
+ }
+}

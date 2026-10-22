@@ -186,8 +186,18 @@ def replay_m12(rows, H, cfg):
         p4 = _np.array(quad, float)
         diag = max(math.dist(p4[a], p4[b]) for a in range(4) for b in range(a + 1, 4))
         tol = max(rf * diag, cfg.get("range_min_px", 4.0))
-        out = [e for e in out
-               if _cv2.pointPolygonTest(qa, (float(e["x"]), float(e["y"])), True) >= -tol]
+        win = int(cfg.get("range_window", 0))
+        by_fid = {pt[0]: (pt[1], pt[2]) for pt in traj}
+
+        def _keep(e):
+            fid = e["frame_id"] + 1
+            if win <= 0:
+                pts = [(float(e["x"]), float(e["y"]))]
+            else:
+                pts = [by_fid[f] for f in range(fid - win, fid + win + 1) if f in by_fid]
+            return (not pts) or any(
+                _cv2.pointPolygonTest(qa, (float(x), float(y)), True) >= -tol for x, y in pts)
+        out = [e for e in out if _keep(e)]
     return out
 
 

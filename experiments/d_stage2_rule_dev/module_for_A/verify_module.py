@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """验证 event_rules.py 与已验证回放（m12_eval.replay_m12 候选栈全配置）逐条一致。
 
-- 公开 15：带桌面几何（门+双判+固定范围门 range_frac=0.07 启用）；顺带复算 F1
+- 公开 15：带桌面几何（门+双判+固定范围门 range_frac=0.03/window=2 启用）；顺带复算 F1
 - 154：无几何；顺带复算（v2 标签，应 = 585/459/150 ≈ 0.658，范围门不生效）
 """
 import importlib.util
@@ -27,7 +27,7 @@ replay_m12 = m.replay_m12
 CFG = {"gate": 900, "F1": True, "F2": True, "F3": True, "D2": True, "D2_back": 5,
        "D_smin": 8.0, "D_ratio": 0.40, "D_smax": 50.0, "D_dmin": 2, "gate_quad": 4.0,
        "D3": True, "D3_ratio": 0.45, "D3_min": 3.0,
-       "range_frac": 0.07, "range_min_px": 4.0}
+       "range_frac": 0.03, "range_window": 2, "range_min_px": 4.0}
 
 V2 = Path("E:/pingpong-data/adjudicated_candidates_v2_20261013")
 RAW154 = Path("E:/pingpong-data/C_train154_20261011_v3/raw")
@@ -69,7 +69,7 @@ def main():
         fp += len(f_) + (len(mm_) - mv)
         fn += sum(1 for j in n_ if gts[j].get("valid", True))
     f1 = 2 * tp / (2 * tp + fp + fn)
-    print(f"公开15：逐条一致 = {ok}；模块 F1 复算 = {tp}/{fp}/{fn} = {f1:.3f}（应 77/30/15 ≈ 0.774：GT 角点 + 固定范围门 0.07；无范围门 0.744）")
+    print(f"公开15：逐条一致 = {ok}；模块 F1 复算 = {tp}/{fp}/{fn} = {f1:.3f}（GT 角点 + v1.2 范围门；无范围门 0.744）")
 
     # —— 154 ——
     ev2 = [json.loads(l) for l in
