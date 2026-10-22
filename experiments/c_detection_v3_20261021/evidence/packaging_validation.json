@@ -1,0 +1,241 @@
+{
+  "scope": "repackaging validation, not a new independent model evaluation",
+  "numerical_rule_AST_checks": [
+    "policy.py",
+    "admission_v2.py",
+    "curve_rescue.py",
+    "local_repair.py",
+    "model_input_decoder.py"
+  ],
+  "allowed_AST_changes": [
+    "relative imports",
+    "two event metadata fields"
+  ],
+  "GPU_frozen_rule_replays": [
+    {
+      "round": "r0_144_v3",
+      "video_id": "00_001",
+      "frames": 193
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "00_002",
+      "frames": 107
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "00_005",
+      "frames": 74
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "02_006",
+      "frames": 57
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "03_003",
+      "frames": 62
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "04_001",
+      "frames": 65
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "06_001",
+      "frames": 74
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "08_001",
+      "frames": 175
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "10_001",
+      "frames": 95
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "10_005",
+      "frames": 106
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "10_007",
+      "frames": 224
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "11_004",
+      "frames": 98
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "16_004",
+      "frames": 76
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "18_001",
+      "frames": 177
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "20_004",
+      "frames": 152
+    },
+    {
+      "round": "r0_144_v3",
+      "video_id": "v000085",
+      "frames": 208
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "00_001",
+      "frames": 193
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "02_006",
+      "frames": 57
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "03_003",
+      "frames": 62
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "04_001",
+      "frames": 65
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "06_001",
+      "frames": 74
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "08_001",
+      "frames": 175
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "10_001",
+      "frames": 95
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "11_004",
+      "frames": 98
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "16_004",
+      "frames": 76
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "18_001",
+      "frames": 177
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "20_004",
+      "frames": 152
+    },
+    {
+      "round": "r1_144_v3",
+      "video_id": "v000085",
+      "frames": 208
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "00_001",
+      "frames": 193
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "02_006",
+      "frames": 57
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "03_003",
+      "frames": 62
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "04_001",
+      "frames": 65
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "06_001",
+      "frames": 74
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "08_001",
+      "frames": 175
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "10_001",
+      "frames": 95
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "11_004",
+      "frames": 98
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "16_004",
+      "frames": 76
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "18_001",
+      "frames": 177
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "20_004",
+      "frames": 152
+    },
+    {
+      "round": "r2_144_v3",
+      "video_id": "v000085",
+      "frames": 208
+    }
+  ],
+  "fresh_CPU_full_lifecycles": [
+    {
+      "video_id": "03_003",
+      "frames": 62,
+      "tracks_equal_frozen_CPU": true,
+      "final_events_equal_frozen_CPU": true
+    },
+    {
+      "video_id": "20_004",
+      "frames": 152,
+      "tracks_equal_frozen_CPU": true,
+      "final_events_equal_frozen_CPU": true
+    },
+    {
+      "video_id": "06_001",
+      "frames": 74,
+      "tracks_equal_frozen_CPU": true,
+      "final_events_equal_frozen_CPU": true
+    }
+  ],
+  "original_framework_integrity": "passed before and after installation and before execution",
+  "assets_and_middle_model_warmup": "CPU passed",
+  "GPU_rerun_for_packaging": false,
+  "run_v3_wrapper_used": true,
+  "protected_framework_changed": false
+}

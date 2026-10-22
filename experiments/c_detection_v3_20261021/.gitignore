@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+payload/participant/weights/*
+!payload/participant/weights/ball_v3.onnx
+!payload/participant/weights/ball_v3_middle.onnx

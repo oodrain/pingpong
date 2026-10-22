@@ -1,0 +1,59 @@
+{
+  "modules": {
+    "policy.py": {
+      "frozen_source": {
+        "sha256": "98227cbcecbc5476783a35390372b1546c41a6cbb987790423e1a9e020df6841",
+        "bytes": 1134
+      },
+      "published": {
+        "sha256": "98227cbcecbc5476783a35390372b1546c41a6cbb987790423e1a9e020df6841",
+        "bytes": 1134
+      }
+    },
+    "admission_v2.py": {
+      "frozen_source": {
+        "sha256": "62d6511952b5269d46368e01451fa4dbde6c596be8750ea49ad5b6175ce79708",
+        "bytes": 3055
+      },
+      "published": {
+        "sha256": "62d6511952b5269d46368e01451fa4dbde6c596be8750ea49ad5b6175ce79708",
+        "bytes": 3055
+      }
+    },
+    "curve_rescue.py": {
+      "frozen_source": {
+        "sha256": "e7bf269c237d0cf81a14b753148b826ae35b6e0883f0bbe4e803e7172e042060",
+        "bytes": 5202
+      },
+      "published": {
+        "sha256": "ad2054fef6973517735b897a434a45206e5db8d021c98ca69dd0964e7c40d2e8",
+        "bytes": 5193
+      }
+    },
+    "local_repair.py": {
+      "frozen_source": {
+        "sha256": "5c1ec55ea54c74c7c18f658df895bc7468733194cbc0828c1ecbc4f84b08572a",
+        "bytes": 3425
+      },
+      "published": {
+        "sha256": "357ff2e8218e0ed811eea14b0b64b0104d946759ce2dfaacf0d2b3394d4e7e90",
+        "bytes": 3308
+      }
+    },
+    "model_input_decoder.py": {
+      "frozen_source": {
+        "sha256": "ae5ff4395c7e07c0287e91498be06c5f3618b6cd2dca915a8f82af39cd75bcb5",
+        "bytes": 2248
+      },
+      "published": {
+        "sha256": "ae5ff4395c7e07c0287e91498be06c5f3618b6cd2dca915a8f82af39cd75bcb5",
+        "bytes": 2248
+      }
+    }
+  },
+  "changes": [
+    "package-relative imports",
+    "correct stale event-compatibility description fields; enriched tracks feed unchanged TCN"
+  ],
+  "numeric_rule_changes": false
+}
