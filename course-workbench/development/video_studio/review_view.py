@@ -3,10 +3,12 @@ from tkinter import StringVar, ttk
 from uuid import uuid4
 
 from core import _Lock, _read, _sha, _write
+from flight_review import FLIGHT_HINTS, flight_hints
 
 
 STATE_NAMES = {"pending": "待复核", "confirmed": "已确认", "rejected": "已驳回", "uncertain": "疑难"}
 STATE_COLORS = {"pending": "#ffc270", "confirmed": "#81ecc3", "rejected": "#a6b6c7", "uncertain": "#d6b7fc"}
+AIRBORNE = "疑似空中"
 
 
 class ReviewView(ttk.Frame):
@@ -16,6 +18,7 @@ class ReviewView(ttk.Frame):
         self.path = None
         self.manual_path = None
         self.predictions = []
+        self.flight = {}
         self.state = {"decisions": {}, "manual": []}
         self.rows = {}
         self.selected_id = None
@@ -55,7 +58,7 @@ class ReviewView(ttk.Frame):
         for label, command in (("‹  上一处", lambda: self.navigate(-1)), ("下一处  ›", lambda: self.navigate(1))):
             ttk.Button(nav, text=label, command=command, style="Quiet.TButton").pack(side="left", padx=(0, 3))
         ttk.Button(nav, text="回看片段", command=self.preview_selected, style="Small.TButton").pack(side="left")
-        picker = ttk.Combobox(nav, textvariable=self.filter, values=("全部状态", *STATE_NAMES.values()),
+        picker = ttk.Combobox(nav, textvariable=self.filter, values=("全部状态", *STATE_NAMES.values(), AIRBORNE),
                               width=8, state="readonly")
         picker.pack(side="right")
         picker.bind("<<ComboboxSelected>>", self.refilter)
@@ -67,7 +70,7 @@ class ReviewView(ttk.Frame):
             if state != "pending":
                 self.tree.tag_configure(state, foreground=color)
         for name, label, width in (("frame", "原片帧", 58), ("source", "来源", 82),
-                                   ("status", "复核状态", 72), ("position", "台面", 70)):
+                                   ("status", "复核状态", 72), ("position", "投影状态", 70)):
             self.tree.heading(name, text=label)
             self.tree.column(name, width=width, minwidth=38, anchor="center")
         scrollbar = ttk.Scrollbar(area, orient="vertical", command=self.tree.yview)
@@ -94,6 +97,7 @@ class ReviewView(ttk.Frame):
     def clear(self):
         self.path = self.manual_path = self.selected_id = None
         self.predictions = []
+        self.flight = {}
         self.state = {"decisions": {}, "manual": []}
         self.cancel_add()
         self.show_rows([])
@@ -106,6 +110,7 @@ class ReviewView(ttk.Frame):
         self.manual_path = directory / f"{reader.sha256}_manual.json" if shared_manual else self.path
         self.predictions = [dict(row, review_id=f"prediction-{i}", source="prediction")
                             for i, row in enumerate(predictions)]
+        self.flight = flight_hints(predictions, self.studio.review_tracks, self.studio.review_times, reader.width)
         self.state = self.read_state()
         self.selected_id = next((row["review_id"] for row in self.predictions
                                  if row["frame_id"] == self.studio.table_view.frame_id), None)
@@ -144,9 +149,12 @@ class ReviewView(ttk.Frame):
             manual = original["source"] == "manual"
             row = dict(original, status=decisions.get(key, "confirmed" if manual else "pending"),
                        position_source="manual" if manual else "prediction")
+            hint = self.flight.get(original["frame_id"]) if not manual else None
+            if hint is not None:
+                row["flight_hint"] = hint
             if key in corrections:
                 row.update(corrections[key], position_source="corrected", original_frame_id=original["frame_id"])
-            elif key in adjustments:
+            elif key in adjustments and hint is None:
                 row.update(adjustments[key], position_source="track", original_frame_id=original["frame_id"])
             rows.append(row)
         return sorted(rows, key=lambda row: row["frame_id"])
@@ -162,10 +170,12 @@ class ReviewView(ttk.Frame):
         active = self.filter.get()
         self.tree.delete(*self.tree.get_children())
         for key, row in self.rows.items():
-            if active != "全部状态" and STATE_NAMES[row["status"]] != active:
+            if active == AIRBORNE and row["map_note"] != AIRBORNE:
+                continue
+            if active not in ("全部状态", AIRBORNE) and STATE_NAMES[row["status"]] != active:
                 continue
             source = choices[row["position_source"]]
-            position = row["side"] if row["inside"] else "台外" if row["u"] is not None else "未定位"
+            position = row["side"] or row["map_note"]
             frame_id = self.studio.source_frame_id(row["frame_id"])
             self.tree.insert("", "end", iid=key, values=(f"f{frame_id}", source, STATE_NAMES[row["status"]], position),
                              tags=(row["status"],))
@@ -221,6 +231,8 @@ class ReviewView(ttk.Frame):
             frame = self.studio.source_frame_id(row["frame_id"])
             original = row.get("original_frame_id")
             detail = f" · 原预测 f{self.studio.source_frame_id(original)}" if original is not None else ""
+            if row.get("flight_hint") and row["status"] in ("pending", "uncertain"):
+                detail += f" · {FLIGHT_HINTS[row['flight_hint']]}"
             self.note.set(f"f{frame} · {STATE_NAMES[row['status']]}{detail}")
         self.studio.draw_timeline(refresh=True)
 

@@ -32,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "annotation"))
 
 from core import (ROOT, VideoEntry, SequentialVideo, SessionStore, _read, _write,
                   discover_catalog, entry_from_path, load_reference)
+from cpu_limits import CPU_LIMITS, DEFAULT_CPU_LIMIT, LIMIT_FAILED
 from overlays import interval_of, load_history, read_own_session, timed_tail, trajectory_segments
 import review_theme
 from review_playback import ReviewPlayback
@@ -292,6 +293,15 @@ class Studio(tk.Tk):
         ttk.Label(bar, textvariable=self.status, style="Workspace.TLabel" if self.review_mode else "Muted.TLabel").pack(side="left")
         if self.review_mode:
             ttk.Label(bar, textvariable=self.save_status, style="Workspace.TLabel").pack(side="right")
+            self.cpu_limit = tk.IntVar(value=DEFAULT_CPU_LIMIT)
+            self.cpu_limit_text = tk.StringVar(value=f"CPU 上限 {DEFAULT_CPU_LIMIT}%")
+            self.cpu_limit_button = ttk.Menubutton(bar, textvariable=self.cpu_limit_text)
+            limit_menu = self.review_layout.make_menu(self.cpu_limit_button)
+            for percent in CPU_LIMITS:
+                limit_menu.add_radiobutton(label=f"{percent}%", value=percent, variable=self.cpu_limit,
+                                           command=self._change_cpu_limit)
+            self.cpu_limit_button.configure(menu=limit_menu)
+            self.cpu_limit_button.pack(side="right", padx=(0, 8))
             self.auto_analysis = tk.BooleanVar(value=True)
             self.auto_analysis_button = ttk.Checkbutton(bar, text="导入后分析", variable=self.auto_analysis,
                                                           command=self._toggle_auto_analysis)
@@ -605,6 +615,10 @@ class Studio(tk.Tk):
             if not isinstance(preferences, dict):
                 raise ValueError("Expected an analysis preferences object")
             self.auto_analysis.set(preferences.get("auto_analysis") is not False)
+            limit = preferences.get("cpu_limit_percent")
+            if type(limit) is int and limit in CPU_LIMITS:
+                self.cpu_limit.set(limit)
+                self.cpu_limit_text.set(f"CPU 上限 {limit}%")
             configured = preferences.get("runtime")
             if self.analysis_runtime is None and configured:
                 runtime = Path(configured)
@@ -618,6 +632,7 @@ class Studio(tk.Tk):
             _write(self.analysis_preferences_path, {
                 "runtime": str(self.analysis_runtime) if self.analysis_runtime is not None else None,
                 "auto_analysis": self.auto_analysis.get(),
+                "cpu_limit_percent": self.cpu_limit.get(),
             })
         except OSError as error:
             self.error(f"无法记住 CPU 分析设置：{error}")
@@ -646,6 +661,11 @@ class Studio(tk.Tk):
         self.analyze_button.configure(text="CPU 分析" if configured else "配置 CPU",
                                       state="normal" if can_run or not configured else "disabled")
         self.auto_analysis_button.configure(state="normal" if configured else "disabled")
+        self.cpu_limit_button.configure(state="disabled" if self.cpu_busy else "normal")
+
+    def _change_cpu_limit(self):
+        self.cpu_limit_text.set(f"CPU 上限 {self.cpu_limit.get()}%")
+        self._save_analysis_preferences()
 
     def _toggle_auto_analysis(self):
         self._save_analysis_preferences()
@@ -821,13 +841,17 @@ class Studio(tk.Tk):
         if self.analysis_runtime is not None:
             worker = self.analysis_runtime / "development/video_studio/local_analysis.py"
             executable = self.analysis_runtime / "runtime/python.exe"
-        args = [str(executable), "-E", "-s", "-B", "-X", "utf8", "-u", str(worker),
+        percent = self.cpu_limit.get() if self.review_mode else DEFAULT_CPU_LIMIT
+        limiter = Path(__file__).with_name("cpu_limits.py")
+        args = [str(executable), "-E", "-s", "-B", "-X", "utf8", "-u", str(limiter), str(percent), str(worker),
                 "--video", str(self.entry.path), "--workspace", str(self.output),
                 "--video-id", self.entry.video_id, "--run-id", identifier, "--sha256", self.reader.sha256]
         self.cpu_busy = True
         self.cpu_generation = generation
         self.analyze_button.configure(state="disabled")
-        self.status.set("正在启动本地 CPU 分析…")
+        if self.review_mode:
+            self._update_cpu_controls()
+        self.status.set(f"正在启动 CPU 分析 · 上限 {percent}%")
 
         def analyze():
             log.parent.mkdir(parents=True, exist_ok=True)
@@ -836,12 +860,16 @@ class Studio(tk.Tk):
                 text=True, encoding="utf-8", errors="replace",
                 creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
             ) as process:
+                limit_failed = False
                 for line in process.stdout:
                     output.write(line)
                     output.flush()
+                    limit_failed |= line.startswith(LIMIT_FAILED)
                     if line.startswith("正在"):
                         self.results.put(("cpu_status", generation, line.strip()))
                 if process.wait():
+                    if limit_failed:
+                        raise RuntimeError(f"Windows 未能启用 CPU 限载，分析未启动。诊断日志：\n{log}")
                     raise RuntimeError(f"本地分析失败。诊断日志：\n{log}")
 
         self.analysis_executor.submit(analyze).add_done_callback(
@@ -935,7 +963,10 @@ class Studio(tk.Tk):
                             else:
                                 self._load_cpu_results()
                             self.render()
-                            self.status.set(f"分析完成 · {self.cpu_result[1]['event_count']} 个预测落点")
+                            total = self.cpu_result[1]["event_count"]
+                            hints = len(self.review_view.flight) if self.review_mode else 0
+                            suffix = f" · {hints} 个疑似空中" if hints else ""
+                            self.status.set(f"分析完成 · {total} 个触台候选{suffix}")
                     except Exception as e:
                         if generation == self.generation or not self.review_mode:
                             self.error(str(e))
@@ -1544,7 +1575,9 @@ class Studio(tk.Tk):
         self.table_view.select(self.review_view.selected_id)
         self.references["imported"] = [dict(
             row, event_type="table_bounce", valid=row["status"] != "rejected",
-            review_color=STATE_COLORS[row["status"]], review_label=STATE_NAMES[row["status"]],
+            review_color=STATE_COLORS[row["status"]],
+            review_label=("疑似空中" if row.get("flight_hint") and row["status"] == "pending"
+                          else STATE_NAMES[row["status"]]),
         ) for row in self.table_view.rows]
         self.render()
 
@@ -2060,9 +2093,12 @@ class Studio(tk.Tk):
         if self.table_view is not None:
             messagebox.showinfo("触台复核工作台",
                                 "首次点击「配置 CPU」选择包含模型的运行目录。启用「导入后分析」时，新导入的录像会自动分析。\n\n"
+                                "底部「CPU 上限」可以选 20%、40% 或 60%，默认 40%，用于下一次后台分析。\n\n"
                                 "点击时间轴圆点、球桌落点或清单中的事件跳回原片。时间轴随清单状态筛选。使用确认、驳回、标疑难记录判断。"
                                 "要补记漏报，先点补记按钮，定位原片帧后在左侧画面点击球心。复核自动保存。\n\n"
                                 "俯视图默认随播放只画最新出现的一个落点，也可切换仅触台帧或全部落点。"
+                                "空心标记为候选，实心为已确认。疑似空中事件保留在清单，确认后才可投影。"
+                                "俯视图依赖固定机位的台面标定。换机位或镜头移动后需要重新标定。"
                                 "打开「台面线」可在原画面检查四角连线，重标时自动显示。"
                                 "原视频上滚轮以光标为中心缩放，右键拖动，A/D 逐帧。"
                                 "点「适应画面」恢复全图，Shift+滚轮也可逐帧。\n\n"
@@ -2071,7 +2107,7 @@ class Studio(tk.Tk):
                                 "布局菜单支持独立弹出、停靠、隐藏和保存。拖动分隔条可以调整大小。\n\n"
                                 "重标四角时，先选 A 端的一个角，沿同一条长边到 B 端，"
                                 "横跨 B 端到第三角，最后沿另一条长边回到 A 端。"
-                                "四个角在同一帧上选取。A 端显示在示意图左侧。",
+                                "四个角在同一帧上选取。核对原片的四边、球网底部和 A/B 端后，点击「确认标定」。A 端显示在示意图左侧。",
                                 parent=self)
             return
         if self.portable:

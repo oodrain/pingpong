@@ -8,14 +8,14 @@ import numpy as np
 
 from core import _read, _write
 from landing_refinement import adjacent_observations
-from review_view import STATE_COLORS
+from review_view import AIRBORNE, STATE_COLORS
 import review_theme as ui
 from review_geometry.table_geometry import (
     TABLE_L, TABLE_W, GeometryError, build_plane,
 )
 
 
-LABELS = ("A端 · 起点", "B端 · 同一长边", "B端 · 另一长边", "A端 · 另一长边")
+LABELS = ("A 端的一个台角", "同一长边另一头的 B 端台角", "B 端剩下的台角", "A 端剩下的台角")
 FOLLOW = "随播放（单点）"
 AT_EVENT = "仅触台帧"
 OVERVIEW = "全部落点"
@@ -26,12 +26,23 @@ def project_events(plane, events):
     for event in events:
         row = dict(event)
         u = v = None
-        if plane is not None:
+        status = row.get("status", "pending")
+        reason = "未定位"
+        if status == "rejected":
+            reason = "已驳回"
+        elif status != "confirmed" and row.get("flight_hint"):
+            reason = AIRBORNE
+        elif status == "uncertain":
+            reason = "疑难待定"
+        elif plane is not None:
             try:
                 u, v = plane.project(row["x"], row["y"])
+                if not (0 <= u <= TABLE_L and 0 <= v <= TABLE_W):
+                    reason = "投影台外"
             except GeometryError:
                 pass
-        row.update(u=u, v=v, inside=u is not None and 0 <= u <= TABLE_L and 0 <= v <= TABLE_W)
+        row.update(u=u, v=v, inside=u is not None and 0 <= u <= TABLE_L and 0 <= v <= TABLE_W,
+                   map_note=reason)
         row["side"] = ("A 端" if u < TABLE_L / 2 else "B 端") if row["inside"] else None
         rows.append(row)
     return rows
@@ -79,8 +90,10 @@ class TableView(ttk.Frame):
         self.corners = []
         self.net = []
         self.plane = None
+        self.verified = False
         self.selected_id = None
         self.pending = None
+        self.draft_net = []
         self.frame_id = 0
         self.saved_path = None
         self.note = tk.StringVar(value="正在载入已有预测…")
@@ -91,20 +104,24 @@ class TableView(ttk.Frame):
         self.mark_button.pack(side="left")
         self.flip_button = ttk.Button(buttons, text="交换 A/B", style="Quiet.TButton", command=self.flip, state="disabled")
         self.flip_button.pack(side="left", padx=5)
-        self.calibration_button = ttk.Button(buttons, text="回到标定帧", style="Quiet.TButton",
-                                             command=lambda: self.go(self.frame_id), state="disabled")
+        self.calibration_button = ttk.Button(buttons, text="检查标定", style="Quiet.TButton",
+                                             command=self.check_saved, state="disabled")
         self.calibration_button.pack(side="left")
-        ttk.Checkbutton(buttons, text="轨迹校正", variable=self.refine, command=studio.refresh_reviews).pack(side="right")
+        self.refine_button = ttk.Checkbutton(buttons, text="轨迹校正", variable=self.refine,
+                                             command=studio.refresh_reviews)
+        self.refine_button.pack(side="right")
+        self.undo_button = ttk.Button(buttons, text="撤销角点", style="Quiet.TButton", command=self.undo_corner)
+        self.apply_button = ttk.Button(buttons, text="确认标定", style="Small.TButton", command=self.accept_marking)
         self.canvas.pack(fill="both", expand=True)
 
     def clear(self):
         self.plane = self.pending = self.selected_id = self.saved_path = None
         self.frame_id, self.source_frame = 0, -1
         self.corners, self.net, self.predictions = [], [], []
+        self.verified = False
+        self.draft_net = []
         self.adjustments = {}
-        self.mark_button.configure(text="标定四角", state="disabled")
-        self.flip_button.configure(state="disabled")
-        self.calibration_button.configure(state="disabled")
+        self.sync_controls()
         self.set_events([])
 
     def load(self, reader, predictions, case=None):
@@ -113,21 +130,26 @@ class TableView(ttk.Frame):
         self.events = self.predictions
         self.saved_path = self.studio.output / "table_calibration" / (reader.sha256 + ".json")
         saved = self.saved_path.is_file()
-        source = _read(self.saved_path) if saved else case
-        if source is not None:
-            self.set_plane(source["corners"], source["frame_id"], save=False)
-        else:
+        error_reading = False
+        try:
+            source = _read(self.saved_path) if saved else case
+            if source is not None:
+                self.set_plane(source["corners"], source["frame_id"], save=False,
+                               verified=not saved or source.get("verified") is True)
+        except (OSError, ValueError, TypeError, KeyError, np.linalg.LinAlgError):
+            error_reading = True
+        if self.plane is None:
             self.set_events(predictions)
-        self.mark_button.configure(state="normal")
-        if saved:
-            self.note.set("已载入你的四角标定。A 端在示意图左侧。")
+            if error_reading:
+                self.note.set("旧标定无法读取，请重新标定四角。")
+        self.sync_controls()
 
     def set_predictions(self, predictions):
         self.predictions = predictions
         if self.plane is not None:
             self.update_adjustments()
 
-    def set_plane(self, corners, frame_id, *, save):
+    def geometry_for(self, corners, frame_id):
         reader = self.studio.reader
         if type(frame_id) is not int or not 0 <= frame_id < reader.n_frames:
             raise ValueError("标定帧超出源视频范围。")
@@ -135,17 +157,24 @@ class TableView(ttk.Frame):
         if (points.shape != (4, 2) or not np.isfinite(points).all()
                 or (points < 0).any() or (points >= [reader.width, reader.height]).any()):
             raise ValueError("四个台角须落在原图范围内。")
-        plane = build_plane(dict(corners=points, edge01_axis="length"))
+        edges = points - np.roll(points, 1, axis=0)
+        if min(np.linalg.norm(edges, axis=1)) < max(5, .008 * min(reader.width, reader.height)):
+            raise ValueError("相邻角点太近。")
+        try:
+            plane = build_plane(dict(corners=points, edge01_axis="length"))
+        except GeometryError as error:
+            raise ValueError("四角连线交叉或形状异常，请沿台面外沿依次点击。") from error
         inverse = np.linalg.inv(plane.matrix)
         net = [inverse @ [TABLE_L / 2, across, 1] for across in (0, TABLE_W)]
         net = [(float(p[0] / p[2]), float(p[1] / p[2])) for p in net]
+        return points.tolist(), plane, net
+
+    def set_plane(self, corners, frame_id, *, save, verified=True):
+        points, plane, net = self.geometry_for(corners, frame_id)
         if save:
-            _write(self.saved_path, dict(frame_id=frame_id, corners=points.tolist()))
-        self.corners, self.frame_id, self.net = points.tolist(), frame_id, net
-        self.plane = plane
-        self.mark_button.configure(text="重标四角")
-        self.flip_button.configure(state="normal")
-        self.calibration_button.configure(state="normal")
+            _write(self.saved_path, dict(frame_id=frame_id, corners=points, verified=verified))
+        self.corners, self.frame_id, self.net = points, frame_id, net
+        self.plane, self.verified = plane, verified
         self.update_adjustments()
         if self.studio.review_view.path is not None:
             self.studio.refresh_reviews()
@@ -154,46 +183,78 @@ class TableView(ttk.Frame):
 
     def update_adjustments(self):
         reader = self.studio.reader
-        self.adjustments = adjacent_observations(self.predictions, self.studio.review_tracks, self.plane,
-                                                 self.corners, (reader.width, reader.height))
+        self.adjustments = (adjacent_observations(self.predictions, self.studio.review_tracks, self.plane,
+                                                  self.corners, (reader.width, reader.height))
+                            if self.verified else {})
 
     def set_events(self, events):
         self.events = events
-        self.rows = project_events(self.plane, events)
+        self.rows = project_events(self.plane if self.verified else None, events)
         self.source_frames = [row["frame_id"] for row in self.rows]
-        shown = sum(row["inside"] for row in self.rows)
-        if self.plane is None and self.pending is None:
-            self.note.set("导入视频后，标定球桌四角即可显示俯视落点。")
-        elif self.pending is None or len(self.pending) == 4:
-            adjusted = sum(row.get("position_source") == "track" for row in self.rows)
-            frame_id = self.studio.source_frame_id(self.frame_id)
-            self.note.set(f"标定 f{frame_id} · {shown}/{len(self.rows)} 点在台内 · {adjusted} 点轨迹校正")
         self.draw()
+
+    def sync_controls(self):
+        editing = self.pending is not None
+        has_plane = self.plane is not None
+        self.mark_button.configure(text="取消标定" if editing else "重标四角" if has_plane else "标定四角",
+                                   state="normal" if self.saved_path is not None else "disabled")
+        self.flip_button.configure(state="normal" if self.verified else "disabled")
+        self.calibration_button.configure(state="normal" if has_plane else "disabled")
+        if editing:
+            for button in (self.flip_button, self.calibration_button, self.refine_button):
+                button.pack_forget()
+            if not self.undo_button.winfo_manager():
+                self.undo_button.pack(side="left", padx=5)
+                self.apply_button.pack(side="left")
+            self.undo_button.configure(state="normal" if self.pending else "disabled")
+            self.apply_button.configure(state="normal" if self.draft_net else "disabled")
+        else:
+            self.undo_button.pack_forget()
+            self.apply_button.pack_forget()
+            if not self.flip_button.winfo_manager():
+                self.flip_button.pack(side="left", padx=5)
+                self.calibration_button.pack(side="left")
+                self.refine_button.pack(side="right")
+
+    def mark_hint(self):
+        if len(self.pending) == 4:
+            self.note.set("核对四边贴合台面、虚线对齐球网底部，且 ①④ 为 A 端。正确后点「确认标定」。")
+        else:
+            step = len(self.pending)
+            self.note.set(f"{step + 1}/4  请点{LABELS[step]}。选择台面边线的交点。")
+
+    def begin_marking(self, corners, frame):
+        s = self.studio
+        if s.review_view.adding:
+            s.review_view.cancel_add()
+        s.pause()
+        self.pending = list(corners)
+        self.mark_frame = frame
+        self.draft_net = self.net if corners else []
+        self.sync_controls()
+        self.mark_hint()
+        self.draw()
+        s.render()
+
+    def check_saved(self):
+        self.go(self.frame_id)
+        self.begin_marking(self.corners, self.frame_id)
 
     def toggle_marking(self):
         if self.pending is not None:
             self.pending = None
-            has_plane = self.plane is not None
-            self.mark_button.configure(text="重标四角" if has_plane else "标定四角")
-            self.flip_button.configure(state="normal" if has_plane else "disabled")
+            self.draft_net = []
+            self.sync_controls()
             self.set_events(self.events)
             self.studio.render()
             return
         s = self.studio
         if s.loading or s.reading or s.image_bgr is None:
             return
-        if s.review_view.adding:
-            s.review_view.cancel_add()
-        s.pause()
-        self.pending = []
-        self.mark_frame = s.frame
-        self.mark_button.configure(text="取消标定")
-        self.flip_button.configure(state="disabled")
-        self.note.set("同一帧按四角顺序点击：先选 A 端起点，再沿长边到 B 端。")
-        s.render()
+        self.begin_marking([], s.frame)
 
     def add_corner(self, point, frame_id):
-        if point is None:
+        if point is None or len(self.pending) == 4:
             return
         if frame_id != self.mark_frame:
             frame_id = self.studio.source_frame_id(self.mark_frame)
@@ -202,17 +263,37 @@ class TableView(ttk.Frame):
         self.pending.append(point)
         if len(self.pending) == 4:
             try:
-                self.set_plane(self.pending, frame_id, save=True)
-            except (ValueError, OSError, np.linalg.LinAlgError) as error:
-                self.pending.clear()
-                self.note.set(f"标定失败，请从 A 端重新点击四角。{error}")
+                _, _, self.draft_net = self.geometry_for(self.pending, frame_id)
+            except (ValueError, np.linalg.LinAlgError) as error:
+                self.pending.pop()
+                self.note.set(str(error))
             else:
-                self.pending = None
-                self.mark_button.configure(text="重标四角")
-                self.flip_button.configure(state="normal")
+                self.mark_hint()
         else:
-            self.note.set(f"已标 {len(self.pending)}/4。下一点 {LABELS[len(self.pending)]}。")
+            self.mark_hint()
+        self.sync_controls()
+        self.draw()
         self.studio.render()
+
+    def undo_corner(self):
+        self.pending.pop()
+        self.draft_net = []
+        self.mark_hint()
+        self.sync_controls()
+        self.draw()
+        self.studio.render()
+
+    def accept_marking(self):
+        if self.studio.frame != self.mark_frame or self.studio.reading:
+            self.go(self.mark_frame)
+            self.note.set("已返回标定帧，请核对原画面后再确认。")
+            return
+        try:
+            self.set_plane(self.pending, self.mark_frame, save=True)
+        except (ValueError, OSError, np.linalg.LinAlgError) as error:
+            self.note.set(f"无法保存标定。{error}")
+            return
+        self.toggle_marking()
 
     def flip(self):
         try:
@@ -266,6 +347,18 @@ class TableView(ttk.Frame):
         c = self.canvas
         c.delete("all")
         self.hit_points = []
+        index = self.marker_index() if self.mode.get() != OVERVIEW else -1
+        if self.pending is None:
+            if self.plane is None:
+                self.note.set("固定机位：确认台面四角后显示落点。")
+            elif not self.verified:
+                self.note.set("旧标定待确认，请点「检查标定」。")
+            elif index >= 0 and not self.rows[index]["inside"]:
+                row = self.rows[index]
+                frame = self.studio.source_frame_id(row["frame_id"])
+                self.note.set(f"f{frame} · {row['map_note']}，请在原片复核。")
+            else:
+                self.note.set(f"标定 f{self.studio.source_frame_id(self.frame_id)} · 空心为候选，实心为已确认。")
         width = min(c.winfo_width() - 36, (c.winfo_height() - 34) * TABLE_L / TABLE_W)
         if width < 30:
             return
@@ -284,12 +377,17 @@ class TableView(ttk.Frame):
         c.create_line(left, top + height / 2, right, top + height / 2, fill="#668890")
         midpoint = left + width / 2
         c.create_line(midpoint, top - 4, midpoint, bottom + 4, fill="#9ab8c0", width=1, dash=(3, 3))
-        c.create_text(left + width / 4, top - 13, text="A 端", fill=ui.MUTED, font=("Microsoft YaHei UI", 9))
-        c.create_text(right - width / 4, top - 13, text="B 端", fill=ui.MUTED, font=("Microsoft YaHei UI", 9))
+        c.create_text(left + width / 4, top - 13, text="A 端", fill="#82e1cf", font=("Microsoft YaHei UI", 9))
+        c.create_text(right - width / 4, top - 13, text="B 端", fill="#f3bd88", font=("Microsoft YaHei UI", 9))
+        if self.pending is not None:
+            for number, (x, y) in enumerate(((left, top), (right, top), (right, bottom), (left, bottom)), 1):
+                color = "#82e1cf" if number in (1, 4) else "#f3bd88"
+                c.create_oval(x - 9, y - 9, x + 9, y + 9, fill=ui.CANVAS, outline=color)
+                c.create_text(x, y, text=str(number), fill=color, font=(ui.NUMERIC, 9, "bold"))
+            return
         if self.mode.get() == OVERVIEW:
             displayed = sorted(self.rows, key=lambda item: item.get("review_id", "") == self.selected_id)
         else:
-            index = self.marker_index()
             displayed = () if index < 0 else (self.rows[index],)
         for row in displayed:
             if not row["inside"]:
@@ -305,13 +403,8 @@ class TableView(ttk.Frame):
                 c.create_oval(x - 8, y - 8, x + 8, y + 8, outline=ui.ACCENT)
                 c.create_line(x - 12, y, x + 12, y, fill=ui.ACCENT)
                 c.create_line(x, y - 12, x, y + 12, fill=ui.ACCENT)
-            if status == "rejected":
-                c.create_line(x - radius, y - radius, x + radius, y + radius, fill=color, width=2)
-                c.create_line(x + radius, y - radius, x - radius, y + radius, fill=color, width=2)
-            else:
-                dot = 2 if active else radius
-                c.create_oval(x - dot, y - dot, x + dot, y + dot, fill=color,
-                              outline="#102f36", width=1)
+            c.create_oval(x - radius, y - radius, x + radius, y + radius,
+                          fill=color if status == "confirmed" else "", outline=color, width=1.5)
             prefix = "+" if row.get("source") == "manual" else ""
             label_y = y - 19 if y > top + 24 else y + 19
             frame_id = self.studio.source_frame_id(row["frame_id"])
@@ -326,19 +419,22 @@ class TableView(ttk.Frame):
         if self.pending is not None and frame_id != self.mark_frame:
             return
         corners = self.pending if self.pending is not None else self.corners
+        net = self.draft_net if self.pending is not None else self.net
         for index, corner in enumerate(corners):
             point = locate(*corner)
             if not point:
                 continue
             x, y = point
-            canvas.create_oval(x - 4, y - 4, x + 4, y + 4, fill="#50ffdf", outline="#123b48")
-            canvas.create_text(x, y - 12, text=f"{index + 1}{LABELS[index][0]}", fill="white",
+            end = ("A", "B", "B", "A")[index]
+            color = "#82e1cf" if end == "A" else "#f3bd88"
+            canvas.create_oval(x - 4, y - 4, x + 4, y + 4, fill=color, outline="#123b48")
+            canvas.create_text(x, y - 12, text=f"{index + 1}{end}", fill=color,
                                font=("Segoe UI", 10, "bold"))
             if index or len(corners) == 4:
                 previous = locate(*corners[index - 1])
                 if previous:
-                    canvas.create_line(*previous, *point, fill="#50ffdf", width=2)
-        if self.pending is None and self.net:
-            a, b = [locate(*point) for point in self.net]
+                    canvas.create_line(*previous, *point, fill=color if index in (0, 2) else "#e0f2f3", width=2)
+        if net:
+            a, b = [locate(*point) for point in net]
             if a and b:
-                canvas.create_line(*a, *b, fill="#50ffdf", width=2, dash=(4, 4))
+                canvas.create_line(*a, *b, fill="#f6d77f", width=2, dash=(5, 4))
