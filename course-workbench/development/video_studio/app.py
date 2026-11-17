@@ -56,12 +56,15 @@ TRAIL_STROKES = (("#2b505b", 1.0), ("#376472", 1.2), ("#447d89", 1.5), ("#5296a1
 
 
 class Studio(tk.Tk):
-    def __init__(self, output: Path, initial_video=None, portable=False, table_demo=None):
+    def __init__(self, output: Path, initial_video=None, portable=False, table_demo=None, review=False, analysis_runtime=None):
         super().__init__()
         self.portable = portable
-        self.table_demo = table_demo
-        self.source_frame_offset = (table_demo or {}).get("source_frame_offset", 0)
-        self.source_time_offset = (table_demo or {}).get("source_time_offset", 0)
+        self.review_mode = review or table_demo is not None
+        self.demo_case = table_demo
+        self.active_demo = None
+        self.analysis_runtime = analysis_runtime
+        self.source_frame_offset = self.source_time_offset = 0
+        self.review_tracks, self.review_times = [], {}
         self.table_view = None
         self.review_view = None
         self.review_layout = None
@@ -71,8 +74,8 @@ class Studio(tk.Tk):
         self.cpu_busy = False
         self.cpu_result = None
         self.cpu_track_frames = []
-        self.title("Pingpong · 触台复核工作台" if table_demo else "Pingpong · 视频工作台")
-        if portable or table_demo:
+        self.title("Pingpong · 触台复核工作台" if self.review_mode else "Pingpong · 视频工作台")
+        if portable or self.review_mode:
             width = max(900, min(1260, self.winfo_screenwidth() - 72))
             height = max(610, min(820, self.winfo_screenheight() - 120))
             self.geometry(f"{width}x{height}")
@@ -80,12 +83,12 @@ class Studio(tk.Tk):
         else:
             self.geometry("1460x900")
             self.minsize(1160, 760)
-        self.configure(bg=review_theme.BACKGROUND if table_demo else BG)
+        self.configure(bg=review_theme.BACKGROUND if self.review_mode else BG)
         self.output = output
         self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="video-decode")
         self.analysis_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="video-analysis")
         self.results = queue.Queue()
-        self.catalog = [] if portable or table_demo else discover_catalog()
+        self.catalog = [] if portable or self.review_mode else discover_catalog()
         self.reader = None
         self.store = None
         self.entry = None
@@ -128,7 +131,7 @@ class Studio(tk.Tk):
         self.layers = {name: tk.BooleanVar(value=(name in {"own", "history", "official", "trajectory"})) for name in ("own", "history", "official", "trajectory", "imported", "boxes")}
         self.point_radius = tk.StringVar(value="2")
         self.event_scope = tk.StringVar(value="整段位置")
-        if table_demo:
+        if self.review_mode:
             self.show_time_tail = tk.BooleanVar(value=True)
             self.show_table_outline = tk.BooleanVar(value=False)
             self.timeline_gradient = None
@@ -156,7 +159,7 @@ class Studio(tk.Tk):
 
     def _show_window(self):
         # pythonw may inherit SW_HIDE from the console-free launcher.
-        if self.table_demo and sys.platform == "win32":
+        if self.review_mode and sys.platform == "win32":
             from ctypes import c_void_p, windll
 
             if self.state() == "withdrawn":
@@ -172,7 +175,7 @@ class Studio(tk.Tk):
             self.review_layout.restore_sizes()
 
     def _style(self):
-        self.option_add("*Menu.font" if self.table_demo else "*Font", "{Microsoft YaHei UI} 10")
+        self.option_add("*Menu.font" if self.review_mode else "*Font", "{Microsoft YaHei UI} 10")
         s = ttk.Style(self)
         s.theme_use("clam")
         s.configure(".", font=("Microsoft YaHei UI", 10), foreground=INK, background=WHITE)
@@ -204,7 +207,7 @@ class Studio(tk.Tk):
         s.map("TNotebook.Tab", background=[("selected", WHITE)], foreground=[("selected", ACCENT)])
         s.configure("Horizontal.TProgressbar", background=ACCENT, troughcolor=BG, borderwidth=0)
         s.configure("TPanedwindow", background=LINE)
-        if self.table_demo:
+        if self.review_mode:
             self.review_button_images = review_theme.apply(s)
             self.option_add("*TCombobox*Listbox.background", review_theme.CONTROL)
             self.option_add("*TCombobox*Listbox.foreground", review_theme.TEXT)
@@ -212,68 +215,66 @@ class Studio(tk.Tk):
             self.option_add("*TCombobox*Listbox.selectForeground", review_theme.TEXT)
 
     def _build(self):
-        top = ttk.Frame(self, padding=(18, 10) if self.table_demo else (22, 14))
+        top = ttk.Frame(self, padding=(18, 10) if self.review_mode else (22, 14))
         top.pack(fill="x")
         brand = ttk.Frame(top)
         brand.pack(side="left")
-        if not self.table_demo:
+        if not self.review_mode:
             ttk.Label(brand, text="PINGPONG", foreground=ACCENT, font=("Segoe UI", 10, "bold")).pack(anchor="w")
-        ttk.Label(brand, text="触台复核工作台" if self.table_demo else "视频工作台", style="Title.TLabel").pack(anchor="w")
-        if self.table_demo:
+        ttk.Label(brand, text="触台复核工作台" if self.review_mode else "视频工作台", style="Title.TLabel").pack(anchor="w")
+        if self.review_mode:
             ttk.Button(top, text="使用说明", style="Quiet.TButton", command=self.help).pack(side="right")
-        modes = ttk.Frame(top, padding=(0 if self.table_demo else 34, 0))
-        modes.pack(side="right" if self.table_demo else "left")
-        if not self.portable and not self.table_demo:
+        modes = ttk.Frame(top, padding=(0 if self.review_mode else 34, 0))
+        modes.pack(side="right" if self.review_mode else "left")
+        if not self.portable and not self.review_mode:
             for mode in ("观察", "标注"):
                 ttk.Radiobutton(modes, text=mode + "模式", value=mode, variable=self.mode, command=self._mode_changed).pack(side="left", padx=3)
-        if self.table_demo:
+        if self.review_mode:
             ttk.Checkbutton(modes, text="球轨迹", variable=self.show_time_tail,
                             command=self.render).pack(side="left", padx=(0, 12))
             ttk.Checkbutton(modes, text="台面线", variable=self.show_table_outline,
                             command=self.render).pack(side="left", padx=(0, 12))
         else:
             ttk.Button(top, text="使用说明", command=self.help).pack(side="right", padx=(8, 0))
-        self.export_button = ttk.Button(top, text="导出落点" if self.portable else "导出", command=self.export, state="disabled")
-        if not self.table_demo:
-            self.export_button.pack(side="right", padx=(8, 0))
+        self.export_button = ttk.Button(top, text="导出预测" if self.review_mode else "导出落点" if self.portable else "导出",
+                                        command=self.export, state="disabled")
+        self.export_button.pack(side="right", padx=(8, 0))
         self.save_button = ttk.Button(top, text="保存  Ctrl+S", command=self.save, style="Accent.TButton", state="disabled")
-        if not self.portable and not self.table_demo:
+        if not self.portable and not self.review_mode:
             self.save_button.pack(side="right", padx=(8, 0))
-        if not self.table_demo:
-            ttk.Button(top, text="＋ 导入视频", command=self.import_videos).pack(side="right")
-        analysis_ready = not (self.portable or self.table_demo) and find_spec("video_only_entry") is not None
-        self.analyze_button = ttk.Button(top, text="自动分析 · CPU" if self.portable else "自动分析 · 第三轮",
+        ttk.Button(top, text="导入视频", command=self.import_videos).pack(side="right")
+        analysis_ready = not (self.portable or self.review_mode) and find_spec("video_only_entry") is not None
+        self.analyze_button = ttk.Button(top, text="CPU 分析" if self.portable or self.review_mode else "自动分析 · 第三轮",
                                          command=self.analyze_current, state="normal" if analysis_ready else "disabled")
-        if not self.table_demo:
-            self.analyze_button.pack(side="right", padx=6)
-        if not self.table_demo:
+        self.analyze_button.pack(side="right", padx=6)
+        if not self.review_mode:
             ttk.Separator(self).pack(fill="x")
         self.panes = ttk.Panedwindow(self, orient="horizontal")
-        self.panes.pack(fill="both", expand=True, padx=14, pady=(10, 0) if self.table_demo else 14)
+        self.panes.pack(fill="both", expand=True, padx=14, pady=(10, 0) if self.review_mode else 14)
         self.library = ttk.Frame(self.panes, padding=14, width=220)
-        self.center = ttk.Frame(self.panes, padding=14, style="ReviewCard.TFrame" if self.table_demo else "TFrame")
-        self.inspector = ttk.Frame(self.panes, padding=0 if self.table_demo else 12, width=302,
-                                   style="Workspace.TFrame" if self.table_demo else "TFrame")
-        if not self.table_demo:
+        self.center = ttk.Frame(self.panes, padding=14, style="ReviewCard.TFrame" if self.review_mode else "TFrame")
+        self.inspector = ttk.Frame(self.panes, padding=0 if self.review_mode else 12, width=302,
+                                   style="Workspace.TFrame" if self.review_mode else "TFrame")
+        if not self.review_mode:
             self.panes.add(self.library, weight=0)
         self.panes.add(self.center, weight=1)
         self.panes.add(self.inspector, weight=0)
-        if not self.table_demo:
+        if not self.review_mode:
             self.startup_jobs.append(self.after(100, self._initial_sashes))
         self._build_library()
         self._build_player()
-        if self.table_demo:
+        if self.review_mode:
             self._build_review_panels(modes)
         else:
             self._build_inspector()
-        bar = ttk.Frame(self, padding=(14, 5) if self.table_demo else (20, 7),
-                        style="Workspace.TFrame" if self.table_demo else "TFrame")
-        if self.table_demo:
+        bar = ttk.Frame(self, padding=(14, 5) if self.review_mode else (20, 7),
+                        style="Workspace.TFrame" if self.review_mode else "TFrame")
+        if self.review_mode:
             bar.pack(side="bottom", fill="x", before=self.panes)
         else:
             bar.pack(fill="x")
-        ttk.Label(bar, textvariable=self.status, style="Workspace.TLabel" if self.table_demo else "Muted.TLabel").pack(side="left")
-        if self.table_demo:
+        ttk.Label(bar, textvariable=self.status, style="Workspace.TLabel" if self.review_mode else "Muted.TLabel").pack(side="left")
+        if self.review_mode:
             ttk.Label(bar, textvariable=self.save_status, style="Workspace.TLabel").pack(side="right")
         else:
             ttk.Label(bar, textvariable=self.save_status, foreground=ACCENT).pack(side="right")
@@ -288,7 +289,7 @@ class Studio(tk.Tk):
         from review_view import ReviewView
         from table_view import TableView
         self.review_layout = ReviewLayout(self, toolbar)
-        self.table_view = TableView(self.review_layout.hosts["table"], self, self.table_demo)
+        self.table_view = TableView(self.review_layout.hosts["table"], self)
         self.review_view = ReviewView(self.review_layout.hosts["review"], self)
         self.track_view = TrackView(self.review_layout.hosts["track"], self)
         self.review_layout.cards.update(table=self.table_view, review=self.review_view, track=self.track_view)
@@ -327,22 +328,22 @@ class Studio(tk.Tk):
 
     def _build_player(self):
         heading = ttk.Frame(self.center)
-        heading.pack(fill="x", pady=(0, 9 if self.table_demo else 12))
-        self.video_title = ttk.Label(heading, text="原始视频" if self.table_demo else "选择一段视频", style="Section.TLabel" if self.table_demo else "Title.TLabel")
-        self.video_meta = ttk.Label(heading, text="" if self.table_demo else "逐帧观察 · 事件标注 · 参考结果叠加",
-                                    style="VideoMeta.TLabel" if self.table_demo else "Muted.TLabel")
-        if self.table_demo:
+        heading.pack(fill="x", pady=(0, 9 if self.review_mode else 12))
+        self.video_title = ttk.Label(heading, text="原始视频" if self.review_mode else "选择一段视频", style="Section.TLabel" if self.review_mode else "Title.TLabel")
+        self.video_meta = ttk.Label(heading, text="" if self.review_mode else "逐帧观察 · 事件标注 · 参考结果叠加",
+                                    style="VideoMeta.TLabel" if self.review_mode else "Muted.TLabel")
+        if self.review_mode:
             self.video_title.pack(side="left", padx=(0, 10))
             self.video_meta.pack(side="left")
         else:
             self.video_title.pack(anchor="w")
             self.video_meta.pack(anchor="w", pady=(5, 0))
-        self.canvas = tk.Canvas(self.center, bg=review_theme.CANVAS if self.table_demo else VIDEO,
+        self.canvas = tk.Canvas(self.center, bg=review_theme.CANVAS if self.review_mode else VIDEO,
                                 highlightthickness=0, cursor="crosshair")
         self.canvas.pack(fill="both", expand=True)
         self.canvas.bind("<Configure>", self._resize_player)
         self.canvas.bind("<Button-1>", self._canvas_click)
-        if self.table_demo:
+        if self.review_mode:
             self.canvas.bind("<ButtonPress-3>", self._begin_pan)
             self.canvas.bind("<B3-Motion>", self._move_pan)
             self.canvas.bind("<ButtonRelease-3>", self._end_pan)
@@ -350,9 +351,9 @@ class Studio(tk.Tk):
             self.canvas.bind("<Button-3>", self._zoom_center)
         self.canvas.bind("<MouseWheel>", self._wheel)
         self.progress = ttk.Progressbar(self.center, mode="indeterminate")
-        if not self.table_demo:
+        if not self.review_mode:
             self.progress.pack(fill="x")
-        if self.table_demo:
+        if self.review_mode:
             frame_bar = ttk.Frame(self.center, style="PlayerStatus.TFrame", padding=(10, 4))
             frame_bar.pack(fill="x", pady=(8, 0))
             self.frame_number = ttk.Label(frame_bar, text="f—", width=3, style="FrameNumber.TLabel")
@@ -364,29 +365,29 @@ class Studio(tk.Tk):
         else:
             self.frame_info = ttk.Label(self.center, text="0 基帧号 · 坐标以原始视频像素保存", style="Muted.TLabel")
             self.frame_info.pack(fill="x", pady=(8, 0))
-        self.timeline = tk.Canvas(self.center, bg=review_theme.CANVAS if self.table_demo else WHITE,
+        self.timeline = tk.Canvas(self.center, bg=review_theme.CANVAS if self.review_mode else WHITE,
                                    height=52, highlightthickness=0, cursor="hand2")
-        self.timeline.pack(fill="x", pady=(0, 5) if self.table_demo else (4, 2))
+        self.timeline.pack(fill="x", pady=(0, 5) if self.review_mode else (4, 2))
         self.timeline.bind("<Configure>", lambda _: self.draw_timeline())
         self.timeline.bind("<Button-1>", self._timeline_click)
         self.timeline.bind("<B1-Motion>", lambda event: self._timeline_click(event, scrub=True))
-        if self.table_demo:
+        if self.review_mode:
             self.timeline.bind("<Motion>", lambda event: self._timeline_hover(event.x if event.y < 25 else None))
             self.timeline.bind("<Leave>", lambda _: self._timeline_hover(None))
         controls = ttk.Frame(self.center)
-        controls.pack(fill="x", pady=(2, 6 if self.table_demo else 9))
-        before = (("‹  上一帧  A", -1),) if self.table_demo else (("−10", -10), ("上一帧", -1))
-        after = (("下一帧  D  ›", 1),) if self.table_demo else (("下一帧", 1), ("＋10", 10))
+        controls.pack(fill="x", pady=(2, 6 if self.review_mode else 9))
+        before = (("‹  上一帧  A", -1),) if self.review_mode else (("−10", -10), ("上一帧", -1))
+        after = (("下一帧  D  ›", 1),) if self.review_mode else (("下一帧", 1), ("＋10", 10))
         for label, delta in before:
             ttk.Button(controls, text=label, style="Small.TButton", command=lambda n=delta: self.step(n)).pack(side="left", padx=(0, 5))
-        play_options = {"image": self.review_button_images["播放"], "compound": "left"} if self.table_demo else {}
+        play_options = {"image": self.review_button_images["播放"], "compound": "left"} if self.review_mode else {}
         self.play_button = ttk.Button(controls, text="播放", width=6, style="Accent.TButton", command=self.toggle_play, **play_options)
         self.play_button.pack(side="left", padx=(0, 5))
         for label, delta in after:
             ttk.Button(controls, text=label, style="Small.TButton", command=lambda n=delta: self.step(n)).pack(side="left", padx=(0, 5))
         speed = ttk.Combobox(controls, textvariable=self.speed, values=("0.1×", "0.25×", "0.5×", "1×", "2×"), width=5, state="readonly")
         speed.pack(side="right")
-        if self.table_demo:
+        if self.review_mode:
             speed.bind("<<ComboboxSelected>>", lambda _: self.canvas.focus_set())
             ttk.Label(controls, text="倍速", style="Muted.TLabel").pack(side="right", padx=(0, 5))
         secondary = ttk.Frame(self.center)
@@ -395,20 +396,20 @@ class Studio(tk.Tk):
         jump = ttk.Entry(secondary, textvariable=self.jump, width=7)
         jump.pack(side="left")
         jump.bind("<Return>", lambda _: self.jump_to())
-        utility_style = "Quiet.TButton" if self.table_demo else "Small.TButton"
+        utility_style = "Quiet.TButton" if self.review_mode else "Small.TButton"
         ttk.Button(secondary, text="前往", style=utility_style, command=self.jump_to).pack(side="left", padx=6)
         ttk.Button(secondary, text="截图", style=utility_style, command=self.snapshot).pack(side="right")
-        zoom = ttk.Combobox(secondary, textvariable=self.zoom, values=REVIEW_ZOOMS if self.table_demo else ("适应", "2×", "4×", "8×"),
+        zoom = ttk.Combobox(secondary, textvariable=self.zoom, values=REVIEW_ZOOMS if self.review_mode else ("适应", "2×", "4×", "8×"),
                             width=6, state="readonly")
         zoom.pack(side="right", padx=6)
         zoom.bind("<<ComboboxSelected>>", lambda _: self._set_zoom())
-        if self.table_demo:
+        if self.review_mode:
             ttk.Button(secondary, text="适应画面", style=utility_style, command=self._fit_review_video).pack(side="right")
         else:
             ttk.Label(secondary, text="放大", style="Muted.TLabel").pack(side="right")
         help_text = ("空格 播放    A/D 或 ←/→ 逐帧    滚轮缩放    右键拖动"
-                     if self.table_demo else "Space 播放    ← → 逐帧    滚轮调帧    右键设置放大中心")
-        ttk.Label(self.center, text=help_text, style="Muted.TLabel", font=("Microsoft YaHei UI", 9)).pack(anchor="w", pady=(6 if self.table_demo else 12, 0))
+                     if self.review_mode else "Space 播放    ← → 逐帧    滚轮调帧    右键设置放大中心")
+        ttk.Label(self.center, text=help_text, style="Muted.TLabel", font=("Microsoft YaHei UI", 9)).pack(anchor="w", pady=(6 if self.review_mode else 12, 0))
 
     def _build_inspector(self):
         ttk.Label(self.inspector, text="工作面板", style="Section.TLabel").pack(anchor="w", pady=(0, 13))
@@ -522,11 +523,11 @@ class Studio(tk.Tk):
         self._set_editing(False)
 
     def _bind_keys(self):
-        bind = self.bind_all if self.table_demo else self.bind
+        bind = self.bind_all if self.review_mode else self.bind
         for key, fn in (("<space>", self.toggle_play), ("<Left>", lambda: self.step(-1)), ("<Right>", lambda: self.step(1)),
                         ("<Shift-Left>", lambda: self.step(-10)), ("<Shift-Right>", lambda: self.step(10))):
             bind(key, lambda event, f=fn: self._shortcut(event, f))
-        if self.table_demo:
+        if self.review_mode:
             for key, delta in (("a", -1), ("A", -1), ("d", 1), ("D", 1)):
                 bind(f"<KeyPress-{key}>", lambda event, n=delta: self._shortcut(event, lambda: self.step(n)))
             for key, delta in (("j", -1), ("k", 1)):
@@ -597,6 +598,11 @@ class Studio(tk.Tk):
                 self.open_entry(entry)
 
     def import_videos(self):
+        if self.review_mode:
+            selected = filedialog.askopenfilename(parent=self, title="导入视频", filetypes=VIDEO_TYPES)
+            if selected:
+                self.open_entry(self._entry_from_path(Path(selected).resolve()))
+            return
         paths = filedialog.askopenfilenames(parent=self, title="导入视频", filetypes=VIDEO_TYPES)
         self._import_paths(paths)
 
@@ -625,7 +631,7 @@ class Studio(tk.Tk):
             self.open_entry(first)
 
     def _entry_from_path(self, path):
-        return VideoEntry(path.stem, path) if self.portable or self.table_demo else entry_from_path(path)
+        return VideoEntry(path.stem, path) if self.portable or self.review_mode else entry_from_path(path)
 
     def open_entry(self, entry):
         if not self._release_session():
@@ -639,7 +645,15 @@ class Studio(tk.Tk):
         self.entry = entry
         self.cpu_result = None
         self.cpu_track_frames = []
-        if self.portable:
+        if self.review_mode:
+            self.active_demo = (self.demo_case if self.demo_case and
+                                entry.path.resolve() == (ROOT / self.demo_case["video"]).resolve() else None)
+            self.source_frame_offset = (self.active_demo or {}).get("source_frame_offset", 0)
+            self.source_time_offset = (self.active_demo or {}).get("source_time_offset", 0)
+            self.review_tracks, self.review_times = [], {}
+            self.review_view.clear()
+            self.table_view.clear()
+        if self.portable or self.review_mode:
             self.analyze_button.configure(state="disabled")
             self.export_button.configure(state="disabled")
         self.image_bgr = None
@@ -659,21 +673,21 @@ class Studio(tk.Tk):
         self.boxes = {}
         self._set_editing(False)
         self.refresh_records()
-        title = self.table_demo.get("title", entry.video_id) if self.table_demo else entry.video_id
-        self.video_title.configure(text=f"原片 · {title}" if self.table_demo else title)
-        role = "" if self.table_demo else f"{ROLES.get(entry.role, '自行导入')}  ·  "
+        title = (self.active_demo or {}).get("title", entry.video_id)
+        self.video_title.configure(text=f"原片 · {title}" if self.review_mode else title)
+        role = "" if self.review_mode else f"{ROLES.get(entry.role, '自行导入')}  ·  "
         self.video_meta.configure(text=f"{role}正在核对视频…")
         self.status.set("正在打开原始视频…" if self.portable else "正在顺序解码并核对帧数，首次打开请稍候…")
-        if self.table_demo:
+        if self.review_mode:
             self.progress.pack(fill="x", after=self.canvas)
-        self.progress.start(45 if self.table_demo else 12)
+        self.progress.start(45 if self.review_mode else 12)
         self.render()
         def load():
             if self.portable:
                 from source_video import PreviewVideo
                 reader = PreviewVideo(entry.path)
             else:
-                reader = SequentialVideo(entry.path, seek_preroll=2 if self.table_demo else None)
+                reader = SequentialVideo(entry.path, seek_preroll=2 if self.review_mode else None)
             try:
                 image, pts = reader.get(0)
                 return reader, image, pts
@@ -685,7 +699,9 @@ class Studio(tk.Tk):
     def analyze_current(self):
         if not self.entry or not self.reader or self.loading:
             return
-        if self.portable:
+        if self.portable or self.review_mode:
+            if self.review_mode and (self.analysis_runtime is None or self.active_demo is not None):
+                return
             self.analyze_cpu()
             return
         from datetime import datetime, timezone
@@ -710,6 +726,9 @@ class Studio(tk.Tk):
         executable = Path(sys.executable)
         if sys.platform == "win32":
             executable = executable.with_name("python.exe")
+        if self.analysis_runtime is not None:
+            worker = self.analysis_runtime / "development/video_studio/local_analysis.py"
+            executable = self.analysis_runtime / "runtime/python.exe"
         args = [str(executable), "-E", "-s", "-B", "-X", "utf8", "-u", str(worker),
                 "--video", str(self.entry.path), "--workspace", str(self.output),
                 "--video-id", self.entry.video_id, "--run-id", identifier, "--sha256", self.reader.sha256]
@@ -757,6 +776,47 @@ class Studio(tk.Tk):
             self.export_button.configure(state="normal")
         self._refresh_layer_summary()
 
+    def _load_review(self, *, initial):
+        from core import _read
+        from portable_results import latest, rows_for_video
+        from table_view import load_events
+
+        reader = self.reader
+        tracks, rows, prediction_file = [], [], None
+        if self.active_demo:
+            folder = ROOT / self.active_demo["result"]
+            rows = load_events(folder, reader)
+            prediction_file = folder / "landings.json"
+            tracks = _read(folder / "tracks.json")
+        else:
+            try:
+                result = latest(self.output, reader.sha256)
+                if result is not None:
+                    folder, _ = result
+                    tracks = _read(folder / "tracks.json")
+                    rows = sorted(rows_for_video(result, self.entry.video_id, reader.width, reader.height,
+                                                 reader.n_frames), key=lambda row: row["frame_id"])
+                    prediction_file = folder / "predictions.jsonl"
+                self.cpu_result = result
+            except (OSError, ValueError, KeyError, TypeError):
+                if not initial:
+                    raise
+                logging.warning("Could not load cached CPU results for %s", reader.sha256, exc_info=True)
+                tracks, rows, prediction_file = [], [], None
+                self.cpu_result = None
+        self.review_tracks = tracks
+        self.review_times = {row["frame_id"]: row["timestamp_s"] for row in tracks}
+        if initial:
+            self.table_view.load(reader, rows, self.active_demo)
+        else:
+            self.review_view.cancel_add()
+            self.table_view.set_predictions(rows)
+        self.review_view.load(reader, prediction_file, rows, shared_manual=self.active_demo is None)
+        self.layers["imported"].set(True)
+        self.event_scope.set("当前帧")
+        self.export_button.configure(state="normal" if self.cpu_result is not None else "disabled")
+        self.refresh_reviews()
+
     def _poll(self):
         if self.closed:
             return
@@ -769,12 +829,16 @@ class Studio(tk.Tk):
                     continue
                 if kind == "cpu_analysis":
                     self.cpu_busy = False
-                    if self.reader is not None:
+                    if self.reader is not None and (not self.review_mode or
+                                                    (self.analysis_runtime is not None and self.active_demo is None)):
                         self.analyze_button.configure(state="normal")
                     try:
                         future.result()
                         if generation == self.generation:
-                            self._load_cpu_results()
+                            if self.review_mode:
+                                self._load_review(initial=False)
+                            else:
+                                self._load_cpu_results()
                             self.render()
                             self.status.set(f"分析完成 · {self.cpu_result[1]['event_count']} 个预测落点")
                     except Exception as e:
@@ -801,40 +865,35 @@ class Studio(tk.Tk):
                         self.reader, self.image_bgr, self.pts = result
                         self.loading = False
                         self.progress.stop()
-                        if self.table_demo:
+                        if self.review_mode:
                             self.progress.pack_forget()
                         if self.table_view is not None:
-                            from core import _read
-                            result_path = ROOT / self.table_demo["result"]
-                            self.review_tracks = _read(result_path / "tracks.json")
-                            self.review_observations = {row["frame_id"]: row for row in self.review_tracks}
-                            self.review_times = {row["frame_id"]: row["timestamp_s"] for row in self.review_tracks}
-                            self.table_view.load(self.reader)
-                            self.review_view.load(self.reader, result_path, self.table_view.predictions)
-                            self.layers["imported"].set(True)
-                            self.event_scope.set("当前帧")
-                            self.refresh_reviews()
+                            self._load_review(initial=True)
+                            if self.analysis_runtime is not None and self.active_demo is None and not self.cpu_busy:
+                                self.analyze_button.configure(state="normal")
                         elif self.portable:
                             self._load_cpu_results()
                             self.analyze_button.configure(state="disabled" if self.cpu_busy else "normal")
                         else:
                             self._auto_references()
                         r = self.reader
-                        if self.table_demo:
+                        if self.review_mode:
                             self.frame_number.configure(width=len(str(self.source_frame_id(r.n_frames - 1))) + 1)
-                        role = "" if self.table_demo else f"{ROLES.get(self.entry.role, '自行导入')}  ·  "
+                        role = "" if self.review_mode else f"{ROLES.get(self.entry.role, '自行导入')}  ·  "
                         self.video_meta.configure(text=f"{role}{r.width} × {r.height}  ·  {r.n_frames} 帧  ·  {r.fps:.2f} fps")
                         if self.source_frame_offset:
                             self.status.set(f"视频就绪 · 原片 f{self.source_frame_offset}–f{self.source_frame_id(r.n_frames - 1)}")
+                        elif self.review_mode and self.active_demo is None and self.analysis_runtime is None:
+                            self.status.set("视频就绪 · 未配置 CPU 分析环境")
                         else:
                             self.status.set("视频就绪 · 帧号从 0 开始")
-                        if self.table_view is not None:
+                        if self.active_demo is not None:
                             self.seek(self.table_view.frame_id)
-                        else:
+                        elif not self.review_mode:
                             self._mode_changed()
                     else:
                         self.reading = False
-                        if self.table_demo and result[0] != self.target_frame:
+                        if self.review_mode and result[0] != self.target_frame:
                             continue
                         self.frame, self.image_bgr, self.pts = result
                         self.stream_preview = None
@@ -846,7 +905,7 @@ class Studio(tk.Tk):
                     self.loading = self.reading = False
                     self.target_frame = self.frame
                     self.progress.stop()
-                    if self.table_demo:
+                    if self.review_mode:
                         self.progress.pack_forget()
                     self.pause()
                     self.error(str(e))
@@ -857,7 +916,7 @@ class Studio(tk.Tk):
             if self.target_frame != self.frame:
                 self._request_frame()
             elif self.playing:
-                if self.table_demo:
+                if self.review_mode:
                     try:
                         self._advance_review_playback(now)
                     except Exception as error:
@@ -871,7 +930,7 @@ class Studio(tk.Tk):
                         self.play_at = now + self._frame_delay()
                         self._request_frame()
         polling_ms = 10 if self.portable else 15
-        if self.table_demo and (self.playing or self.reading):
+        if self.review_mode and (self.playing or self.reading):
             polling_ms = 5
             if self.review_playback is not None and self.play_at is not None:
                 remaining = ceil((self.play_at - time.monotonic()) * 1000)
@@ -936,7 +995,7 @@ class Studio(tk.Tk):
                 self.pause()
             self.target_frame = max(0, min(int(frame), self.reader.n_frames - 1))
             self.clear_draft()
-            if self.table_demo and not self.reading and self.target_frame != self.frame:
+            if self.review_mode and not self.reading and self.target_frame != self.frame:
                 if self.render_job is not None:
                     self.after_cancel(self.render_job)
                     self.render_job = None
@@ -965,14 +1024,14 @@ class Studio(tk.Tk):
         if self.playing:
             self.pause()
         else:
-            resized = self.table_demo and self.preview_window_size != (self.winfo_width(), self.winfo_height())
+            resized = self.review_mode and self.preview_window_size != (self.winfo_width(), self.winfo_height())
             if self.frame == self.reader.n_frames - 1:
                 self.seek(0)
             self.clear_draft()
             self.playing = True
             self.play_at = time.monotonic()
             self._set_play_button("暂停")
-            if self.table_demo and not self.reading and self.target_frame == self.frame:
+            if self.review_mode and not self.reading and self.target_frame == self.frame:
                 self._advance_review_playback(self.play_at)
             if resized:
                 # Finish window layout while the decode worker fills the playback buffer.
@@ -986,17 +1045,17 @@ class Studio(tk.Tk):
             self.review_playback = None
             self.stream_preview = None
         self.preview_end = None
-        if self.table_demo and was_playing:
+        if self.review_mode and was_playing:
             self.target_frame = self.frame
             self.jump.set(str(self.source_frame_id(self.frame)))
         if hasattr(self, "play_button"):
             self._set_play_button("播放")
-        if self.table_demo and was_playing:
+        if self.review_mode and was_playing:
             self._queue_render()
 
     def _set_play_button(self, caption):
         if self.play_button.cget("text") != caption:
-            options = {"image": self.review_button_images[caption]} if self.table_demo else {}
+            options = {"image": self.review_button_images[caption]} if self.review_mode else {}
             self.play_button.configure(text=caption, **options)
 
     def preview_event(self, frame):
@@ -1020,7 +1079,7 @@ class Studio(tk.Tk):
     def _wheel(self, event):
         if not event.delta:
             return
-        if not self.table_demo or event.state & 1:
+        if not self.review_mode or event.state & 1:
             self.step(-1 if event.delta > 0 else 1)
             return "break"
         point = self._to_original(event.x, event.y)
@@ -1038,14 +1097,14 @@ class Studio(tk.Tk):
     def _timeline_click(self, event, *, scrub=False):
         if not self.reader or self.loading:
             return
-        if self.table_demo:
+        if self.review_mode:
             self.canvas.focus_set()
             event_id = self._timeline_marker_at(event.x) if not scrub and event.y < 25 else None
             if event_id is not None:
                 self.review_view.select_and_go(event_id)
                 return
         ratio = max(0, min(1, (event.x - 10) / max(1, self.timeline.winfo_width() - 20)))
-        stamps = self.reader.timestamps if self.table_demo else ()
+        stamps = self.reader.timestamps if self.review_mode else ()
         if len(stamps) > 1 and stamps[0] is not None:
             stamp = stamps[0] + ratio * (stamps[-1] - stamps[0])
             after = min(bisect_left(stamps, stamp), len(stamps) - 1)
@@ -1093,7 +1152,7 @@ class Studio(tk.Tk):
             cx, cy = center or (self.draft[1:] if self.draft else ((self.roi[0] + self.roi[2] / 2, self.roi[1] + self.roi[3] / 2) if self.roi else (w / 2, h / 2)))
             rw, rh = max(1, int(w / factor)), max(1, int(h / factor))
             self.roi = self._bounded_roi(cx - rw * anchor[0], cy - rh * anchor[1], rw, rh)
-        if self.table_demo:
+        if self.review_mode:
             self.canvas.focus_set()
         self.render()
 
@@ -1147,7 +1206,7 @@ class Studio(tk.Tk):
         return left + (x - ox) * dw / rw, top + (y - oy) * dh / rh
 
     def _resize_player(self, event):
-        if not self.table_demo:
+        if not self.review_mode:
             self._queue_render()
         elif self.review_playback is not None:
             self.review_playback.bounds = self._video_geometry(event.width, event.height)[2:]
@@ -1185,7 +1244,7 @@ class Studio(tk.Tk):
             canvas.delete("all")
             self.picture_item = self.picture_key = self.photo = None
             self.transform = None
-            if self.table_demo:
+            if self.review_mode:
                 self.frame_number.configure(text="f—")
                 self.frame_info.configure(text="/ f—  ·  PTS —")
                 self.frame_event_info.configure(text="")
@@ -1198,13 +1257,13 @@ class Studio(tk.Tk):
             self.draw_timeline()
             return
         self.transform = self._video_geometry(cw, ch)
-        if self.table_demo and not self.playing:
+        if self.review_mode and not self.playing:
             self.preview_window_size = (self.winfo_width(), self.winfo_height())
         _, _, _, _, ox, oy, rw, rh = self.transform
         if self.review_playback is not None:
             self.review_playback.bounds = self.transform[2:]
         canvas.delete("!video_frame")
-        fast = bool(self.table_demo and (self.playing or self.pan_start is not None))
+        fast = bool(self.review_mode and (self.playing or self.pan_start is not None))
         picture_key = self.generation, self.frame, self.transform, fast
         if picture_key != self.picture_key:
             self._update_picture(fast)
@@ -1276,9 +1335,9 @@ class Studio(tk.Tk):
                 if (current or self.event_scope.get() == "整段位置") and item.get("x") is not None and item.get("y") is not None:
                     valid = item.get("valid", True)
                     suffix = f" f{interval[0]}" if not current else ""
-                    point_label = "" if self.table_demo and item.get("review_label") else label + suffix
+                    point_label = "" if self.review_mode and item.get("review_label") else label + suffix
                     self._draw_point(item["x"], item["y"], event_color if valid else "#a8a8a8", point_label, hollow=not valid or not current)
-        if self.table_demo:
+        if self.review_mode:
             text = " / ".join(dict.fromkeys(label for label, _ in frame_events))
             color = frame_events[0][1] if frame_events else review_theme.MUTED
             if self.displayed_event != (text, color):
@@ -1292,7 +1351,7 @@ class Studio(tk.Tk):
             self._draw_point(*self.draft[1:], "#ffde75", "待确认", cross=True)
         timestamp = (f"PTS {self.pts + self.source_time_offset:.3f} s" if self.pts is not None else
                      f"估算 {self.frame / max(1, self.reader.fps) + self.source_time_offset:.3f} s")
-        if self.table_demo:
+        if self.review_mode:
             self.frame_number.configure(text=f"f{self.source_frame_id(self.frame)}")
             end_frame = self.source_frame_id(self.reader.n_frames - 1)
             self.frame_info.configure(text=f"/ f{end_frame}  ·  {timestamp}  ·  {self.zoom.get()}")
@@ -1375,7 +1434,7 @@ class Studio(tk.Tk):
 
     def refresh_reviews(self):
         from review_view import STATE_COLORS, STATE_NAMES
-        if self.review_view.path is None or self.table_view.plane is None:
+        if self.review_view.path is None:
             return
         self.table_view.set_events(self.review_view.events())
         self.review_view.show_rows(self.table_view.rows)
@@ -1407,7 +1466,7 @@ class Studio(tk.Tk):
             return
         c = self.timeline
         w = max(20, c.winfo_width())
-        if self.table_demo:
+        if self.review_mode:
             reader = self.reader if not self.loading else None
             axis = reader, w
             if refresh or axis != self.timeline_axis:
@@ -1668,7 +1727,7 @@ class Studio(tk.Tk):
             if not self.loading and not self.reading:
                 self.table_view.add_corner(self._to_original(event.x, event.y), self.frame)
             return
-        if self.table_demo:
+        if self.review_mode:
             self.canvas.focus_set()
             return
         self.canvas.focus_set()
@@ -1684,7 +1743,7 @@ class Studio(tk.Tk):
         self.status.set(f"当前类型：{self.event_type.get()} · 触台必须选点，其余事件可只记录帧号")
 
     def clear_draft(self):
-        if self.table_demo and self.draft is None:
+        if self.review_mode and self.draft is None:
             return
         self.draft = None
         self.point_status.set("尚未选点")
@@ -1824,7 +1883,7 @@ class Studio(tk.Tk):
                 self.error(str(ex))
 
     def export(self):
-        if self.portable:
+        if self.portable or self.review_mode:
             self.export_predictions()
             return
         if not self.store or not self.save(quiet=True):
@@ -1896,7 +1955,8 @@ class Studio(tk.Tk):
 
     def help(self):
         if self.table_view is not None:
-            messagebox.showinfo("触台复核原型",
+            messagebox.showinfo("触台复核工作台",
+                                "导入视频后可以播放和复核。配置本机 CPU 运行环境后，可用「CPU 分析」生成预测并导出。\n\n"
                                 "点击时间轴圆点、球桌落点或清单中的事件跳回原片。时间轴随清单状态筛选。使用确认、驳回、标疑难记录判断。"
                                 "要补记漏报，先点补记按钮，定位原片帧后在左侧画面点击球心。复核自动保存。\n\n"
                                 "俯视图默认随播放只画最新出现的一个落点，也可切换仅触台帧或全部落点。"
@@ -1958,8 +2018,14 @@ def main():
     parser.add_argument("--video", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--portable", action="store_true")
+    parser.add_argument("--legacy", action="store_true")
     parser.add_argument("--table-demo", type=Path)
+    parser.add_argument("--analysis-runtime", type=Path)
     args = parser.parse_args()
+    runtime = args.analysis_runtime.resolve() if args.analysis_runtime else None
+    if runtime is not None and not all((runtime / name).is_file() for name in
+                                      ("runtime/python.exe", "development/video_studio/local_analysis.py")):
+        parser.error("--analysis-runtime must point to an extracted CPU runtime directory")
     table_demo = None
     if args.table_demo:
         from core import _read
@@ -1967,7 +2033,7 @@ def main():
         args.video = ROOT / table_demo["video"]
     if args.output is None:
         args.output = (Path(os.environ.get("LOCALAPPDATA") or Path.home()) / "PingpongStudio"
-                       if args.portable else ROOT / "outputs/video_studio")
+                       if args.portable else ROOT / "workspace")
     args.output = args.output.resolve()
     args.output.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(filename=args.output / "video_studio.log", level=logging.INFO, encoding="utf-8", format="%(asctime)s %(levelname)s %(message)s")
@@ -1975,7 +2041,8 @@ def main():
         if sys.platform == "win32":
             import ctypes
             ctypes.windll.shcore.SetProcessDpiAwareness(1)
-        Studio(args.output, args.video, portable=args.portable, table_demo=table_demo).mainloop()
+        Studio(args.output, args.video, portable=args.portable, table_demo=table_demo,
+               review=not (args.portable or args.legacy), analysis_runtime=runtime).mainloop()
     except Exception:
         logging.exception("Application failed")
         raise

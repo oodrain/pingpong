@@ -6,7 +6,7 @@ from tkinter import ttk
 
 import numpy as np
 
-from core import ROOT, _read, _write
+from core import _read, _write
 from landing_refinement import adjacent_observations
 from review_view import STATE_COLORS
 import review_theme as ui
@@ -25,10 +25,12 @@ def project_events(plane, events):
     rows = []
     for event in events:
         row = dict(event)
-        try:
-            u, v = plane.project(row["x"], row["y"])
-        except GeometryError:
-            u = v = None
+        u = v = None
+        if plane is not None:
+            try:
+                u, v = plane.project(row["x"], row["y"])
+            except GeometryError:
+                pass
         row.update(u=u, v=v, inside=u is not None and 0 <= u <= TABLE_L and 0 <= v <= TABLE_W)
         row["side"] = ("A 端" if u < TABLE_L / 2 else "B 端") if row["inside"] else None
         rows.append(row)
@@ -51,9 +53,9 @@ def load_events(result, reader):
 
 
 class TableView(ttk.Frame):
-    def __init__(self, parent, studio, case):
+    def __init__(self, parent, studio):
         super().__init__(parent, padding=(13, 10), style="ReviewCard.TFrame")
-        self.studio, self.case = studio, case
+        self.studio = studio
         header = ttk.Frame(self)
         header.pack(fill="x", pady=(0, 4))
         ttk.Label(header, text="俯视球桌", style="Section.TLabel").pack(side="left")
@@ -63,7 +65,7 @@ class TableView(ttk.Frame):
                                         width=15, state="readonly")
         self.mode_picker.pack(side="right")
         self.mode_picker.bind("<<ComboboxSelected>>", self.change_mode)
-        self.refine = tk.BooleanVar(value=case.get("refine", True))
+        self.refine = tk.BooleanVar(value=False)
         self.canvas = tk.Canvas(self, bg=ui.CANVAS, height=150, highlightthickness=0, cursor="hand2")
         self.canvas.bind("<Configure>", lambda _: self.draw())
         self.canvas.bind("<Button-1>", self.pick_event)
@@ -79,7 +81,7 @@ class TableView(ttk.Frame):
         self.plane = None
         self.selected_id = None
         self.pending = None
-        self.frame_id = case["frame_id"]
+        self.frame_id = 0
         self.saved_path = None
         self.note = tk.StringVar(value="正在载入已有预测…")
         buttons = ttk.Frame(self)
@@ -89,21 +91,41 @@ class TableView(ttk.Frame):
         self.mark_button.pack(side="left")
         self.flip_button = ttk.Button(buttons, text="交换 A/B", style="Quiet.TButton", command=self.flip, state="disabled")
         self.flip_button.pack(side="left", padx=5)
-        ttk.Button(buttons, text="回到标定帧", style="Quiet.TButton", command=lambda: self.go(self.frame_id)).pack(side="left")
+        self.calibration_button = ttk.Button(buttons, text="回到标定帧", style="Quiet.TButton",
+                                             command=lambda: self.go(self.frame_id), state="disabled")
+        self.calibration_button.pack(side="left")
         ttk.Checkbutton(buttons, text="轨迹校正", variable=self.refine, command=studio.refresh_reviews).pack(side="right")
         self.canvas.pack(fill="both", expand=True)
 
-    def load(self, reader):
-        self.predictions = load_events(ROOT / self.case["result"], reader)
+    def clear(self):
+        self.plane = self.pending = self.selected_id = self.saved_path = None
+        self.frame_id, self.source_frame = 0, -1
+        self.corners, self.net, self.predictions = [], [], []
+        self.adjustments = {}
+        self.mark_button.configure(text="标定四角", state="disabled")
+        self.flip_button.configure(state="disabled")
+        self.calibration_button.configure(state="disabled")
+        self.set_events([])
+
+    def load(self, reader, predictions, case=None):
+        self.refine.set(bool(case and case.get("refine", True)))
+        self.predictions = predictions
         self.events = self.predictions
         self.saved_path = self.studio.output / "table_calibration" / (reader.sha256 + ".json")
         saved = self.saved_path.is_file()
-        source = _read(self.saved_path) if saved else self.case
-        self.set_plane(source["corners"], source["frame_id"], save=False)
+        source = _read(self.saved_path) if saved else case
+        if source is not None:
+            self.set_plane(source["corners"], source["frame_id"], save=False)
+        else:
+            self.set_events(predictions)
         self.mark_button.configure(state="normal")
-        self.flip_button.configure(state="normal")
         if saved:
             self.note.set("已载入你的四角标定。A 端在示意图左侧。")
+
+    def set_predictions(self, predictions):
+        self.predictions = predictions
+        if self.plane is not None:
+            self.update_adjustments()
 
     def set_plane(self, corners, frame_id, *, save):
         reader = self.studio.reader
@@ -121,19 +143,28 @@ class TableView(ttk.Frame):
             _write(self.saved_path, dict(frame_id=frame_id, corners=points.tolist()))
         self.corners, self.frame_id, self.net = points.tolist(), frame_id, net
         self.plane = plane
-        self.adjustments = adjacent_observations(self.predictions, self.studio.review_tracks, plane, points,
-                                                 (reader.width, reader.height))
+        self.mark_button.configure(text="重标四角")
+        self.flip_button.configure(state="normal")
+        self.calibration_button.configure(state="normal")
+        self.update_adjustments()
         if self.studio.review_view.path is not None:
             self.studio.refresh_reviews()
         else:
             self.set_events(self.events)
+
+    def update_adjustments(self):
+        reader = self.studio.reader
+        self.adjustments = adjacent_observations(self.predictions, self.studio.review_tracks, self.plane,
+                                                 self.corners, (reader.width, reader.height))
 
     def set_events(self, events):
         self.events = events
         self.rows = project_events(self.plane, events)
         self.source_frames = [row["frame_id"] for row in self.rows]
         shown = sum(row["inside"] for row in self.rows)
-        if self.pending is None or len(self.pending) == 4:
+        if self.plane is None and self.pending is None:
+            self.note.set("导入视频后，标定球桌四角即可显示俯视落点。")
+        elif self.pending is None or len(self.pending) == 4:
             adjusted = sum(row.get("position_source") == "track" for row in self.rows)
             frame_id = self.studio.source_frame_id(self.frame_id)
             self.note.set(f"标定 f{frame_id} · {shown}/{len(self.rows)} 点在台内 · {adjusted} 点轨迹校正")
@@ -142,9 +173,10 @@ class TableView(ttk.Frame):
     def toggle_marking(self):
         if self.pending is not None:
             self.pending = None
-            self.mark_button.configure(text="重标四角")
-            self.flip_button.configure(state="normal")
-            self.note.set("已保留原四角标定。")
+            has_plane = self.plane is not None
+            self.mark_button.configure(text="重标四角" if has_plane else "标定四角")
+            self.flip_button.configure(state="normal" if has_plane else "disabled")
+            self.set_events(self.events)
             self.studio.render()
             return
         s = self.studio
@@ -155,7 +187,7 @@ class TableView(ttk.Frame):
         s.pause()
         self.pending = []
         self.mark_frame = s.frame
-        self.mark_button.configure(text="取消重标")
+        self.mark_button.configure(text="取消标定")
         self.flip_button.configure(state="disabled")
         self.note.set("同一帧按四角顺序点击：先选 A 端起点，再沿长边到 B 端。")
         s.render()

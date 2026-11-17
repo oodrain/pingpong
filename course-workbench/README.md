@@ -2,7 +2,7 @@
 
 触台复核工作台是在 Windows 上运行的本地工具，用于核查乒乓球碰到球桌的时刻和位置。原视频、短球轨迹、俯视落点和事件清单集中在一个窗口，点击落点即可跳到对应帧。
 
-工作台支持播放和逐帧查看自己的本地视频。带预置触台事件的固定机位样片还支持 A/D 逐帧、点击落点跳帧、四角标定和面板调整。复核时可以确认、驳回、标疑难或补记漏报，人工记录单独保存。
+工作台支持导入本地视频、播放、A/D 逐帧、四角标定和面板调整。加载触台事件后，点击俯视落点或清单即可跳回对应帧。复核可确认、驳回、标疑难或补记漏报，人工记录单独保存。带预置触台事件的固定机位样片可直接练习这套流程。
 
 ## 第一次启动
 
@@ -32,13 +32,21 @@ cd pingpong\course-workbench
 
 ## 播放本地视频
 
-创建虚拟环境并安装 `requirements.txt` 后，在 `course-workbench` 目录运行以下命令，把路径换成自己的视频。普通视频工作台用空格播放，左右方向键逐帧，也可以用窗口里的「导入视频」继续打开其他文件。
+从窗口上方的「导入视频」选择自己的录像，仍在原视频、俯视球桌和事件清单的界面操作。也可以在 `course-workbench` 目录用下面的命令直接打开视频。空格播放，A/D 或左右方向键逐帧。固定机位可以点击「标定四角」，为当前录像设置俯视投影。
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Video "C:\Videos\clip.mp4"
 ```
 
-普通播放只需要视频文件。当前仓库提供播放和标注查看，自动分析需要另行配置推理组件。
+## 本地 CPU 分析
+
+播放和人工复核只需要上面的依赖。自动分析使用单独提供的本地 CPU 运行目录，其中包含运行时和模型。检查 CPU 运行目录内的 `Check CPU.cmd` 后，用 `-AnalysisRuntime` 指定该目录。仓库源码可以独立使用，模型按项目原有渠道获取。
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Video "C:\Videos\clip.mp4" -AnalysisRuntime "C:\Tools\PingpongStudio_CPU_Windows_x64"
+```
+
+打开自己的视频后点「CPU 分析」，完成后轨迹和触台候选会回到当前工作台。四角标定后，候选会同步显示在俯视球桌上。可以逐条复核，或用「导出预测」导出自动结果。分析日志保存在 `workspace/analysis/jobs/`。
 
 ## 样片复核操作
 

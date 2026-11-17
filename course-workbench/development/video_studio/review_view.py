@@ -14,6 +14,7 @@ class ReviewView(ttk.Frame):
         super().__init__(parent, padding=(13, 10), style="ReviewCard.TFrame")
         self.studio = studio
         self.path = None
+        self.manual_path = None
         self.predictions = []
         self.state = {"decisions": {}, "manual": []}
         self.rows = {}
@@ -90,9 +91,19 @@ class ReviewView(ttk.Frame):
             if not bounds or bounds[1] + bounds[3] > self.tree.winfo_height():
                 self.tree.see(self.selected_id)
 
-    def load(self, reader, result, predictions):
-        fingerprint = _sha(result / "landings.json")
-        self.path = self.studio.output / "landing_reviews" / f"{reader.sha256}_{fingerprint}.json"
+    def clear(self):
+        self.path = self.manual_path = self.selected_id = None
+        self.predictions = []
+        self.state = {"decisions": {}, "manual": []}
+        self.cancel_add()
+        self.show_rows([])
+        self.note.set("导入视频后开始复核。")
+
+    def load(self, reader, prediction_file, predictions, *, shared_manual=False):
+        directory = self.studio.output / "landing_reviews"
+        fingerprint = _sha(prediction_file) if prediction_file is not None else "manual"
+        self.path = directory / f"{reader.sha256}_{fingerprint}.json"
+        self.manual_path = directory / f"{reader.sha256}_manual.json" if shared_manual else self.path
         self.predictions = [dict(row, review_id=f"prediction-{i}", source="prediction")
                             for i, row in enumerate(predictions)]
         self.state = self.read_state()
@@ -102,18 +113,25 @@ class ReviewView(ttk.Frame):
         self.note.set("点击清单或时间轴圆点跳帧。")
 
     def read_state(self):
-        return _read(self.path) if self.path.is_file() else {"decisions": {}, "manual": []}
+        state = _read(self.path) if self.path.is_file() else {"decisions": {}, "manual": []}
+        if self.manual_path != self.path and self.manual_path.is_file():
+            manual = _read(self.manual_path)
+            state["manual"] = manual["manual"]
+            state["decisions"].update(manual["decisions"])
+            state.setdefault("corrections", {}).update(manual.get("corrections", {}))
+        return state
 
-    def save_edit(self, edit):
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        lock = _Lock(self.path.with_suffix(".lock"))
+    def save_edit(self, edit, *, manual=False):
+        path = self.manual_path if manual else self.path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        lock = _Lock(path.with_suffix(".lock"))
         try:
-            state = self.read_state()
+            state = _read(path) if path.is_file() else {"decisions": {}, "manual": []}
             edit(state)
-            _write(self.path, state)
+            _write(path, state)
         finally:
             lock.close()
-        self.state = state
+        self.state = self.read_state()
 
     def events(self):
         decisions = self.state["decisions"]
@@ -224,7 +242,7 @@ class ReviewView(ttk.Frame):
             self.note.set("正在定位原片，请看清当前画面后再记录。")
             return
         try:
-            self.save_edit(lambda state: state["decisions"].__setitem__(key, status))
+            self.save_edit(lambda state: state["decisions"].__setitem__(key, status), manual=key.startswith("manual-"))
         except (ValueError, OSError) as error:
             self.studio.error(str(error))
             return
@@ -280,7 +298,7 @@ class ReviewView(ttk.Frame):
             else:
                 state["manual"].append(dict(location, review_id=key, source="manual"))
         try:
-            self.save_edit(edit)
+            self.save_edit(edit, manual=key.startswith("manual-"))
         except (ValueError, OSError) as error:
             self.studio.error(str(error))
             return

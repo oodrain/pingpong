@@ -5,6 +5,7 @@ param(
     [string]$Sample = 'course50',
     [Parameter(Mandatory = $true, ParameterSetName = 'Video')]
     [string]$Video,
+    [string]$AnalysisRuntime,
     [switch]$Check,
     [string]$Output
 )
@@ -95,6 +96,15 @@ function Quote-Argument([string]$value) {
 }
 
 try {
+    $runtimePath = $null
+    if ($AnalysisRuntime) {
+        $runtimePath = (Resolve-Path -LiteralPath $AnalysisRuntime).ProviderPath
+        foreach ($file in @('runtime/python.exe', 'development/video_studio/local_analysis.py')) {
+            if (-not (Test-Path -LiteralPath (Join-Path $runtimePath $file) -PathType Leaf)) {
+                throw "The CPU runtime directory is missing $file."
+            }
+        }
+    }
     if ($inputMode -eq 'Video') {
         $sourcePath = (Resolve-Path -LiteralPath $Video).ProviderPath
         $inputFlag = '--video'
@@ -108,6 +118,7 @@ try {
     $null = New-Item -ItemType Directory -Path $logDir -Force
     $run = (Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '-' + $PID
     $arguments = @('-B', $app, '--output', $Output, $inputFlag, $sourcePath)
+    if ($runtimePath) { $arguments += @('--analysis-runtime', $runtimePath) }
     $commandLine = ($arguments | ForEach-Object { Quote-Argument $_ }) -join ' '
     Start-Process -FilePath $pythonw -ArgumentList $commandLine -WorkingDirectory $root -WindowStyle Hidden `
         -RedirectStandardOutput (Join-Path $logDir "$run.stdout.log") `
