@@ -30,7 +30,7 @@ from PIL import Image, ImageOps, ImageTk
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "annotation"))
 
-from core import (ROOT, VideoEntry, SequentialVideo, SessionStore,
+from core import (ROOT, VideoEntry, SequentialVideo, SessionStore, _read, _write,
                   discover_catalog, entry_from_path, load_reference)
 from overlays import interval_of, load_history, read_own_session, timed_tail, trajectory_segments
 import review_theme
@@ -50,6 +50,13 @@ COLORS = {"table_bounce": "#32e2c4", "racket_contact": "#ffbd69", "net_contact":
 VIDEO_TYPES = [("视频", "*.mp4 *.avi *.mov *.mkv *.m4v *.webm"), ("所有文件", "*.*")]
 REVIEW_ZOOMS = ("适应", "1.25×", "1.5×", "2×", "3×", "4×", "6×", "8×")
 TRAIL_SECONDS = 0.48
+CPU_RUNTIME_FILES = (
+    "runtime/python.exe", "development/video_studio/local_analysis.py",
+    "analysis_assets/participant/weights/ball_v3.onnx",
+    "analysis_assets/participant/weights/ball_v3_middle.onnx",
+    "analysis_assets/participant/weights/model.pt",
+    "analysis_assets/participant/weights/table_segmentation.ckpt",
+)
 # Oldest to newest. The leading end gets both a lighter color and a wider stroke.
 TRAIL_STROKES = (("#2b505b", 1.0), ("#376472", 1.2), ("#447d89", 1.5), ("#5296a1", 1.9),
                  ("#61afbc", 2.3), ("#73c8d4", 2.8), ("#8be2ec", 3.3))
@@ -72,6 +79,7 @@ class Studio(tk.Tk):
         self.timeline_hover_x = None
         self.preview_end = None
         self.cpu_busy = False
+        self.cpu_generation = None
         self.cpu_result = None
         self.cpu_track_frames = []
         self.title("Pingpong · 触台复核工作台" if self.review_mode else "Pingpong · 视频工作台")
@@ -143,6 +151,9 @@ class Studio(tk.Tk):
         self._build()
         self._bind_keys()
         self._load_preferences()
+        if self.review_mode:
+            self._load_analysis_preferences()
+            self._update_cpu_controls()
         self._filter_library()
         self.protocol("WM_DELETE_WINDOW", self.close)
         self.report_callback_exception = self._tk_error
@@ -276,6 +287,10 @@ class Studio(tk.Tk):
         ttk.Label(bar, textvariable=self.status, style="Workspace.TLabel" if self.review_mode else "Muted.TLabel").pack(side="left")
         if self.review_mode:
             ttk.Label(bar, textvariable=self.save_status, style="Workspace.TLabel").pack(side="right")
+            self.auto_analysis = tk.BooleanVar(value=True)
+            self.auto_analysis_button = ttk.Checkbutton(bar, text="导入后分析", variable=self.auto_analysis,
+                                                          command=self._toggle_auto_analysis)
+            self.auto_analysis_button.pack(side="right", padx=(0, 12))
         else:
             ttk.Label(bar, textvariable=self.save_status, foreground=ACCENT).pack(side="right")
 
@@ -576,6 +591,73 @@ class Studio(tk.Tk):
         temp.write_text(json.dumps({"imported_videos": [str(e.path) for e in self.catalog if e.role == "imported"]}, ensure_ascii=False, indent=2), encoding="utf-8")
         temp.replace(path)
 
+    def _load_analysis_preferences(self):
+        self.analysis_preferences_path = self.output / "analysis_preferences.json"
+        if not self.analysis_preferences_path.is_file():
+            return
+        try:
+            preferences = _read(self.analysis_preferences_path)
+            if not isinstance(preferences, dict):
+                raise ValueError("Expected an analysis preferences object")
+            self.auto_analysis.set(preferences.get("auto_analysis") is not False)
+            configured = preferences.get("runtime")
+            if self.analysis_runtime is None and configured:
+                runtime = Path(configured)
+                if all((runtime / name).is_file() for name in CPU_RUNTIME_FILES):
+                    self.analysis_runtime = runtime
+        except (OSError, ValueError, TypeError) as error:
+            logging.warning("CPU analysis preferences: %s", error)
+
+    def _save_analysis_preferences(self):
+        try:
+            _write(self.analysis_preferences_path, {
+                "runtime": str(self.analysis_runtime) if self.analysis_runtime is not None else None,
+                "auto_analysis": self.auto_analysis.get(),
+            })
+        except OSError as error:
+            self.error(f"无法记住 CPU 分析设置：{error}")
+
+    def _configure_cpu(self):
+        folder = filedialog.askdirectory(parent=self, title="选择已解压的 CPU 运行目录")
+        if not folder:
+            return
+        runtime = Path(folder).resolve()
+        missing = next((name for name in CPU_RUNTIME_FILES if not (runtime / name).is_file()), None)
+        if missing is not None:
+            self.error(f"当前目录缺少 {missing}。请选择包含 runtime 和 analysis_assets 的 CPU 运行目录。")
+            return
+        self.analysis_runtime = runtime
+        self._save_analysis_preferences()
+        self._update_cpu_controls()
+        if self.reader is not None and self.active_demo is None:
+            self.status.set("CPU 环境已配置 · 可点击「CPU 分析」")
+        else:
+            self.status.set("CPU 环境已配置 · 导入自己的视频开始分析")
+        self._maybe_start_cpu_analysis()
+
+    def _update_cpu_controls(self):
+        configured = self.analysis_runtime is not None
+        can_run = self.reader is not None and self.active_demo is None and not (self.loading or self.cpu_busy)
+        self.analyze_button.configure(text="CPU 分析" if configured else "配置 CPU",
+                                      state="normal" if can_run or not configured else "disabled")
+        self.auto_analysis_button.configure(state="normal" if configured else "disabled")
+
+    def _toggle_auto_analysis(self):
+        self._save_analysis_preferences()
+        if not self.auto_analysis.get() and self.cpu_busy and self.cpu_generation != self.generation:
+            self.status.set("视频就绪 · 上一段分析结束后可手动开始")
+        self._maybe_start_cpu_analysis()
+
+    def _maybe_start_cpu_analysis(self):
+        if (self.analysis_runtime is None or not self.auto_analysis.get() or self.active_demo is not None or
+                self.reader is None or self.loading or self.cpu_result is not None):
+            return
+        if self.cpu_busy:
+            if self.cpu_generation != self.generation:
+                self.status.set("视频就绪 · 等待上一段 CPU 分析完成")
+        else:
+            self.analyze_cpu()
+
     def _filter_library(self):
         if not hasattr(self, "video_list"):
             return
@@ -659,6 +741,8 @@ class Studio(tk.Tk):
         self.image_bgr = None
         self.stream_preview = None
         self.loading = True
+        if self.review_mode:
+            self._update_cpu_controls()
         self.reading = False
         self.frame = self.target_frame = 0
         self.zoom.set("适应")
@@ -697,10 +781,13 @@ class Studio(tk.Tk):
         self.executor.submit(load).add_done_callback(lambda f: self.results.put(("open", generation, f)))
 
     def analyze_current(self):
+        if self.review_mode and self.analysis_runtime is None:
+            self._configure_cpu()
+            return
         if not self.entry or not self.reader or self.loading:
             return
         if self.portable or self.review_mode:
-            if self.review_mode and (self.analysis_runtime is None or self.active_demo is not None):
+            if self.review_mode and self.active_demo is not None:
                 return
             self.analyze_cpu()
             return
@@ -733,6 +820,7 @@ class Studio(tk.Tk):
                 "--video", str(self.entry.path), "--workspace", str(self.output),
                 "--video-id", self.entry.video_id, "--run-id", identifier, "--sha256", self.reader.sha256]
         self.cpu_busy = True
+        self.cpu_generation = generation
         self.analyze_button.configure(state="disabled")
         self.status.set("正在启动本地 CPU 分析…")
 
@@ -829,8 +917,10 @@ class Studio(tk.Tk):
                     continue
                 if kind == "cpu_analysis":
                     self.cpu_busy = False
-                    if self.reader is not None and (not self.review_mode or
-                                                    (self.analysis_runtime is not None and self.active_demo is None)):
+                    self.cpu_generation = None
+                    if self.review_mode:
+                        self._update_cpu_controls()
+                    elif self.reader is not None:
                         self.analyze_button.configure(state="normal")
                     try:
                         future.result()
@@ -842,7 +932,12 @@ class Studio(tk.Tk):
                             self.render()
                             self.status.set(f"分析完成 · {self.cpu_result[1]['event_count']} 个预测落点")
                     except Exception as e:
-                        self.error(str(e))
+                        if generation == self.generation or not self.review_mode:
+                            self.error(str(e))
+                        else:
+                            logging.warning("CPU analysis failed for a previously opened video: %s", e)
+                    if self.review_mode and generation != self.generation:
+                        self._maybe_start_cpu_analysis()
                     continue
                 if kind == 'analysis':
                     self.analyze_button.configure(state='normal')
@@ -869,8 +964,7 @@ class Studio(tk.Tk):
                             self.progress.pack_forget()
                         if self.table_view is not None:
                             self._load_review(initial=True)
-                            if self.analysis_runtime is not None and self.active_demo is None and not self.cpu_busy:
-                                self.analyze_button.configure(state="normal")
+                            self._update_cpu_controls()
                         elif self.portable:
                             self._load_cpu_results()
                             self.analyze_button.configure(state="disabled" if self.cpu_busy else "normal")
@@ -883,8 +977,10 @@ class Studio(tk.Tk):
                         self.video_meta.configure(text=f"{role}{r.width} × {r.height}  ·  {r.n_frames} 帧  ·  {r.fps:.2f} fps")
                         if self.source_frame_offset:
                             self.status.set(f"视频就绪 · 原片 f{self.source_frame_offset}–f{self.source_frame_id(r.n_frames - 1)}")
+                        elif self.review_mode and self.cpu_result is not None:
+                            self.status.set(f"视频就绪 · 已加载 {self.cpu_result[1]['event_count']} 个预测落点")
                         elif self.review_mode and self.active_demo is None and self.analysis_runtime is None:
-                            self.status.set("视频就绪 · 未配置 CPU 分析环境")
+                            self.status.set("视频就绪 · 点击「配置 CPU」后可分析")
                         else:
                             self.status.set("视频就绪 · 帧号从 0 开始")
                         if self.active_demo is not None:
@@ -901,6 +997,8 @@ class Studio(tk.Tk):
                     if self.store:
                         self.store.state["last_frame"] = self.frame
                     self.render()
+                    if self.review_mode and kind == "open":
+                        self._maybe_start_cpu_analysis()
                 except Exception as e:
                     self.loading = self.reading = False
                     self.target_frame = self.frame
@@ -1956,7 +2054,7 @@ class Studio(tk.Tk):
     def help(self):
         if self.table_view is not None:
             messagebox.showinfo("触台复核工作台",
-                                "导入视频后可以播放和复核。配置本机 CPU 运行环境后，可用「CPU 分析」生成预测并导出。\n\n"
+                                "首次点击「配置 CPU」选择包含模型的运行目录。启用「导入后分析」时，新导入的录像会自动分析。\n\n"
                                 "点击时间轴圆点、球桌落点或清单中的事件跳回原片。时间轴随清单状态筛选。使用确认、驳回、标疑难记录判断。"
                                 "要补记漏报，先点补记按钮，定位原片帧后在左侧画面点击球心。复核自动保存。\n\n"
                                 "俯视图默认随播放只画最新出现的一个落点，也可切换仅触台帧或全部落点。"
@@ -2023,8 +2121,7 @@ def main():
     parser.add_argument("--analysis-runtime", type=Path)
     args = parser.parse_args()
     runtime = args.analysis_runtime.resolve() if args.analysis_runtime else None
-    if runtime is not None and not all((runtime / name).is_file() for name in
-                                      ("runtime/python.exe", "development/video_studio/local_analysis.py")):
+    if runtime is not None and not all((runtime / name).is_file() for name in CPU_RUNTIME_FILES):
         parser.error("--analysis-runtime must point to an extracted CPU runtime directory")
     table_demo = None
     if args.table_demo:

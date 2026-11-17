@@ -40,13 +40,19 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 
 
 ## 本地 CPU 分析
 
-播放和人工复核只需要上面的依赖。自动分析使用单独提供的本地 CPU 运行目录，其中包含运行时和模型。检查 CPU 运行目录内的 `Check CPU.cmd` 后，用 `-AnalysisRuntime` 指定该目录。仓库源码可以独立使用，模型按项目原有渠道获取。
+自动分析需要单独获取并解压 CPU 运行目录，其中包含 `runtime/`、`analysis_assets/` 和模型。可以先运行目录内的 `Check CPU.cmd` 检查依赖。工作台和模型可以在本机离线运行。
+
+1. 第一次打开工作台，点「配置 CPU」，选择解压后包含 `runtime/` 和 `analysis_assets/` 的目录。工作台会记住该路径。
+2. 点「导入视频」选择自己的录像。底部开启「导入后分析」时，首次打开这段视频会自动开始分析，并在底部显示进度。已有结果的录像会直接载入结果。需要手动控制时，关闭「导入后分析」，再按需点「CPU 分析」。
+3. 分析完成后，轨迹和触台候选会回到当前工作台。标定四角后，候选也会显示在俯视球桌上。可以逐条复核，或用「导出预测」导出自动结果。
+
+也可以通过下面的命令临时指定 CPU 运行目录。
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Video "C:\Videos\clip.mp4" -AnalysisRuntime "C:\Tools\PingpongStudio_CPU_Windows_x64"
 ```
 
-打开自己的视频后点「CPU 分析」，完成后轨迹和触台候选会回到当前工作台。四角标定后，候选会同步显示在俯视球桌上。可以逐条复核，或用「导出预测」导出自动结果。分析日志保存在 `workspace/analysis/jobs/`。
+当前视频只显示画面时，看一下底部状态和「配置 CPU」按钮。样片使用预置结果。分析日志保存在 `workspace/analysis/jobs/`。
 
 ## 样片复核操作
 

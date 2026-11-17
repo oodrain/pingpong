@@ -23,7 +23,7 @@ if ([string]::IsNullOrWhiteSpace($Output)) {
 }
 $Output = [IO.Path]::GetFullPath($Output)
 
-function Invoke-Preflight([string]$inputPath) {
+function Invoke-Preflight([string]$inputPath, [string]$runtimePath) {
     if (-not (Test-Path -LiteralPath $python -PathType Leaf)) {
         throw 'Python environment missing. Follow course-workbench/README.md before starting.'
     }
@@ -59,12 +59,17 @@ from pathlib import Path
 import sys
 import tkinter
 
-root_path, mode, input_path = sys.argv[1:]
+root_path, mode, input_path, *runtime_args = sys.argv[1:]
 root = Path(root_path)
 source = Path(input_path)
 sys.path.insert(0, str(root / "development" / "video_studio"))
 import app
 
+if runtime_args:
+    runtime = Path(runtime_args[0])
+    for name in app.CPU_RUNTIME_FILES:
+        if not (runtime / name).is_file():
+            raise FileNotFoundError("The CPU runtime directory is missing " + name)
 if mode == "Sample":
     import table_view
 
@@ -84,7 +89,9 @@ version = window.tk.call("info", "patchlevel")
 window.destroy()
 print("VIDEO_STUDIO_CHECK_OK. Tk", version, "|", mode + ":", label)
 '@
-    $result = $code | & $python -B - $root $inputMode $inputPath 2>&1
+    $checkArgs = @('-B', '-', $root, $inputMode, $inputPath)
+    if ($runtimePath) { $checkArgs += $runtimePath }
+    $result = $code | & $python @checkArgs 2>&1
     if ($LASTEXITCODE -ne 0) { throw ($result -join [Environment]::NewLine) }
     $result
 }
@@ -99,11 +106,6 @@ try {
     $runtimePath = $null
     if ($AnalysisRuntime) {
         $runtimePath = (Resolve-Path -LiteralPath $AnalysisRuntime).ProviderPath
-        foreach ($file in @('runtime/python.exe', 'development/video_studio/local_analysis.py')) {
-            if (-not (Test-Path -LiteralPath (Join-Path $runtimePath $file) -PathType Leaf)) {
-                throw "The CPU runtime directory is missing $file."
-            }
-        }
     }
     if ($inputMode -eq 'Video') {
         $sourcePath = (Resolve-Path -LiteralPath $Video).ProviderPath
@@ -112,7 +114,7 @@ try {
         $sourcePath = Join-Path $root "development\video_studio\table_demo_$Sample.json"
         $inputFlag = '--table-demo'
     }
-    Invoke-Preflight $sourcePath
+    Invoke-Preflight $sourcePath $runtimePath
     if ($Check) { exit 0 }
     $logDir = Join-Path $Output 'launcher_logs'
     $null = New-Item -ItemType Directory -Path $logDir -Force
