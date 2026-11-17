@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from bisect import bisect_left, bisect_right
 from concurrent.futures import ThreadPoolExecutor
+from importlib.util import find_spec
 import json
 import logging
 from math import atan2, ceil, degrees, hypot
@@ -240,8 +241,9 @@ class Studio(tk.Tk):
             self.save_button.pack(side="right", padx=(8, 0))
         if not self.table_demo:
             ttk.Button(top, text="＋ 导入视频", command=self.import_videos).pack(side="right")
+        analysis_ready = not (self.portable or self.table_demo) and find_spec("video_only_entry") is not None
         self.analyze_button = ttk.Button(top, text="自动分析 · CPU" if self.portable else "自动分析 · 第三轮",
-                                         command=self.analyze_current, state="disabled" if self.portable else "normal")
+                                         command=self.analyze_current, state="normal" if analysis_ready else "disabled")
         if not self.table_demo:
             self.analyze_button.pack(side="right", padx=6)
         if not self.table_demo:
@@ -1497,8 +1499,6 @@ class Studio(tk.Tk):
             self._timeline_hover(self.timeline_hover_x)
 
     def _auto_references(self):
-        from default_ball import references as default_ball_references
-
         e = self.entry
         notes = []
         public = ROOT / "participant/participant/pingpang/public_data/gt_public.jsonl"
@@ -1510,11 +1510,18 @@ class Studio(tk.Tk):
             if path.exists():
                 self.references["trajectory"] = load_reference(path, e.video_id)
                 break
-        default = default_ball_references(self.reader.sha256, e.video_id)
-        if default is not None:
-            self.references['trajectory'], predictions = default
-            self.references['imported'] = [p for p in self.references['imported'] if p.get('ball_profile') != 'round3_reviewed'] + predictions
-            self.reference_names['trajectory'] = '第三轮默认球点'
+        if find_spec("default_ball") is not None:
+            try:
+                from default_ball import references as default_ball_references
+
+                default = default_ball_references(self.reader.sha256, e.video_id)
+                if default is not None:
+                    trajectory, predictions = default
+                    imported = [row for row in self.references["imported"] if row.get("ball_profile") != "round3_reviewed"]
+                    self.references.update(trajectory=trajectory, imported=imported + predictions)
+                    self.reference_names["trajectory"] = "第三轮默认球点"
+            except Exception:
+                logging.warning("Could not load optional default ball predictions", exc_info=True)
         if e.annotation_path and e.annotation_path.exists():
             try:
                 data = json.loads(e.annotation_path.read_text(encoding="utf-8-sig"))

@@ -2,7 +2,7 @@
 
 触台复核工作台是在 Windows 上运行的本地工具，用于核查乒乓球碰到球桌的时刻和位置。原视频、短球轨迹、俯视落点和事件清单集中在一个窗口，点击落点即可跳到对应帧。
 
-当前版本使用带预置触台事件的固定机位合成样片。支持播放、A/D 逐帧、点击落点跳帧、四角标定和面板调整。复核时可以确认、驳回、标疑难或补记漏报，人工记录单独保存。
+工作台支持播放和逐帧查看自己的本地视频。带预置触台事件的固定机位样片还支持 A/D 逐帧、点击落点跳帧、四角标定和面板调整。复核时可以确认、驳回、标疑难或补记漏报，人工记录单独保存。
 
 ## 第一次启动
 
@@ -29,6 +29,16 @@
 git clone https://github.com/oodrain/pingpong.git
 cd pingpong\course-workbench
 ```
+
+## 播放本地视频
+
+创建虚拟环境并安装 `requirements.txt` 后，在 `course-workbench` 目录运行以下命令，把路径换成自己的视频。普通视频工作台用空格播放，左右方向键逐帧，也可以用窗口里的「导入视频」继续打开其他文件。
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Video "C:\Videos\clip.mp4"
+```
+
+普通播放只需要视频文件。当前仓库提供播放和标注查看，自动分析需要另行配置推理组件。
 
 ## 样片复核操作
 

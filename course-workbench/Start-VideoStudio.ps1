@@ -1,7 +1,10 @@
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName = 'Sample')]
 param(
+    [Parameter(ParameterSetName = 'Sample')]
     [ValidateSet('course50', 'course25')]
     [string]$Sample = 'course50',
+    [Parameter(Mandatory = $true, ParameterSetName = 'Video')]
+    [string]$Video,
     [switch]$Check,
     [string]$Output
 )
@@ -11,7 +14,7 @@ $root = $PSScriptRoot
 $python = Join-Path $root '.venv-annotation\Scripts\python.exe'
 $pythonw = Join-Path $root '.venv-annotation\Scripts\pythonw.exe'
 $app = Join-Path $root 'development\video_studio\app.py'
-$case = Join-Path $root "development\video_studio\table_demo_$Sample.json"
+$inputMode = $PSCmdlet.ParameterSetName
 if ([string]::IsNullOrWhiteSpace($Output)) {
     $Output = Join-Path $root 'workspace'
 } elseif (-not [IO.Path]::IsPathRooted($Output)) {
@@ -19,7 +22,7 @@ if ([string]::IsNullOrWhiteSpace($Output)) {
 }
 $Output = [IO.Path]::GetFullPath($Output)
 
-function Invoke-Preflight {
+function Invoke-Preflight([string]$inputPath) {
     if (-not (Test-Path -LiteralPath $python -PathType Leaf)) {
         throw 'Python environment missing. Follow course-workbench/README.md before starting.'
     }
@@ -55,23 +58,32 @@ from pathlib import Path
 import sys
 import tkinter
 
-root, case_file = map(Path, sys.argv[1:])
+root_path, mode, input_path = sys.argv[1:]
+root = Path(root_path)
+source = Path(input_path)
 sys.path.insert(0, str(root / "development" / "video_studio"))
 import app
-import table_view
 
-case = json.loads(case_file.read_text(encoding="utf-8-sig"))
-result = root / case["result"]
-for path in (root / case["video"], *(result / name for name in ("run.json", "tracks.json", "landings.json"))):
-    if not path.is_file():
-        raise FileNotFoundError("Generate the samples first with tools/generate_samples.py. Missing: " + str(path))
+if mode == "Sample":
+    import table_view
+
+    case = json.loads(source.read_text(encoding="utf-8-sig"))
+    result = root / case["result"]
+    for path in (root / case["video"], *(result / name for name in ("run.json", "tracks.json", "landings.json"))):
+        if not path.is_file():
+            raise FileNotFoundError("Generate the samples first with tools/generate_samples.py. Missing: " + str(path))
+    label = case["title"]
+else:
+    if not source.is_file():
+        raise FileNotFoundError("Expected a local video file: " + str(source))
+    label = source.name
 window = tkinter.Tk()
 window.withdraw()
 version = window.tk.call("info", "patchlevel")
 window.destroy()
-print("VIDEO_STUDIO_CHECK_OK. Tk", version, "| sample:", case["title"])
+print("VIDEO_STUDIO_CHECK_OK. Tk", version, "|", mode + ":", label)
 '@
-    $result = $code | & $python -B - $root $case 2>&1
+    $result = $code | & $python -B - $root $inputMode $inputPath 2>&1
     if ($LASTEXITCODE -ne 0) { throw ($result -join [Environment]::NewLine) }
     $result
 }
@@ -83,12 +95,19 @@ function Quote-Argument([string]$value) {
 }
 
 try {
-    Invoke-Preflight
+    if ($inputMode -eq 'Video') {
+        $sourcePath = (Resolve-Path -LiteralPath $Video).ProviderPath
+        $inputFlag = '--video'
+    } else {
+        $sourcePath = Join-Path $root "development\video_studio\table_demo_$Sample.json"
+        $inputFlag = '--table-demo'
+    }
+    Invoke-Preflight $sourcePath
     if ($Check) { exit 0 }
     $logDir = Join-Path $Output 'launcher_logs'
     $null = New-Item -ItemType Directory -Path $logDir -Force
     $run = (Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '-' + $PID
-    $arguments = @('-B', $app, '--output', $Output, '--table-demo', $case)
+    $arguments = @('-B', $app, '--output', $Output, $inputFlag, $sourcePath)
     $commandLine = ($arguments | ForEach-Object { Quote-Argument $_ }) -join ' '
     Start-Process -FilePath $pythonw -ArgumentList $commandLine -WorkingDirectory $root -WindowStyle Hidden `
         -RedirectStandardOutput (Join-Path $logDir "$run.stdout.log") `
