@@ -1,13 +1,31 @@
 """Commit, reopen and export portable automatic results."""
+from contextlib import contextmanager
 import math
+import os
 from pathlib import Path
-import tempfile
+import shutil
 from uuid import UUID, uuid4
 
 from core import _jsonl, _read, _write
 
 
 SCHEMA = "pingpong-studio-cpu-v1"
+
+
+@contextmanager
+def _staging_directory(parent):
+    parent = parent.resolve(strict=True)
+    staging = parent / f".pending-{uuid4().hex[:12]}"
+    # On Windows, mkdtemp's 0o700 creates a private ACL that can block
+    # restricted processes. A regular directory inherits the destination ACL.
+    staging.mkdir(mode=0o777 if os.name == "nt" else 0o700)
+    try:
+        yield staging
+    finally:
+        if staging.exists():
+            if staging.resolve() != staging:
+                raise OSError(f"Unexpected staging directory location: {staging}")
+            shutil.rmtree(staging)
 
 
 def latest(workspace, source_hash):
@@ -29,8 +47,7 @@ def commit(workspace, manifest, tracks, landings):
     runs = workspace / "analysis" / "runs"
     runs.mkdir(parents=True, exist_ok=True)
     folder = runs / run_id
-    with tempfile.TemporaryDirectory(dir=runs, prefix=".pending-") as staging:
-        staging = Path(staging)
+    with _staging_directory(runs) as staging:
         _write(staging / "tracks.json", tracks)
         _jsonl(staging / "predictions.jsonl", landings)
         _write(staging / "run.json", manifest)
@@ -63,8 +80,7 @@ def export_result(result, destination, video_id):
     safe_id = "".join(c if c.isalnum() or c in "-_" else "_" for c in video_id)[:48]
     destination.mkdir(parents=True, exist_ok=True)
     target = destination / f"{safe_id}_落点_{uuid4().hex[:8]}"
-    with tempfile.TemporaryDirectory(dir=destination, prefix=".pending-") as staging:
-        staging = Path(staging)
+    with _staging_directory(destination) as staging:
         _jsonl(staging / "predictions.jsonl", rows)
         _write(staging / "run.json", dict(manifest, video_id=video_id))
         staging.rename(target)
