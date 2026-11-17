@@ -1,0 +1,25 @@
+{
+  "title": "Course demo 50 fps",
+  "video": "samples/generated/course50/demo.avi",
+  "result": "samples/generated/course50",
+  "frame_id": 0,
+  "refine": false,
+  "corners": [
+    [
+      135,
+      416
+    ],
+    [
+      825,
+      416
+    ],
+    [
+      744,
+      250
+    ],
+    [
+      216,
+      250
+    ]
+  ]
+}
