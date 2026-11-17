@@ -6,22 +6,21 @@
 
 ## 第一次启动
 
-准备一台 Windows x64 电脑，安装 64 位 Python 3.12，保留 Tcl/Tk 组件，并让 PowerShell 能运行 `python`。安装依赖时需要联网，之后可以离线复核样片。
+**完整 Windows 目录**包含 `Start-Workbench.cmd`、`runtime/` 和 `analysis_assets/`。双击 `Start-Workbench.cmd`，点击「导入视频」，工作台会自动识别同目录的 CPU 环境并开始分析。
+
+**源码下载**需要在 Windows x64 上安装 64 位 Python 3.12（含 Tcl/Tk）。仓库的自动分析需要另备 CPU 运行文件和模型，见下文。首次安装依赖需要联网。
 
 1. 在仓库首页选择 **Code → Download ZIP**，或者用下方的 Git 命令克隆仓库。解压或克隆到自己能写入的本地目录。
-2. 进入 `course-workbench`，在这个目录打开 PowerShell，按顺序执行下面的命令。样片生成器会画出球桌和运动轨迹，并生成 25 fps 和 50 fps 各一段，时长为 5 秒。
+2. 进入 `course-workbench`，在这个目录打开 PowerShell，按顺序执行下面的命令。
 
    ```powershell
    python --version
    python -m venv .venv-annotation
    .\.venv-annotation\Scripts\python.exe -m pip install -r requirements.txt
-   .\.venv-annotation\Scripts\python.exe -B .\tools\generate_samples.py
-   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Check
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Workbench -Check
    ```
 
-3. 看到 `VIDEO_STUDIO_CHECK_OK` 后，双击 **`Start-Review.cmd`**。默认打开 50 fps 样片。以后直接双击即可。
-
-要试 25 fps，用 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Sample course25`。
+3. 看到 `VIDEO_STUDIO_CHECK_OK` 后，双击 **`Start-Workbench.cmd`**，再导入自己的录像。
 
 通过 Git 下载时，在准备存放仓库的目录执行下面的命令。
 
@@ -40,7 +39,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 
 
 ## 本地 CPU 分析
 
-自动分析需要单独获取并解压 CPU 运行目录，其中包含 `runtime/`、`analysis_assets/` 和模型。可以先运行目录内的 `Check CPU.cmd` 检查依赖。工作台和模型可以在本机离线运行。
+源码版可以将 CPU 包解压到 `course-workbench/cpu-runtime/` 下，使 `cpu-runtime` 直接包含 `runtime/`、`analysis_assets/` 和分析程序。也可以从界面指定其他目录。可运行 CPU 目录内的 `Check CPU.cmd` 检查依赖。
 
 1. 第一次打开工作台，点「配置 CPU」，选择解压后包含 `runtime/` 和 `analysis_assets/` 的目录。工作台会记住该路径。
 2. 点「导入视频」选择自己的录像。底部开启「导入后分析」时，首次打开这段视频会自动开始分析，并在底部显示进度。已有结果的录像会直接载入结果。需要手动控制时，关闭「导入后分析」，再按需点「CPU 分析」。
@@ -55,6 +54,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 
 当前视频只显示画面时，看一下底部状态和「配置 CPU」按钮。样片使用预置结果。分析日志保存在 `workspace/analysis/jobs/`。
 
 ## 样片复核操作
+
+要体验合成样片，先在源码目录运行 `.\.venv-annotation\Scripts\python.exe -B .\tools\generate_samples.py`，再双击 `Start-Review.cmd` 打开 50 fps 样片。要试 25 fps，使用 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-VideoStudio.ps1 -Sample course25`。
 
 1. 按空格播放。左边看原视频和短轨迹，右上看俯视球桌，右下看事件清单。球桌默认为随播放显示一个落点。
 2. 将球桌切为「全部落点」，点 `f90`（50 fps）或 `f45`（25 fps）。两者都应在约 1.800 秒处同步定位原视频、俯视图和清单。按 D 前进一帧，再按 A 返回。

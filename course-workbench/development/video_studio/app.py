@@ -62,6 +62,11 @@ TRAIL_STROKES = (("#2b505b", 1.0), ("#376472", 1.2), ("#447d89", 1.5), ("#5296a1
                  ("#61afbc", 2.3), ("#73c8d4", 2.8), ("#8be2ec", 3.3))
 
 
+def bundled_cpu_runtime(root):
+    return next((candidate for candidate in (root, root / "cpu-runtime")
+                 if all((candidate / name).is_file() for name in CPU_RUNTIME_FILES)), None)
+
+
 class Studio(tk.Tk):
     def __init__(self, output: Path, initial_video=None, portable=False, table_demo=None, review=False, analysis_runtime=None):
         super().__init__()
@@ -2120,9 +2125,12 @@ def main():
     parser.add_argument("--table-demo", type=Path)
     parser.add_argument("--analysis-runtime", type=Path)
     args = parser.parse_args()
-    runtime = args.analysis_runtime.resolve() if args.analysis_runtime else None
-    if runtime is not None and not all((runtime / name).is_file() for name in CPU_RUNTIME_FILES):
-        parser.error("--analysis-runtime must point to an extracted CPU runtime directory")
+    if args.analysis_runtime:
+        runtime = args.analysis_runtime.resolve()
+        if not all((runtime / name).is_file() for name in CPU_RUNTIME_FILES):
+            parser.error("--analysis-runtime must point to an extracted CPU runtime directory")
+    else:
+        runtime = bundled_cpu_runtime(ROOT) if not (args.legacy or args.portable) else None
     table_demo = None
     if args.table_demo:
         from core import _read

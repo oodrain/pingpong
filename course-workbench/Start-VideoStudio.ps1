@@ -5,6 +5,8 @@ param(
     [string]$Sample = 'course50',
     [Parameter(Mandatory = $true, ParameterSetName = 'Video')]
     [string]$Video,
+    [Parameter(Mandatory = $true, ParameterSetName = 'Workbench')]
+    [switch]$Workbench,
     [string]$AnalysisRuntime,
     [switch]$Check,
     [string]$Output
@@ -25,7 +27,7 @@ $Output = [IO.Path]::GetFullPath($Output)
 
 function Invoke-Preflight([string]$inputPath, [string]$runtimePath) {
     if (-not (Test-Path -LiteralPath $python -PathType Leaf)) {
-        throw 'Python environment missing. Follow course-workbench/README.md before starting.'
+        throw 'Python environment missing. Follow README.md before starting.'
     }
 
     $env:PYTHONUTF8 = '1'
@@ -79,17 +81,21 @@ if mode == "Sample":
         if not path.is_file():
             raise FileNotFoundError("Generate the samples first with tools/generate_samples.py. Missing: " + str(path))
     label = case["title"]
-else:
+elif mode == "Video":
     if not source.is_file():
         raise FileNotFoundError("Expected a local video file: " + str(source))
     label = source.name
+else:
+    label = "Ready to import a video"
+if runtime_args or app.bundled_cpu_runtime(root) is not None:
+    label += " | CPU runtime found"
 window = tkinter.Tk()
 window.withdraw()
 version = window.tk.call("info", "patchlevel")
 window.destroy()
 print("VIDEO_STUDIO_CHECK_OK. Tk", version, "|", mode + ":", label)
 '@
-    $checkArgs = @('-B', '-', $root, $inputMode, $inputPath)
+    $checkArgs = @('-B', '-X', 'utf8', '-', $root, $inputMode, $inputPath)
     if ($runtimePath) { $checkArgs += $runtimePath }
     $result = $code | & $python @checkArgs 2>&1
     if ($LASTEXITCODE -ne 0) { throw ($result -join [Environment]::NewLine) }
@@ -107,19 +113,36 @@ try {
     if ($AnalysisRuntime) {
         $runtimePath = (Resolve-Path -LiteralPath $AnalysisRuntime).ProviderPath
     }
+    if (-not (Test-Path -LiteralPath $python -PathType Leaf)) {
+        $candidates = @($root, (Join-Path $root 'cpu-runtime'))
+        if ($runtimePath) { $candidates = @($runtimePath) + $candidates }
+        foreach ($candidate in $candidates) {
+            $runtimePython = Join-Path $candidate 'runtime\python.exe'
+            $runtimePythonw = Join-Path $candidate 'runtime\pythonw.exe'
+            if ((Test-Path -LiteralPath $runtimePython -PathType Leaf) -and
+                (Test-Path -LiteralPath $runtimePythonw -PathType Leaf)) {
+                $python, $pythonw = $runtimePython, $runtimePythonw
+                break
+            }
+        }
+    }
     if ($inputMode -eq 'Video') {
         $sourcePath = (Resolve-Path -LiteralPath $Video).ProviderPath
         $inputFlag = '--video'
-    } else {
+    } elseif ($inputMode -eq 'Sample') {
         $sourcePath = Join-Path $root "development\video_studio\table_demo_$Sample.json"
         $inputFlag = '--table-demo'
+    } else {
+        $sourcePath = $root
+        $inputFlag = $null
     }
     Invoke-Preflight $sourcePath $runtimePath
     if ($Check) { exit 0 }
     $logDir = Join-Path $Output 'launcher_logs'
     $null = New-Item -ItemType Directory -Path $logDir -Force
     $run = (Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '-' + $PID
-    $arguments = @('-B', $app, '--output', $Output, $inputFlag, $sourcePath)
+    $arguments = @('-B', '-X', 'utf8', $app, '--output', $Output)
+    if ($inputFlag) { $arguments += @($inputFlag, $sourcePath) }
     if ($runtimePath) { $arguments += @('--analysis-runtime', $runtimePath) }
     $commandLine = ($arguments | ForEach-Object { Quote-Argument $_ }) -join ' '
     Start-Process -FilePath $pythonw -ArgumentList $commandLine -WorkingDirectory $root -WindowStyle Hidden `
